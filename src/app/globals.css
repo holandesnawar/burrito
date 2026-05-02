@@ -2182,11 +2182,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-food-btn {
   display: inline-flex; align-items: center; justify-content: center;
-  gap: 6px; padding: 11px 26px; border-radius: 12px;
+  gap: 8px; padding: 13px 30px; border-radius: 12px;
   border: 1px solid #d6a91f;
   background: #f7ca3d; color: #2a1f18 !important;
   font-family: "Salsa", system-ui, sans-serif;
-  font-weight: 700; font-size: 14px;
+  font-weight: 700; font-size: 15px;
   letter-spacing: 0.05em; text-transform: uppercase;
   text-decoration: none;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
@@ -2213,7 +2213,7 @@ h1, h2, h3, h4, h5, h6 {
   .ba-food-img:last-child:hover { transform: translateY(calc(60% - 7px)); }
   .ba-food-title { font-size: 34px; }
   .ba-food-text { font-size: 16px; }
-  .ba-food-btn { font-size: 15px; padding: 12px 28px; }
+  .ba-food-btn { font-size: 16px; padding: 14px 34px; }
 }
 
 /* ============================================================
@@ -2297,15 +2297,15 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 11px 26px;
+  gap: 8px;
+  padding: 13px 30px;
   border-radius: 12px;
   border: 1px solid #d0b79a;
   background: #fff3e2;
   color: #2a1b14;
   font-family: "Salsa", system-ui, sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: none;
@@ -2318,7 +2318,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.45);
 }
 @media (min-width: 768px) {
-  .ba-sfeer-btn { font-size: 15px; padding: 12px 28px; }
+  .ba-sfeer-btn { font-size: 16px; padding: 14px 34px; }
 }
 .ba-sfeer-grid {
   margin: 38px auto 0;
@@ -2361,7 +2361,7 @@ h1, h2, h3, h4, h5, h6 {
   .ba-sfeer { padding: 100px 0 120px; }
   .ba-sfeer-inner { text-align: left; padding: 0 28px; }
   .ba-sfeer-head { max-width: 540px; }
-  .ba-sfeer-title { font-size: 32px; }
+  .ba-sfeer-title { font-size: 28px; letter-spacing: 0.04em; }
   .ba-sfeer-text { font-size: 16px; line-height: 1.8; }
   .ba-sfeer-layout {
     display: grid;
@@ -2385,7 +2385,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1024px) {
   .ba-sfeer { padding: 130px 0 150px; }
   .ba-sfeer-inner { max-width: 1200px; padding: 0 32px; }
-  .ba-sfeer-title { font-size: 42px; letter-spacing: 0.08em; }
+  .ba-sfeer-title { font-size: 34px; letter-spacing: 0.05em; }
   .ba-sfeer-text { font-size: 17px; max-width: 460px; }
   .ba-sfeer-layout { gap: 80px; }
   .ba-sfeer-grid { gap: 22px; }
