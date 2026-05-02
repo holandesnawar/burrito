@@ -29,7 +29,6 @@ export default function MenukaartPage() {
 
       <section className="ba-menu-hero">
         <div className="ba-menu-hero-inner">
-          <p className="ba-menu-hero-eyebrow">De Mexicaan van Kampen</p>
           <h1 className="ba-menu-hero-title">Menukaart</h1>
           <p className="ba-menu-hero-text">
             Vers, royaal gevuld en vol smaak. Bekijk onze volledige selectie
