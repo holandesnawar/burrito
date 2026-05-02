@@ -1719,6 +1719,8 @@ h1, h2, h3, h4, h5, h6 {
    FOOTER  (.ba-footer) — cian brand
    ============================================================ */
 .ba-footer {
+  position: relative;
+  z-index: 1;
   background: radial-gradient(circle at top, var(--ba-bg-soft), var(--ba-bg));
   color: var(--ba-text);
   font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -1819,6 +1821,8 @@ h1, h2, h3, h4, h5, h6 {
    REVIEWS  (.ba-reviews) — cards estilo Google reviews
    ============================================================ */
 .ba-reviews {
+  position: relative;
+  z-index: 1;
   background: #fff1e0;
   padding: 80px 18px 96px;
   color: #2a1f18;
@@ -1976,6 +1980,8 @@ h1, h2, h3, h4, h5, h6 {
   --ba-visit-muted: rgba(247, 236, 221, 0.86);
 }
 .ba-visit {
+  position: relative;
+  z-index: 1;
   background: radial-gradient(circle at top, var(--ba-bg-soft), var(--ba-bg));
   padding: 70px 0 80px;
   color: var(--ba-visit-text);
@@ -2125,7 +2131,7 @@ h1, h2, h3, h4, h5, h6 {
 .ba-food-mocktails {
   position: relative;
   background: radial-gradient(circle at top, #6faf2d, #4f8f22);
-  padding: 90px 0 110px;
+  padding: 70px 0 80px;
   color: #fff1e0;
   font-family: "Salsa", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   z-index: 1;
@@ -2199,7 +2205,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-food-btn:hover, .ba-food-btn:focus { transform: scale(1.05); }
 @media (min-width: 768px) {
-  .ba-food-mocktails { padding: 110px 0 130px; }
+  .ba-food-mocktails { padding: 90px 0 100px; }
   .ba-food-inner { flex-direction: row; align-items: center; justify-content: center; gap: 64px; }
   .ba-food-copy { text-align: left; }
   .ba-food-images { position: relative; width: 620px; max-width: 100%; height: 540px; padding: 0; display: block; }
@@ -2226,6 +2232,7 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .ba-sfeer {
   position: relative;
+  z-index: 1;
   overflow: hidden;
   background: radial-gradient(circle at top, #f7ca3d, #e5b520);
   padding: 56px 0 72px;
