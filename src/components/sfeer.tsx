@@ -3,8 +3,7 @@
 import { useEffect, useRef } from "react";
 
 const cardsData = [
-  { src: "/images/plato2.jpg", alt: "Plato mexicano", speed: 1.0 },
-  { src: "/images/completo.jpg", alt: "Burrito completo", speed: 1.4 },
+  { src: "/images/completo.jpg", alt: "Mexicaans menu compleet", speed: 1.0, wide: true },
   { src: "/images/postre.jpg", alt: "Postre artesanal", speed: 0.9 },
   { src: "/images/sala.jpg", alt: "Sala del restaurante", speed: 1.3 },
   { src: "/images/tarta1.jpg", alt: "Tarta de postre", speed: 0.8 },
@@ -91,7 +90,7 @@ export function Sfeer() {
               return (
                 <div
                   key={card.src}
-                  className={`ba-sfeer-card reveal reveal-${reveal}`}
+                  className={`ba-sfeer-card reveal reveal-${reveal}${card.wide ? " ba-sfeer-card-wide" : ""}`}
                   data-speed={card.speed.toString()}
                 >
                   <img src={card.src} alt={card.alt} />

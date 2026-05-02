@@ -199,10 +199,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Marquee Mexicaans — verde brand */
 .ba-marquee {
   overflow: hidden;
-  background: #6faf2d;
-  color: #fff;
+  background: #f7ca3d;
+  color: #2a1f18;
   padding: 12px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid rgba(0, 0, 0, 0.10);
   border-bottom: 1px solid rgba(0, 0, 0, 0.10);
 }
 .ba-marquee-track {
@@ -224,7 +224,7 @@ h1, h2, h3, h4, h5, h6 {
 .ba-marquee-item::after {
   content: "·";
   margin-left: 36px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(42, 31, 24, 0.5);
   font-size: 24px;
 }
 @media (min-width: 1024px) {
@@ -370,9 +370,8 @@ h1, h2, h3, h4, h5, h6 {
 .ba-cta-lg-secondary:hover { transform: scale(1.05); }
 
 @media (max-width: 640px) {
-  .ba-cta-lg, .ba-cta-glass {
-    width: 260px;
-    padding: 13px 24px;
+  .ba-cta-lg, .ba-cta-lg-secondary {
+    padding: 13px 26px;
     font-size: 15px;
   }
 }
@@ -645,11 +644,12 @@ h1, h2, h3, h4, h5, h6 {
   .ba-burger { display: none; }
 }
 @media (max-width: 880px) {
-  #ba-nav { padding: 10px 16px; }
+  #ba-nav { padding: 14px 18px; }
   .ba-menu { display: none; }
-  .ba-actions { gap: 10px; }
-  .ba-cta { padding: 8px 18px; font-size: 13px; }
-  .ba-burger { display: block; }
+  .ba-actions { gap: 12px; }
+  .ba-cta { padding: 10px 22px; font-size: 14px; }
+  .ba-burger { display: block; width: 44px; height: 44px; }
+  .ba-burger span { width: 24px; }
 }
 
 /* ============================================================
@@ -1380,6 +1380,98 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
+   RESERVEREN (página /reserveren)
+   ============================================================ */
+.ba-reserve-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  color: #fff1e0;
+}
+.ba-reserve-hero-bg { position: absolute; inset: 0; z-index: 0; }
+.ba-reserve-hero-bg img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: brightness(0.45) saturate(1.15);
+}
+.ba-reserve-hero-overlay {
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(22, 14, 10, 0.55) 0%, rgba(22, 14, 10, 0.85) 100%);
+}
+.ba-reserve-hero-content {
+  position: relative; z-index: 2;
+  text-align: center; max-width: 720px;
+}
+.ba-reserve-hero-eyebrow {
+  margin: 0 0 12px;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: #f7ca3d;
+}
+.ba-reserve-hero-title {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: clamp(48px, 9vw, 88px);
+  line-height: 1.05; margin: 0 0 18px;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+.ba-reserve-hero-text {
+  margin: 0 auto; max-width: 520px;
+  font-size: 16px; line-height: 1.6;
+  color: rgba(255, 241, 224, 0.88);
+}
+.ba-reserve-main {
+  background: #fff1e0;
+  padding: 80px 24px 120px;
+  display: flex; justify-content: center;
+}
+.ba-reserve-card {
+  width: 100%; max-width: 560px;
+  background: #fff;
+  border-radius: 24px;
+  padding: 40px 32px;
+  border: 1px solid rgba(42, 31, 24, 0.08);
+  box-shadow: 0 14px 40px rgba(42, 31, 24, 0.10);
+  text-align: center;
+}
+.ba-reserve-title {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 26px; margin: 0 0 12px; color: #2a1f18;
+}
+.ba-reserve-desc {
+  margin: 0 0 28px; font-size: 15px; line-height: 1.6;
+  color: rgba(42, 31, 24, 0.72);
+}
+.ba-reserve-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 32px; border-radius: 14px;
+  border: 1px solid var(--ba-cta-secondary-border);
+  background: var(--ba-cta-secondary);
+  color: #fff;
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 16px; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 12px 28px rgba(111, 175, 45, 0.5);
+  transition: transform .18s ease, background .18s ease;
+}
+.ba-reserve-btn:hover {
+  transform: scale(1.04);
+  background: var(--ba-cta-secondary-hover);
+}
+.ba-reserve-note {
+  margin: 24px 0 0; font-size: 13px;
+  color: rgba(42, 31, 24, 0.65);
+}
+.ba-reserve-note a {
+  color: var(--ba-cta-secondary); font-weight: 700; text-decoration: none;
+}
+.ba-reserve-note a:hover { text-decoration: underline; }
+
+/* ============================================================
    FOOTER  (.ba-footer) — cian brand
    ============================================================ */
 .ba-footer {
@@ -1834,12 +1926,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
-   SFEERIMPRESSIE  (.ba-sfeer) — verde brand
+   SFEERIMPRESSIE  (.ba-sfeer) — amarillo brand
    ============================================================ */
 .ba-sfeer {
-  background: radial-gradient(circle at top, #6faf2d, #4f8f22);
+  background: radial-gradient(circle at top, #f7ca3d, #e5b520);
   padding: 56px 0 72px;
-  color: #fff1e0;
+  color: #2a1f18;
   font-family: "Salsa", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 .ba-sfeer-inner { max-width: 960px; margin: 0 auto; padding: 0 16px; text-align: center; }
@@ -1847,7 +1939,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.20em;
   text-transform: uppercase;
   font-size: 12px;
-  color: rgba(255, 241, 224, 0.7);
+  color: rgba(42, 31, 24, 0.65);
   margin: 0 0 6px;
   font-weight: 700;
 }
@@ -1856,13 +1948,13 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin: 0 0 10px;
-  color: #fff;
+  color: #2a1f18;
 }
 .ba-sfeer-text {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 14px;
   line-height: 1.7;
-  color: rgba(255, 241, 224, 0.88);
+  color: rgba(42, 31, 24, 0.78);
   margin: 0 0 22px;
 }
 .ba-sfeer-btn {
@@ -1899,11 +1991,12 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   border-radius: 22px;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.15);
-  box-shadow: 0 12px 28px rgba(40, 70, 12, 0.45);
+  background: rgba(0, 0, 0, 0.10);
+  box-shadow: 0 12px 28px rgba(120, 80, 0, 0.30);
   transform: translateY(0);
   transition: transform .25s ease, box-shadow .25s ease;
 }
+.ba-sfeer-card-wide { grid-column: span 2; }
 .ba-sfeer-card::before {
   content: "";
   position: absolute;

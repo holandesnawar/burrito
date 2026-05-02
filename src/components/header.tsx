@@ -6,7 +6,7 @@ import { restaurant } from "@/lib/restaurant";
 const links = [
   { label: "Inicio", href: "/" },
   { label: "Menukaart", href: "/menukaart" },
-  { label: "Bestellen", href: restaurant.delivery.orderUrl, external: true },
+  { label: "Reserveren", href: "/reserveren" },
   { label: "Over ons", href: "/over-ons" },
   { label: "Contact", href: "/contact" },
 ];
