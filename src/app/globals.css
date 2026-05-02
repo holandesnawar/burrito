@@ -602,8 +602,10 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
 }
 .ba-menu-mobile-brand img {
+  width: 40px;
   height: 36px;
-  width: auto;
+  object-fit: contain;
+  object-position: left center;
   display: block;
 }
 .ba-menu-close {
@@ -757,7 +759,7 @@ h1, h2, h3, h4, h5, h6 {
   #ba-nav { padding: 14px 18px; }
   .ba-menu { display: none; }
   .ba-actions { gap: 12px; }
-  .ba-cta { padding: 10px 22px; font-size: 14px; }
+  .ba-cta { padding: 7px 14px; font-size: 12px; letter-spacing: 0.06em; }
   .ba-burger { display: block; width: 44px; height: 44px; }
   .ba-burger span { width: 24px; }
 }
