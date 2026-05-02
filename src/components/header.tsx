@@ -42,7 +42,6 @@ export function Header() {
                 key={link.label}
                 href={link.href}
                 role="menuitem"
-                {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               >
                 {link.label}
               </a>
@@ -92,7 +91,6 @@ export function Header() {
               key={link.label}
               href={link.href}
               onClick={() => setOpen(false)}
-              {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
             >
               {link.label}
             </a>
