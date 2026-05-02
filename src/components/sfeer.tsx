@@ -6,7 +6,7 @@ const cardsData = [
   { src: "/images/completo.jpg", alt: "Mexicaans menu compleet", speed: 1.0, wide: true },
   { src: "/images/postre.jpg", alt: "Postre artesanal", speed: 0.9 },
   { src: "/images/sala.jpg", alt: "Sala del restaurante", speed: 1.3 },
-  { src: "/images/tarta1.jpg", alt: "Tarta de postre", speed: 0.8 },
+  { src: "/images/tarta1.jpeg", alt: "Tarta de postre", speed: 0.8 },
   { src: "/images/sala2.jpg", alt: "Ambiente del local", speed: 1.2 },
 ];
 
