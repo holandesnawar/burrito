@@ -44,6 +44,12 @@ function TiltImage({
 export function MexicanClassics() {
   return (
     <section className="ba-food-mocktails">
+      <img
+        className="ba-food-jarritos"
+        src="/images/brand/jarritos-bottles.png"
+        alt=""
+        aria-hidden="true"
+      />
       <div className="ba-food-inner">
         <div className="ba-food-images">
           <TiltImage

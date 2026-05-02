@@ -1876,6 +1876,7 @@ h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
+  margin-top: 36px;
   text-align: left;
   margin-bottom: 32px;
 }
@@ -2082,42 +2083,65 @@ h1, h2, h3, h4, h5, h6 {
   filter: brightness(1.06);
 }
 @media (min-width: 768px) {
-  .ba-visit { padding: 90px 0 100px; }
+  .ba-visit { padding: 100px 0 110px; }
   .ba-visit-inner {
+    max-width: none;
+    padding: 0;
     text-align: left;
-    padding: 0 32px;
   }
   .ba-visit-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-    gap: 48px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
+    gap: 0;
   }
-  .ba-visit-left { text-align: left; max-width: none; }
-  .ba-visit-right { display: flex; justify-content: flex-end; }
-  .ba-visit-cta-row { justify-content: flex-start; }
+  .ba-visit-left {
+    text-align: center;
+    padding-left: max(24px, calc((100vw - 1200px) / 2));
+    padding-right: 32px;
+  }
+  .ba-visit-right { display: block; }
+  .ba-visit-cta-row { justify-content: center; }
   .ba-visit-photo {
-    width: 82%;
+    width: 100%;
     margin: 0;
-    aspect-ratio: 4 / 3;
-    border-radius: 24px;
+    aspect-ratio: 5 / 4;
+    border-radius: 200px 0 0 200px;
   }
 }
 @media (min-width: 1024px) {
-  .ba-visit { padding: 110px 0 130px; }
-  .ba-visit-inner { max-width: 1200px; padding: 0 40px; }
-  .ba-visit-layout { gap: 64px; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
-  .ba-visit-photo { aspect-ratio: 5 / 4; }
+  .ba-visit { padding: 130px 0 140px; }
+  .ba-visit-left { padding-right: 56px; }
+  .ba-visit-photo { border-radius: 280px 0 0 280px; }
 }
 
 /* ============================================================
    MEXICAANSE KLASSIEKERS  (.ba-food-mocktails) — verde brand
    ============================================================ */
 .ba-food-mocktails {
+  position: relative;
   background: radial-gradient(circle at top, #6faf2d, #4f8f22);
   padding: 90px 0 110px;
   color: #fff1e0;
   font-family: "Salsa", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+/* Jarritos accent en Food & Drinks (sustituye al de Sfeer) */
+.ba-food-jarritos {
+  position: absolute;
+  left: -90px;
+  bottom: -30px;
+  width: 200px;
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.30));
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ba-food-jarritos { left: -50px; bottom: -10px; width: 140px; }
+}
+@media (min-width: 1024px) {
+  .ba-food-jarritos { left: -60px; bottom: -50px; width: 280px; }
 }
 .ba-food-inner {
   max-width: 1200px; margin: 0 auto; padding: 0 20px;
@@ -2173,14 +2197,20 @@ h1, h2, h3, h4, h5, h6 {
   .ba-food-mocktails { padding: 110px 0 130px; }
   .ba-food-inner { flex-direction: row; align-items: center; justify-content: center; gap: 64px; }
   .ba-food-copy { text-align: left; }
-  .ba-food-images { position: relative; width: 620px; max-width: 100%; padding: 18px 0 50px; display: block; }
+  .ba-food-images { position: relative; width: 620px; max-width: 100%; height: 540px; padding: 0; display: block; }
   .ba-food-img {
     position: absolute; width: 68%; aspect-ratio: 4 / 5;
     border-radius: 32px; box-shadow: 0 26px 56px rgba(0, 0, 0, 0.5);
   }
   .ba-food-img:first-child { left: 0; top: 0; }
-  .ba-food-img:last-child { right: -4%; bottom: -12%; }
-  .ba-food-img:first-child:hover, .ba-food-img:last-child:hover { transform: translateY(-7px); }
+  .ba-food-img:last-child {
+    right: -4%;
+    bottom: 0;
+    transform: translateY(60%);
+    z-index: 4;
+  }
+  .ba-food-img:first-child:hover { transform: translateY(-7px); }
+  .ba-food-img:last-child:hover { transform: translateY(calc(60% - 7px)); }
   .ba-food-title { font-size: 34px; }
   .ba-food-text { font-size: 16px; }
   .ba-food-btn { font-size: 15px; padding: 12px 28px; }

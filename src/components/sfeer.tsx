@@ -37,12 +37,6 @@ const cards = [
 export function Sfeer() {
   return (
     <section className="ba-sfeer">
-      <img
-        className="ba-jarritos-peek"
-        src="/images/brand/jarritos-bottles.png"
-        alt=""
-        aria-hidden="true"
-      />
       <div className="ba-sfeer-inner">
         <div className="ba-sfeer-layout">
           <div className="ba-sfeer-head">
