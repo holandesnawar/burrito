@@ -1,37 +1,30 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { restaurant } from "@/lib/restaurant";
 
 export function Visit() {
   const photoRef = useRef<HTMLDivElement | null>(null);
 
+  // Scroll zoom-out: la foto entra zoomeada y se asienta a normal
+  // a medida que el usuario hace scroll hacia ella.
   useEffect(() => {
     const photo = photoRef.current;
     if (!photo) return;
     const img = photo.querySelector("img");
     if (!img) return;
 
-    const speed = parseFloat(photo.dataset.zoomSpeed || "0.3") || 0.3;
     let ticking = false;
 
     function updateZoom() {
       if (!photo || !img) return;
-      const vw = window.innerWidth || 1;
-
-      if (vw < 768) {
-        img.style.transform = "scale(1.06)";
-        return;
-      }
-
       const vh = window.innerHeight || 1;
       const rect = photo.getBoundingClientRect();
-      const center = vh / 2;
-      const blockCenter = rect.top + rect.height / 2;
-      const distance = (center - blockCenter) / vh;
 
-      let scale = 1.06 + Math.abs(distance) * speed;
-      if (scale < 1.06) scale = 1.06;
-      if (scale > 1.22) scale = 1.22;
+      // t va de 0 (foto recién entrando por debajo) a 1 (foto en su sitio)
+      const progress = 1 - rect.top / vh;
+      const t = Math.max(0, Math.min(1, progress));
+      const scale = 1.22 - t * 0.22; // 1.22 → 1.00
 
       img.style.transform = `scale(${scale.toFixed(3)})`;
     }
@@ -60,25 +53,12 @@ export function Visit() {
     <section className="ba-visit">
       <div className="ba-visit-inner">
         <div className="ba-visit-layout">
-          {/* Columna izquierda: texto + horarios + CTAs */}
+          {/* Columna izquierda: kicker + dirección como título + horarios + CTAs */}
           <div className="ba-visit-left">
-            <h2 className="ba-visit-title">Bezoek ons</h2>
-            <p className="ba-visit-address">Broederstraat 25, Kampen</p>
-
-            <div className="ba-visit-opening" aria-label="Openingstijden">
-              <div className="ba-visit-opening-row">
-                <span>Maandag</span><span>Gesloten</span>
-              </div>
-              <div className="ba-visit-opening-row">
-                <span>Dinsdag t/m Donderdag</span><span>16:00 tot 21:00</span>
-              </div>
-              <div className="ba-visit-opening-row">
-                <span>Vrijdag t/m Zaterdag</span><span>16:00 tot 21:30</span>
-              </div>
-              <div className="ba-visit-opening-row">
-                <span>Zondag</span><span>16:00 tot 21:00</span>
-              </div>
-            </div>
+            <p className="ba-visit-kicker">Bezoek ons</p>
+            <h2 className="ba-visit-title">
+              {restaurant.address.street}
+            </h2>
 
             <div className="ba-visit-cta-row">
               <a
@@ -100,19 +80,16 @@ export function Visit() {
             </div>
           </div>
 
-          {/* Columna derecha: foto con corte asimétrico + zoom scroll */}
+          {/* Columna derecha: foto grande con zoom-out al hacer scroll */}
           <div className="ba-visit-right">
-            <div className="ba-visit-photo-wrap">
-              <div
-                className="ba-visit-photo"
-                ref={photoRef}
-                data-zoom-speed="0.3"
-              >
-                <img
-                  src="/images/restaurant/interior-visit.jpg"
-                  alt="Gezellige sfeer bij Burrito Azteca"
-                />
-              </div>
+            <div
+              className="ba-visit-photo"
+              ref={photoRef}
+            >
+              <img
+                src="/images/restaurant/interior-visit.jpg"
+                alt="Gezellige sfeer bij Burrito Azteca"
+              />
             </div>
           </div>
         </div>

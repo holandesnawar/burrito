@@ -58,7 +58,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Columna 3: openingstijden + adres */}
+          {/* Columna 3: openingstijden */}
           <div>
             <div className="ba-footer-block">
               <h4 className="ba-footer-heading">Openingstijden</h4>
@@ -77,7 +77,10 @@ export function Footer() {
                 </div>
               </div>
             </div>
+          </div>
 
+          {/* Columna 4: adres */}
+          <div>
             <div className="ba-footer-block">
               <h4 className="ba-footer-heading">Adres</h4>
               <div className="ba-footer-address">

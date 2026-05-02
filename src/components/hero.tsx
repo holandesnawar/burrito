@@ -90,28 +90,32 @@ export function Hero() {
       <div className="ba-hero-overlay" />
 
       <div className="ba-hero-content">
-        <p className="ba-hero-eyebrow">{restaurant.name} · sinds 2017</p>
-        <h1 className="ba-hero-title">{restaurant.tagline}</h1>
+        <p className="ba-hero-eyebrow">Mexicaanse keuken</p>
+        <h1 className="ba-hero-title">{restaurant.name}</h1>
+        <p className="ba-hero-address">
+          {restaurant.address.street}, {restaurant.address.city}
+        </p>
 
-        <div className="ba-hero-info" aria-label="Restaurant info">
-          <p className="ba-hero-address">
-            {restaurant.address.street}, {restaurant.address.city}
-          </p>
-          <p className="ba-hero-hours">
-            <span>Di t/m Do</span>
-            <span>16:30 — 21:00</span>
-          </p>
-          <p className="ba-hero-hours">
-            <span>Vr t/m Za</span>
-            <span>16:30 — 21:30</span>
-          </p>
-          <p className="ba-hero-hours">
-            <span>Zondag</span>
-            <span>16:30 — 21:00</span>
-          </p>
+        <div className="ba-hero-info" aria-label="Openingstijden">
           <p className="ba-hero-hours ba-hero-hours-closed">
-            <span>Maandag</span>
+            <span>MA</span>
+            <span aria-hidden>·</span>
             <span>Gesloten</span>
+          </p>
+          <p className="ba-hero-hours">
+            <span>DI-DO</span>
+            <span aria-hidden>·</span>
+            <span>16:00 — 21:00 uur</span>
+          </p>
+          <p className="ba-hero-hours">
+            <span>VR-ZA</span>
+            <span aria-hidden>·</span>
+            <span>16:00 — 21:30 uur</span>
+          </p>
+          <p className="ba-hero-hours">
+            <span>ZO</span>
+            <span aria-hidden>·</span>
+            <span>16:00 — 21:00 uur</span>
           </p>
         </div>
 
