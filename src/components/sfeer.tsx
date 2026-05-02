@@ -67,6 +67,13 @@ export function Sfeer() {
 
   return (
     <section className="ba-sfeer">
+      {/* Botella de Jarritos asomando como detalle Mexicano */}
+      <img
+        className="ba-jarritos-peek"
+        src="/images/jarritos.png"
+        alt=""
+        aria-hidden="true"
+      />
       <div className="ba-sfeer-inner">
         <div className="ba-sfeer-layout">
           <div className="ba-sfeer-head">

@@ -462,7 +462,7 @@ h1, h2, h3, h4, h5, h6 {
 .ba-burger.is-open span:nth-child(2) { opacity: 0; }
 .ba-burger.is-open span:nth-child(3) { top: 19px; transform: translateX(-50%) rotate(-45deg); }
 
-/* Fullscreen mobile menu — amarillo brand, sin scroll, layout compacto */
+/* Fullscreen mobile menu — amarillo brand. Padding matches navbar exactly. */
 #ba-menu-mobile {
   position: fixed;
   inset: 0;
@@ -475,7 +475,7 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
   transform: translateY(-8px);
   transition: opacity .28s ease, transform .28s ease;
-  padding: 22px 22px 18px 18px;
+  padding: 14px 18px 22px;
   overflow: hidden;
   color: #2a1f18;
 }
@@ -485,32 +485,37 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-/* Cabecera: brand + X */
+/* Cabecera: brand + X — alineados exactamente como el navbar */
 .ba-menu-mobile-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 24px;
+  height: 44px;
 }
 .ba-menu-mobile-brand {
   display: inline-flex;
   align-items: center;
 }
 .ba-menu-mobile-brand img {
-  height: 48px;
+  height: 36px;
   width: auto;
   display: block;
-  margin-left: -4px;
 }
 .ba-menu-close {
+  width: 44px;
+  height: 44px;
   border: 0;
   background: transparent;
-  padding: 4px 8px;
+  padding: 0;
   color: #2a1f18;
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: 56px;
+  font-size: 38px;
   line-height: 1;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: transform .18s ease, color .18s ease;
 }
 .ba-menu-close:hover {
@@ -1775,19 +1780,20 @@ h1, h2, h3, h4, h5, h6 {
   gap: 8px;
   padding: 11px 22px;
   border-radius: 12px;
-  border: 1px solid var(--ba-cta-secondary-border);
-  background: var(--ba-cta-secondary);
-  color: #fff;
+  border: 1px solid #d6a91f;
+  background: #f7ca3d;
+  color: #2a1f18 !important;
   font-family: "Salsa", system-ui, sans-serif;
   font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
   transition: transform .18s ease, background .18s ease;
 }
+.ba-visit-cta * { color: #2a1f18 !important; }
 .ba-visit-cta:hover {
-  background: var(--ba-cta-secondary-hover);
+  background: #ffd75f;
   transform: scale(1.05);
 }
 .ba-visit-photo-wrap {
@@ -1926,13 +1932,50 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
-   SFEERIMPRESSIE  (.ba-sfeer) — amarillo brand
+   SFEERIMPRESSIE  (.ba-sfeer) — amarillo brand + Jarritos detail
    ============================================================ */
 .ba-sfeer {
+  position: relative;
+  overflow: hidden;
   background: radial-gradient(circle at top, #f7ca3d, #e5b520);
   padding: 56px 0 72px;
   color: #2a1f18;
   font-family: "Salsa", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Jarritos peek — botella asomando desde la izquierda */
+.ba-jarritos-peek {
+  position: absolute;
+  left: -110px;
+  bottom: -40px;
+  width: 240px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  transform: rotate(-8deg);
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.30));
+  opacity: 0;
+}
+@supports (animation-timeline: view()) {
+  .ba-jarritos-peek {
+    animation: jarritos-slide-in linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 70%;
+  }
+  @keyframes jarritos-slide-in {
+    from { transform: translateX(-180px) rotate(-30deg); opacity: 0; }
+    to { transform: translateX(0) rotate(-8deg); opacity: 1; }
+  }
+}
+@media (min-width: 1024px) {
+  .ba-jarritos-peek {
+    left: -90px;
+    bottom: -50px;
+    width: 320px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ba-jarritos-peek { animation: none !important; opacity: 1; transform: rotate(-8deg); }
 }
 .ba-sfeer-inner { max-width: 960px; margin: 0 auto; padding: 0 16px; text-align: center; }
 .ba-sfeer-kicker {
