@@ -19,9 +19,8 @@ export type MenuCategory = {
 
 export const menu: MenuCategory[] = [
   {
-    slug: "ensaladas",
-    name: "Ensaladas",
-    subtitle: "Salades",
+    slug: "salades",
+    name: "Salades",
     items: [
       {
         name: "Ensalada Azteca",

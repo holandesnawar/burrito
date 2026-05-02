@@ -6,7 +6,7 @@ import { menu } from "@/lib/menu";
 export const metadata: Metadata = {
   title: "Menukaart | Burrito Azteca Kampen",
   description:
-    "Onze volledige menukaart: burritos, quesadillas, fajitas, ensaladas, postres en meer. Authentieke Mexicaanse keuken in Kampen.",
+    "Onze volledige menukaart: burritos, quesadillas, fajitas, salades, postres en meer. Authentieke Mexicaanse keuken in Kampen.",
 };
 
 function formatPrice(price: string | { single: string; double?: string }) {

@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 import { restaurant } from "@/lib/restaurant";
 
 const links = [
-  { label: "Inicio", href: "/" },
+  { label: "Home", href: "/" },
   { label: "Menukaart", href: "/menukaart" },
-  { label: "Reserveren", href: "/reserveren" },
   { label: "Sfeerimpressie", href: "/sfeerimpressie" },
   { label: "Over ons", href: "/over-ons" },
   { label: "Contact", href: "/contact" },

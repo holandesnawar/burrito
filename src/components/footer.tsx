@@ -45,14 +45,13 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Columna 2: menu */}
+          {/* Columna 2: navigatie */}
           <div>
             <div className="ba-footer-block">
-              <h4 className="ba-footer-heading">Menu</h4>
               <ul className="ba-footer-menu-list">
                 <li><a href="/">Home</a></li>
                 <li><a href="/menukaart">Menukaart</a></li>
-                <li><a href="/bestellen">Bestellen</a></li>
+                <li><a href="/sfeerimpressie">Sfeerimpressie</a></li>
                 <li><a href="/over-ons">Over ons</a></li>
                 <li><a href="/contact">Contact</a></li>
               </ul>

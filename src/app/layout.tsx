@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Salsa, Inter } from "next/font/google";
 import "./globals.css";
+import { FloatingReserveer } from "@/components/floating-reserveer";
 
 const salsa = Salsa({
   variable: "--font-salsa",
@@ -32,6 +33,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-cream-light text-ink">
         {children}
+        <FloatingReserveer />
       </body>
     </html>
   );

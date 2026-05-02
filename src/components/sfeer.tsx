@@ -27,28 +27,10 @@ const cards = [
     alt: "Nachos con queso",
   },
   {
-    _id: "empanada",
-    title: "Empanada",
-    image: { _id: "empanada", url: "/images/food/empanada-mexicana.jpg" },
-    alt: "Empanada mexicana",
-  },
-  {
-    _id: "tarta",
-    title: "Tarta de queso",
-    image: { _id: "tarta", url: "/images/food/tarta-queso-mango.jpeg" },
-    alt: "Tarta de queso con mango",
-  },
-  {
     _id: "postre-fresa",
     title: "Postre con fresa",
     image: { _id: "postre-fresa", url: "/images/food/postre-fresa-chocolate.jpg" },
     alt: "Postre con fresa y chocolate",
-  },
-  {
-    _id: "postre-platano",
-    title: "Postre con plátano",
-    image: { _id: "postre-platano", url: "/images/food/postre-platano.jpg" },
-    alt: "Postre con plátano",
   },
 ];
 

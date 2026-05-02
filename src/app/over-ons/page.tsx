@@ -13,11 +13,7 @@ export default function OverOnsPage() {
     <main className="flex-1">
       <Header />
 
-      <section className="ba-over-hero">
-        <div className="ba-over-hero-bg" aria-hidden>
-          <img src="/images/food/plato-mexicano.jpg" alt="" />
-        </div>
-        <div className="ba-over-hero-overlay" aria-hidden />
+      <section className="ba-over-hero ba-over-hero-green">
         <div className="ba-over-hero-content">
           <p className="ba-over-hero-eyebrow">Over ons</p>
           <h1 className="ba-over-hero-title">Claudia &amp; Alfredo</h1>

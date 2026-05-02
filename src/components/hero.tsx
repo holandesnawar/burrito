@@ -97,7 +97,6 @@ export function Hero() {
           <p className="ba-hero-address">
             {restaurant.address.street}, {restaurant.address.city}
           </p>
-          <p className="ba-hero-hours-label">Openingstijden</p>
           <p className="ba-hero-hours">
             <span>Di t/m Do</span>
             <span>16:30 — 21:00</span>
@@ -121,15 +120,6 @@ export function Hero() {
             <span>Bekijk de menukaart</span>
             <span aria-hidden>→</span>
           </Link>
-          <a
-            href={restaurant.delivery.orderUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ba-cta-lg"
-          >
-            <span>Bestellen</span>
-            <span aria-hidden>→</span>
-          </a>
         </div>
       </div>
     </section>
