@@ -81,8 +81,17 @@ export default function ContactPage() {
               </ul>
             </div>
 
-            <div className="ba-contact-photo">
-              <img src="/images/restaurant/interior-bar.jpg" alt="Sfeer Burrito Azteca" />
+            <div className="ba-contact-map">
+              <iframe
+                src="https://www.google.com/maps?q=Broederstraat+25,+8261+GN+Kampen&output=embed"
+                title="Burrito Azteca op de kaart"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
             </div>
           </aside>
 
