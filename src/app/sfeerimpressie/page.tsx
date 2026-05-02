@@ -10,49 +10,24 @@ export const metadata: Metadata = {
 
 const photos = [
   {
-    src: "/images/food/plato-completo-mesa.jpg",
-    alt: "Plato Mexicano completo",
-    caption: "Plato completo Mexicano",
-  },
-  {
-    src: "/images/restaurant/interior-fiesta.jpg",
-    alt: "Fiesta sfeer in het restaurant",
-    caption: "Fiësta in onze zaak",
-  },
-  {
-    src: "/images/food/tacos-frescos.jpg",
-    alt: "Verse tacos",
-    caption: "Verse tacos",
-  },
-  {
-    src: "/images/food/canelones-mexicanos.jpg",
-    alt: "Mexicaanse canelones",
-    caption: "Mexicaanse canelones",
-  },
-  {
-    src: "/images/restaurant/interior-bar.jpg",
-    alt: "Bar van het restaurant",
-    caption: "Onze bar",
-  },
-  {
     src: "/images/food/empanada-mexicana.jpg",
     alt: "Verse empanada",
     caption: "Empanadas",
   },
   {
-    src: "/images/food/nachos-con-queso.jpg",
-    alt: "Nachos met kaas",
-    caption: "Nachos con queso",
-  },
-  {
-    src: "/images/food/postre-fresa-chocolate.jpg",
-    alt: "Aardbeien dessert met chocolade",
-    caption: "Aardbeien dessert",
+    src: "/images/food/tostadas-mexicanas.jpg",
+    alt: "Mexicaanse tostadas",
+    caption: "Tostadas",
   },
   {
     src: "/images/food/tarta-queso-mango.jpeg",
     alt: "Cheesecake met mango",
     caption: "Cheesecake met mango",
+  },
+  {
+    src: "/images/food/postre-platano.jpg",
+    alt: "Huisgemaakt dessert met banaan",
+    caption: "Postre met banaan",
   },
 ];
 

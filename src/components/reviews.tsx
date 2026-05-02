@@ -51,10 +51,6 @@ export function Reviews() {
       <div className="ba-reviews-inner">
         <p className="ba-reviews-kicker">REVIEWS</p>
         <h2 className="ba-reviews-title">Wat onze gasten zeggen</h2>
-        <p className="ba-reviews-text">
-          Echte beoordelingen van Google over ons eten, de service en de
-          ervaring bij Burrito Azteca.
-        </p>
 
         <div className="ba-reviews-grid">
           {reviews.map((r) => (
