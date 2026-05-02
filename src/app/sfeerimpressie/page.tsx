@@ -29,6 +29,31 @@ const photos = [
     alt: "Huisgemaakt dessert met banaan",
     caption: "Postre met banaan",
   },
+  {
+    src: "/images/food/canelones-mexicanos.jpg",
+    alt: "Mexicaanse canelones",
+    caption: "Canelones",
+  },
+  {
+    src: "/images/food/burrito-classic.jpg",
+    alt: "Burrito classic",
+    caption: "Burrito classic",
+  },
+  {
+    src: "/images/food/plato-mexicano.jpg",
+    alt: "Plato Mexicano",
+    caption: "Plato Mexicano",
+  },
+  {
+    src: "/images/food/postre-fresa-chocolate.jpg",
+    alt: "Aardbeien dessert met chocolade",
+    caption: "Aardbeien dessert",
+  },
+  {
+    src: "/images/food/nachos-con-queso.jpg",
+    alt: "Nachos met kaas",
+    caption: "Nachos con queso",
+  },
 ];
 
 export default function SfeerimpressiePage() {

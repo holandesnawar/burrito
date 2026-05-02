@@ -28,16 +28,23 @@ export function Hero() {
     let ticking = false;
 
     const update = () => {
-      const rect = hero.getBoundingClientRect();
       const vh = window.innerHeight || 1;
-      // 0 when fully in view, 1 when fully scrolled past
-      const t = Math.min(Math.max(-rect.top / vh, 0), 1);
+      // Use scrollY instead of getBoundingClientRect because hero is
+      // position:sticky → rect.top stays at 0 once stuck.
+      const t = Math.min(Math.max(window.scrollY / vh, 0), 1);
       const scale = 1 + t * 0.18; // up to 1.18×
       const main = hero.querySelector<HTMLVideoElement>(".ba-hero-video-main");
       const bg = hero.querySelector<HTMLVideoElement>(".ba-hero-video-bg");
+      const content = hero.querySelector<HTMLDivElement>(".ba-hero-content");
       if (main) main.style.transform = `scale(${scale.toFixed(3)})`;
       // bg already has scale(1.18) baseline → add the same delta
       if (bg) bg.style.transform = `scale(${(1.18 + t * 0.18).toFixed(3)})`;
+      // Mini-parallax: el bloque de texto sube ~80px y se desvanece
+      // a medida que la siguiente sección emerge desde abajo.
+      if (content) {
+        content.style.transform = `translateY(${(-t * 80).toFixed(1)}px)`;
+        content.style.opacity = `${(1 - t * 0.85).toFixed(3)}`;
+      }
     };
 
     const onScroll = () => {
