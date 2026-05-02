@@ -18,15 +18,15 @@ export const restaurant = {
   },
   hours: [
     { day: "Maandag", value: "Gesloten", closed: true },
-    { day: "Dinsdag", value: "16:30 — 21:00" },
-    { day: "Woensdag", value: "16:30 — 21:00" },
-    { day: "Donderdag", value: "16:30 — 21:00" },
-    { day: "Vrijdag", value: "16:30 — 21:30" },
-    { day: "Zaterdag", value: "16:30 — 21:30" },
-    { day: "Zondag", value: "16:30 — 21:00" },
+    { day: "Dinsdag", value: "16:30 tot 21:00" },
+    { day: "Woensdag", value: "16:30 tot 21:00" },
+    { day: "Donderdag", value: "16:30 tot 21:00" },
+    { day: "Vrijdag", value: "16:30 tot 21:30" },
+    { day: "Zaterdag", value: "16:30 tot 21:30" },
+    { day: "Zondag", value: "16:30 tot 21:00" },
   ],
   delivery: {
-    info: "Tot €30 — €2,50 bezorgkosten",
+    info: "Tot €30: €2,50 bezorgkosten",
     orderUrl: "https://burritoazteca.sitedish.shop/",
   },
   reservation: {

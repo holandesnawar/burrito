@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 import { menu } from "@/lib/menu";
 
 export const metadata: Metadata = {
-  title: "Menukaart — Burrito Azteca Kampen",
+  title: "Menukaart | Burrito Azteca Kampen",
   description:
     "Onze volledige menukaart: burritos, quesadillas, fajitas, ensaladas, postres en meer. Authentieke Mexicaanse keuken in Kampen.",
 };
@@ -33,7 +33,7 @@ export default function MenukaartPage() {
           <h1 className="ba-menu-hero-title">Menukaart</h1>
           <p className="ba-menu-hero-text">
             Vers, royaal gevuld en vol smaak. Bekijk onze volledige selectie
-            authentieke Mexicaanse gerechten — van klassieke burritos tot
+            authentieke Mexicaanse gerechten. Van klassieke burritos tot
             hoofdgerechten en huisgemaakte desserts.
           </p>
 
@@ -101,7 +101,7 @@ export default function MenukaartPage() {
 
           <div className="ba-menu-footer-note">
             <p>
-              <strong>Allergieën?</strong> Vraag het ons gerust — we informeren
+              <strong>Allergieën?</strong> Vraag het ons gerust. We informeren
               je graag over de ingrediënten van elk gerecht.
             </p>
             <p>

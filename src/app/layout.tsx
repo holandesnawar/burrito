@@ -14,7 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Burrito Azteca — De Mexicaan van Kampen",
+  title: "Burrito Azteca | De Mexicaan van Kampen",
   description:
     "Authentieke Mexicaanse keuken in het hart van Kampen. Burritos, quesadillas, fajitas en meer. Reserveer of bestel online.",
   metadataBase: new URL("https://burrito-azteca.nl"),

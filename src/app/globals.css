@@ -201,20 +201,20 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   background: #6faf2d;
   color: #fff;
-  padding: 20px 0;
+  padding: 12px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   border-bottom: 1px solid rgba(0, 0, 0, 0.10);
 }
 .ba-marquee-track {
   display: flex;
-  gap: 48px;
+  gap: 36px;
   white-space: nowrap;
-  animation: ba-marquee 38s linear infinite;
+  animation: ba-marquee 22s linear infinite;
   width: max-content;
 }
 .ba-marquee-item {
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   display: inline-flex;
@@ -223,15 +223,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-marquee-item::after {
   content: "·";
-  margin-left: 48px;
+  margin-left: 36px;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 28px;
+  font-size: 24px;
 }
 @media (min-width: 1024px) {
-  .ba-marquee { padding: 24px 0; }
-  .ba-marquee-item { font-size: 22px; }
-  .ba-marquee-track { gap: 60px; }
-  .ba-marquee-item::after { margin-left: 60px; font-size: 32px; }
+  .ba-marquee { padding: 14px 0; }
+  .ba-marquee-item { font-size: 17px; }
+  .ba-marquee-track { gap: 48px; animation-duration: 28s; }
+  .ba-marquee-item::after { margin-left: 48px; font-size: 28px; }
 }
 @keyframes ba-marquee {
   0% { transform: translateX(0); }
@@ -407,7 +407,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform .18s ease;
 }
 .ba-menu a:hover::after { transform: scaleX(1); }
-.ba-menu a:hover { color: var(--ba-link-dim); transform: translateY(-1px); }
+.ba-menu a:hover { color: var(--ba-link-dim); transform: scale(1.08); }
 
 .ba-actions { display: flex; align-items: center; gap: 12px; }
 
@@ -463,14 +463,12 @@ h1, h2, h3, h4, h5, h6 {
 .ba-burger.is-open span:nth-child(2) { opacity: 0; }
 .ba-burger.is-open span:nth-child(3) { top: 19px; transform: translateX(-50%) rotate(-45deg); }
 
-/* Fullscreen mobile menu — verde brand, lista izquierda + info colapsable + redes */
+/* Fullscreen mobile menu — amarillo brand, sin scroll, layout compacto */
 #ba-menu-mobile {
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: linear-gradient(180deg, #6faf2d 0%, #5a9024 100%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  backdrop-filter: blur(20px) saturate(140%);
+  background: linear-gradient(180deg, #f7ca3d 0%, #e5b520 100%);
   display: flex;
   flex-direction: column;
   font-family: "Salsa", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -478,8 +476,9 @@ h1, h2, h3, h4, h5, h6 {
   pointer-events: none;
   transform: translateY(-8px);
   transition: opacity .28s ease, transform .28s ease;
-  padding: 28px 28px 24px;
-  overflow-y: auto;
+  padding: 22px 22px 18px 18px;
+  overflow: hidden;
+  color: #2a1f18;
 }
 #ba-menu-mobile.is-open {
   opacity: 1;
@@ -492,55 +491,55 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 18px;
 }
 .ba-menu-mobile-brand {
   display: inline-flex;
   align-items: center;
 }
 .ba-menu-mobile-brand img {
-  height: 56px;
+  height: 48px;
   width: auto;
   display: block;
+  margin-left: -4px;
 }
 .ba-menu-close {
   border: 0;
   background: transparent;
   padding: 4px 8px;
-  color: #fff;
+  color: #2a1f18;
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: 38px;
+  font-size: 56px;
   line-height: 1;
   cursor: pointer;
   transition: transform .18s ease, color .18s ease;
 }
 .ba-menu-close:hover {
-  color: #fff1e0;
+  color: #5a3d1e;
   transform: scale(1.12);
 }
 
-/* Lista de links principales */
+/* Lista de links principales — compacta para que entre en una pantalla */
 .ba-menu-mobile-links {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  margin-bottom: 28px;
+  gap: 0;
+  margin-bottom: 16px;
 }
 .ba-menu-mobile-links a {
   display: block;
-  padding: 10px 0;
+  padding: 6px 0;
   text-decoration: none;
-  color: #fff;
+  color: #2a1f18;
   font-family: "Salsa", system-ui, sans-serif;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 22px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1.1;
-  transition: transform .18s ease, color .18s ease;
+  transition: transform .18s ease;
 }
 .ba-menu-mobile-links a:hover {
-  color: #fff1e0;
   transform: translateX(4px);
 }
 
@@ -549,23 +548,23 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 .ba-menu-mobile-info details {
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
-  padding: 14px 0;
+  border-top: 1px solid rgba(42, 31, 24, 0.22);
+  padding: 10px 0;
 }
 .ba-menu-mobile-info details:last-of-type {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  border-bottom: 1px solid rgba(42, 31, 24, 0.22);
 }
 .ba-menu-mobile-info summary {
   list-style: none;
   cursor: pointer;
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #fff;
+  color: #2a1f18;
   position: relative;
   padding-right: 24px;
 }
@@ -576,7 +575,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   transition: transform .2s ease;
 }
@@ -586,55 +585,57 @@ h1, h2, h3, h4, h5, h6 {
 .ba-menu-mobile-hours {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 12px;
-  font-family: system-ui, sans-serif;
+  gap: 4px;
+  margin-top: 8px;
+  font-family: "Salsa", system-ui, sans-serif;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.02em;
+  color: rgba(42, 31, 24, 0.88);
 }
 .ba-menu-mobile-hours > div {
   display: flex;
   justify-content: space-between;
 }
 .ba-menu-mobile-info p {
-  margin: 12px 0 0;
-  font-family: system-ui, sans-serif;
+  margin: 8px 0 0;
+  font-family: "Salsa", system-ui, sans-serif;
   font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.02em;
+  line-height: 1.55;
+  color: rgba(42, 31, 24, 0.88);
 }
 .ba-menu-mobile-info a {
-  color: #fff;
+  color: #2a1f18;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(42, 31, 24, 0.4);
   transition: border-color .18s ease;
 }
-.ba-menu-mobile-info a:hover { border-color: #fff; }
+.ba-menu-mobile-info a:hover { border-color: #2a1f18; }
 
 /* Redes sociales abajo */
 .ba-menu-mobile-social {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   align-items: center;
   margin-top: auto;
-  padding-top: 14px;
+  padding-top: 8px;
 }
 .ba-menu-mobile-social a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #2a1f18;
   background: transparent;
   border: 0;
   transition: transform .18s ease, color .18s ease;
 }
 .ba-menu-mobile-social a:hover {
-  color: #fff1e0;
+  color: #5a3d1e;
   transform: scale(1.12);
 }
 .ba-menu-mobile-social svg {
-  width: 26px;
-  height: 26px;
+  width: 22px;
+  height: 22px;
   display: block;
 }
 
@@ -1178,6 +1179,207 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
+   OVER ONS (página /over-ons)
+   ============================================================ */
+.ba-over-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  color: #fff1e0;
+}
+.ba-over-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.ba-over-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.45) saturate(1.15);
+}
+.ba-over-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(22, 14, 10, 0.55) 0%, rgba(22, 14, 10, 0.85) 100%);
+}
+.ba-over-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 800px;
+}
+.ba-over-hero-eyebrow {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #f7ca3d;
+}
+.ba-over-hero-title {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: clamp(48px, 10vw, 96px);
+  line-height: 1.05;
+  margin: 0 0 18px;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+.ba-over-hero-text {
+  margin: 0 auto;
+  max-width: 540px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(255, 241, 224, 0.88);
+}
+
+.ba-over-story {
+  background: #fff1e0;
+  padding: 64px 24px 32px;
+  color: #2a1f18;
+}
+.ba-over-story-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 36px;
+  align-items: start;
+}
+.ba-over-photo {
+  width: 100%;
+  border-radius: 22px;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 18px 46px rgba(42, 31, 24, 0.18);
+}
+.ba-over-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease, filter .4s ease;
+}
+.ba-over-photo:hover img {
+  transform: scale(1.04);
+  filter: brightness(1.05);
+}
+.ba-over-text p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: rgba(42, 31, 24, 0.84);
+  margin: 0 0 18px;
+}
+.ba-over-welcome {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 22px !important;
+  color: #2b9595 !important;
+  margin-top: 24px !important;
+}
+.ba-over-signature {
+  font-family: "Salsa", system-ui, sans-serif;
+  margin-top: 16px !important;
+  font-size: 17px !important;
+  color: #2a1f18 !important;
+}
+.ba-over-signature strong {
+  font-weight: 400;
+  font-size: 22px;
+  display: inline-block;
+  margin-top: 4px;
+}
+@media (min-width: 768px) {
+  .ba-over-hero { min-height: 60vh; padding: 160px 24px 100px; }
+  .ba-over-story { padding: 100px 24px 80px; }
+  .ba-over-text p { font-size: 17px; }
+}
+@media (min-width: 1024px) {
+  .ba-over-story-inner {
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 64px;
+  }
+  .ba-over-photo {
+    position: sticky;
+    top: 100px;
+    max-width: 100%;
+  }
+}
+
+/* Over ons — sección impressie con grid de fotos */
+.ba-over-impressie {
+  background: linear-gradient(180deg, #fff1e0 0%, #fce6d4 100%);
+  padding: 80px 24px 100px;
+  scroll-margin-top: 80px;
+}
+.ba-over-impressie-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ba-over-impressie-kicker {
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #2b9595;
+}
+.ba-over-impressie-title {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: clamp(28px, 5vw, 44px);
+  margin: 0 0 36px;
+  color: #2a1f18;
+  line-height: 1.15;
+}
+.ba-over-impressie-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.ba-over-impressie-item {
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 12px 30px rgba(42, 31, 24, 0.10);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.ba-over-impressie-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease, filter .35s ease;
+}
+.ba-over-impressie-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(42, 31, 24, 0.15);
+}
+.ba-over-impressie-item:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+@media (min-width: 768px) {
+  .ba-over-impressie { padding: 100px 32px 130px; }
+  .ba-over-impressie-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 220px;
+    gap: 18px;
+  }
+  .ba-over-impressie-item { aspect-ratio: auto; height: 100%; }
+  .ba-over-impressie-tall { grid-row: span 2; }
+  .ba-over-impressie-wide { grid-column: span 2; }
+}
+@media (min-width: 1024px) {
+  .ba-over-impressie-grid { grid-auto-rows: 260px; gap: 22px; }
+  .ba-over-impressie-item { border-radius: 22px; }
+}
+
+/* ============================================================
    FOOTER  (.ba-footer) — cian brand
    ============================================================ */
 .ba-footer {
@@ -1425,15 +1627,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
-   VISIT  (.ba-visit) — rojo brand + foto sol mexicano + botones blancos
+   VISIT  (.ba-visit) — cian brand + 2 columnas en desktop + foto asimétrica
    ============================================================ */
 :root {
-  --ba-visit-text: #fff1e0;
-  --ba-visit-muted: rgba(255, 241, 224, 0.78);
+  --ba-visit-text: #f7f8fa;
+  --ba-visit-muted: rgba(247, 236, 221, 0.86);
 }
 .ba-visit {
-  background: radial-gradient(circle at top, #d44a3f, #a83830);
-  padding: 80px 20px 90px;
+  background: radial-gradient(circle at top, var(--ba-bg-soft), var(--ba-bg));
+  padding: 64px 18px 72px;
   color: var(--ba-visit-text);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
@@ -1444,7 +1646,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0 0 8px;
-  color: var(--ba-visit-text);
+  color: #fff;
 }
 .ba-visit-address {
   font-size: 14px;
@@ -1462,10 +1664,10 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   gap: 16px;
   padding: 6px 0;
-  border-bottom: 1px solid rgba(249, 236, 221, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.26);
 }
 .ba-visit-opening-row:first-child {
-  border-top: 1px solid rgba(249, 236, 221, 0.16);
+  border-top: 1px solid rgba(255, 255, 255, 0.26);
 }
 .ba-visit-cta-row {
   display: flex;
@@ -1481,20 +1683,19 @@ h1, h2, h3, h4, h5, h6 {
   gap: 8px;
   padding: 11px 22px;
   border-radius: 12px;
-  border: 1px solid #fff;
-  background: #fff;
-  color: #a83830;
+  border: 1px solid var(--ba-cta-secondary-border);
+  background: var(--ba-cta-secondary);
+  color: #fff;
   font-family: "Salsa", system-ui, sans-serif;
   font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.20);
-  transition: transform .18s ease, background .18s ease, color .18s ease;
+  transition: transform .18s ease, background .18s ease;
 }
 .ba-visit-cta:hover {
-  background: #fff1e0;
-  color: #2a1f18;
+  background: var(--ba-cta-secondary-hover);
   transform: scale(1.05);
 }
 .ba-visit-photo-wrap {
@@ -1504,12 +1705,24 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-visit-photo {
   width: min(440px, 100%);
-  aspect-ratio: 5 / 3;
-  /* Forma de burrito (cápsula horizontal) */
-  border-radius: 999px;
+  aspect-ratio: 4 / 3;
+  border-radius: 34px 10px 26px 10px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(80, 18, 14, 0.55);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.55);
   background: #000;
+  position: relative;
+}
+.ba-visit-photo::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.22), transparent 60%),
+    radial-gradient(circle at bottom, rgba(0, 0, 0, 0.7), transparent 65%);
+  mix-blend-mode: soft-light;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
 }
 .ba-visit-photo img {
   width: 100%;
@@ -1517,37 +1730,40 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: cover;
   transform: scale(1.06);
   transition: transform .25s ease, filter .25s ease;
+  will-change: transform;
 }
 .ba-visit-photo:hover img {
-  transform: scale(1.1);
   filter: brightness(1.06);
 }
 @media (min-width: 768px) {
-  .ba-visit { padding: 100px 24px 110px; }
-  .ba-visit-title { font-size: 32px; }
-  .ba-visit-address { font-size: 16px; }
-  .ba-visit-opening { max-width: 520px; font-size: 15px; }
-  .ba-visit-photo { width: min(480px, 100%); }
-  .ba-visit-cta { padding: 12px 24px; font-size: 14px; }
+  .ba-visit { padding: 80px 24px 90px; }
+  .ba-visit-inner { text-align: left; }
+  .ba-visit-layout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  .ba-visit-left { flex: 1; text-align: left; max-width: none; }
+  .ba-visit-right { flex: 1; justify-content: flex-end; }
+  .ba-visit-title { font-size: 26px; }
+  .ba-visit-opening { margin-left: 0; margin-right: 0; }
+  .ba-visit-cta-row { justify-content: flex-start; }
+  .ba-visit-photo-wrap { margin-top: 0; justify-content: flex-end; }
 }
 @media (min-width: 1024px) {
-  .ba-visit { padding: 130px 24px 140px; }
-  .ba-visit-title { font-size: 40px; margin-bottom: 12px; }
-  .ba-visit-address { font-size: 17px; }
-  .ba-visit-opening { max-width: 580px; font-size: 16px; margin-bottom: 36px; }
-  .ba-visit-opening-row { padding: 10px 0; }
-  .ba-visit-photo { width: min(560px, 100%); }
-  .ba-visit-cta-row { gap: 16px; margin-bottom: 40px; }
-  .ba-visit-cta { padding: 14px 28px; font-size: 15px; }
+  .ba-visit { padding: 110px 24px 130px; }
+  .ba-visit-title { font-size: 32px; }
+  .ba-visit-photo { width: min(520px, 100%); }
 }
 
 /* ============================================================
-   MEXICAANSE KLASSIEKERS  (.ba-food-mocktails)
+   MEXICAANSE KLASSIEKERS  (.ba-food-mocktails) — verde brand
    ============================================================ */
 .ba-food-mocktails {
-  background: radial-gradient(circle at top, var(--ba-bg-soft), var(--ba-bg));
+  background: radial-gradient(circle at top, #6faf2d, #4f8f22);
   padding: 90px 0 110px;
-  color: var(--ba-text);
+  color: #fff1e0;
   font-family: "Salsa", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 .ba-food-inner {
@@ -1590,14 +1806,14 @@ h1, h2, h3, h4, h5, h6 {
 .ba-food-btn {
   display: inline-flex; align-items: center; justify-content: center;
   gap: 6px; padding: 11px 26px; border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: #6faf2d; color: #fff !important;
+  border: 1px solid #d6a91f;
+  background: #f7ca3d; color: #2a1f18 !important;
   font-family: "Salsa", system-ui, sans-serif;
-  font-weight: 600; font-size: 14px;
+  font-weight: 700; font-size: 14px;
   letter-spacing: 0.05em; text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 14px 30px rgba(7, 42, 51, 0.26);
-  transition: background .18s ease, transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  transition: transform .18s ease;
 }
 .ba-food-btn:hover, .ba-food-btn:focus { transform: scale(1.05); }
 @media (min-width: 768px) {
@@ -1709,21 +1925,34 @@ h1, h2, h3, h4, h5, h6 {
 .ba-sfeer-card:hover { box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55); }
 .ba-sfeer-card:hover img { transform: scale(1.07); filter: brightness(1.05); }
 @media (min-width: 768px) {
-  .ba-sfeer { padding: 72px 0 96px; }
-  .ba-sfeer-inner { text-align: left; }
-  .ba-sfeer-head { max-width: 520px; }
+  .ba-sfeer { padding: 100px 0 120px; }
+  .ba-sfeer-inner { text-align: left; padding: 0 28px; }
+  .ba-sfeer-head { max-width: 540px; }
+  .ba-sfeer-title { font-size: 32px; }
+  .ba-sfeer-text { font-size: 16px; line-height: 1.8; }
   .ba-sfeer-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    gap: 40px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: 56px;
     align-items: center;
   }
   .ba-sfeer-grid {
     margin-top: 0;
     max-width: none;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 14px;
+    gap: 18px;
   }
-  .ba-sfeer-card { border-radius: 24px; }
-  .ba-sfeer-card img { border-radius: 24px; }
+  .ba-sfeer-card {
+    border-radius: 26px;
+    aspect-ratio: 4 / 5;
+  }
+  .ba-sfeer-card img { border-radius: 26px; }
+}
+@media (min-width: 1024px) {
+  .ba-sfeer { padding: 130px 0 150px; }
+  .ba-sfeer-inner { max-width: 1280px; padding: 0 32px; }
+  .ba-sfeer-title { font-size: 42px; letter-spacing: 0.08em; }
+  .ba-sfeer-text { font-size: 17px; max-width: 460px; }
+  .ba-sfeer-layout { gap: 80px; }
+  .ba-sfeer-grid { gap: 22px; }
 }

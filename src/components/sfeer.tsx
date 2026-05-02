@@ -80,7 +80,7 @@ export function Sfeer() {
               tot kleurrijke desserts. Scroll door de beelden en proef hoe gezellig
               het is in ons restaurant.
             </p>
-            <a href="/sfeerimpressie" className="ba-sfeer-btn">
+            <a href="/over-ons#impressie" className="ba-sfeer-btn">
               Bekijk impressie
             </a>
           </div>

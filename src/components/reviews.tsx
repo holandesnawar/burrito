@@ -46,8 +46,6 @@ function StarRow({ count }: { count: number }) {
 }
 
 export function Reviews() {
-  const avg = (reviews.reduce((s, r) => s + r.rating, 0) / reviews.length).toFixed(1);
-
   return (
     <section className="ba-reviews">
       <div className="ba-reviews-inner">
@@ -57,17 +55,6 @@ export function Reviews() {
           Echte beoordelingen van Google over ons eten, de service en de
           ervaring bij Burrito Azteca.
         </p>
-
-        <div className="ba-reviews-summary">
-          <div className="ba-reviews-rating">
-            <span className="ba-reviews-rating-num">{avg}</span>
-            <StarRow count={5} />
-          </div>
-          <div className="ba-reviews-summary-text">
-            <span>Gebaseerd op echte recensies</span>
-            <GoogleLogo />
-          </div>
-        </div>
 
         <div className="ba-reviews-grid">
           {reviews.map((r) => (

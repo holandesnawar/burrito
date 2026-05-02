@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/contact-form";
 import { restaurant } from "@/lib/restaurant";
 
 export const metadata: Metadata = {
-  title: "Contact — Burrito Azteca Kampen",
+  title: "Contact | Burrito Azteca Kampen",
   description:
     "Neem contact op met Burrito Azteca in Kampen. Stuur ons een bericht, bel ons of kom langs aan de Broederstraat 25.",
 };
@@ -43,7 +43,7 @@ export default function ContactPage() {
               <h2 className="ba-contact-info-title">Kom in contact</h2>
               <p className="ba-contact-info-text">
                 We horen graag van je. Voor reserveringen, vragen over het menu
-                of suggesties — wij zijn er voor je.
+                of suggesties. Wij zijn er voor je.
               </p>
 
               <ul className="ba-contact-list">

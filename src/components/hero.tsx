@@ -52,7 +52,6 @@ export function Hero() {
       )}
 
       <div className="ba-hero-overlay" />
-      <div className="ba-hero-watermark-cover" aria-hidden="true" />
 
       <div className="ba-hero-content">
         <p className="ba-hero-eyebrow">
@@ -65,7 +64,7 @@ export function Hero() {
         </p>
 
         <div className="ba-hero-ctas">
-          <Link href="/menukaart" className="ba-cta-lg">
+          <Link href="/menukaart" className="ba-cta-lg-secondary">
             <span>Bekijk de menukaart</span>
             <span aria-hidden>→</span>
           </Link>
@@ -73,7 +72,7 @@ export function Hero() {
             href={restaurant.delivery.orderUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="ba-cta-lg-secondary"
+            className="ba-cta-lg"
           >
             <span>Bestellen</span>
             <span aria-hidden>→</span>
