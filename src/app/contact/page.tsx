@@ -93,18 +93,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Mapa simple */}
-      <section className="ba-contact-map-section">
-        <div className="ba-contact-map-inner">
-          <iframe
-            title="Locatie Burrito Azteca op kaart"
-            src="https://maps.google.com/maps?q=Broederstraat%2025%2C%208261%20GN%20Kampen&t=&z=15&ie=UTF8&iwloc=&output=embed"
-            loading="lazy"
-            allowFullScreen
-          />
-        </div>
-      </section>
-
       <Footer />
     </main>
   );
