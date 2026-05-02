@@ -1390,6 +1390,120 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
+   SFEERIMPRESSIE PAGE  (.ba-sfeerimpressie)
+   ============================================================ */
+.ba-sfeerimpressie {
+  background: #fff7ec;
+  padding: 80px 20px 110px;
+  color: #2a1f18;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.ba-sfeerimpressie-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.ba-sfeerimpressie-head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+.ba-sfeerimpressie-kicker {
+  margin: 0 0 12px;
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #2b9595;
+}
+.ba-sfeerimpressie-title {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: clamp(32px, 6vw, 52px);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin: 0 0 18px;
+  color: #2a1f18;
+}
+.ba-sfeerimpressie-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(42, 31, 24, 0.78);
+  margin: 0;
+}
+.ba-sfeerimpressie-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
+.ba-sfeerimpressie-card {
+  position: relative;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(42, 31, 24, 0.12);
+  background: #000;
+  cursor: pointer;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.ba-sfeerimpressie-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 44px rgba(42, 31, 24, 0.22);
+}
+.ba-sfeerimpressie-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+.ba-sfeerimpressie-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .55s ease, filter .35s ease;
+  display: block;
+}
+.ba-sfeerimpressie-card:hover .ba-sfeerimpressie-img img {
+  transform: scale(1.10);
+  filter: brightness(0.85);
+}
+.ba-sfeerimpressie-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 18px 20px 16px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+  color: #fff;
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform .35s ease, opacity .35s ease;
+  pointer-events: none;
+}
+.ba-sfeerimpressie-card:hover .ba-sfeerimpressie-caption {
+  transform: translateY(0);
+  opacity: 1;
+}
+@media (min-width: 768px) {
+  .ba-sfeerimpressie { padding: 110px 28px 140px; }
+  .ba-sfeerimpressie-head { margin-bottom: 60px; }
+  .ba-sfeerimpressie-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .ba-sfeerimpressie-card { border-radius: 22px; }
+}
+@media (min-width: 1024px) {
+  .ba-sfeerimpressie { padding: 140px 32px 170px; }
+  .ba-sfeerimpressie-grid { gap: 28px; }
+  .ba-sfeerimpressie-caption {
+    padding: 22px 24px 18px;
+    font-size: 16px;
+  }
+}
+
+/* ============================================================
    RESERVEREN (página /reserveren)
    ============================================================ */
 .ba-reserve-hero {
