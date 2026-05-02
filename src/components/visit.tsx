@@ -109,7 +109,7 @@ export function Visit() {
                 data-zoom-speed="0.3"
               >
                 <img
-                  src="/images/visit-sala.jpg"
+                  src="/images/restaurant/interior-visit.jpg"
                   alt="Gezellige sfeer bij Burrito Azteca"
                 />
               </div>

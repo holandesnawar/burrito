@@ -1,11 +1,18 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { GalleryPhotoDoc } from "@/sanity/lib/queries";
+
+type SfeerCard = {
+  _id: string;
+  title: string;
+  wide?: boolean;
+  image: { _id: string; url: string };
+  alt: string;
+};
 
 const speeds = [1.0, 1.4, 0.9, 1.3, 0.8, 1.2];
 
-export function SfeerGrid({ cards }: { cards: GalleryPhotoDoc[] }) {
+export function SfeerGrid({ cards }: { cards: SfeerCard[] }) {
   const gridRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {

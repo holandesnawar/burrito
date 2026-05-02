@@ -15,7 +15,7 @@ export default function OverOnsPage() {
 
       <section className="ba-over-hero">
         <div className="ba-over-hero-bg" aria-hidden>
-          <img src="/images/plato.jpg" alt="" />
+          <img src="/images/food/plato-mexicano.jpg" alt="" />
         </div>
         <div className="ba-over-hero-overlay" aria-hidden />
         <div className="ba-over-hero-content">
@@ -31,7 +31,7 @@ export default function OverOnsPage() {
         <div className="ba-over-story-inner">
           <div className="ba-over-photo">
             <img
-              src="/images/claudia-alfredo.jpg"
+              src="/images/team/claudia-alfredo-fundadores.jpg"
               alt="Claudia y Alfredo, oprichters van Burrito Azteca"
             />
           </div>
@@ -92,31 +92,31 @@ export default function OverOnsPage() {
           </h2>
           <div className="ba-over-impressie-grid">
             <div className="ba-over-impressie-item ba-over-impressie-tall">
-              <img src="/images/fiesta.jpg" alt="Fiesta sfeer in het restaurant" />
+              <img src="/images/restaurant/interior-fiesta.jpg" alt="Fiesta sfeer in het restaurant" />
             </div>
             <div className="ba-over-impressie-item">
-              <img src="/images/tacos.jpg" alt="Verse tacos" />
+              <img src="/images/food/tacos-frescos.jpg" alt="Verse tacos" />
             </div>
             <div className="ba-over-impressie-item">
-              <img src="/images/postre2.jpg" alt="Huisgemaakt dessert" />
+              <img src="/images/food/postre-platano.jpg" alt="Huisgemaakt dessert" />
             </div>
             <div className="ba-over-impressie-item">
-              <img src="/images/nachos.jpg" alt="Mexicaanse nachos" />
+              <img src="/images/food/nachos-con-queso.jpg" alt="Mexicaanse nachos" />
             </div>
             <div className="ba-over-impressie-item">
-              <img src="/images/empanada.jpg" alt="Verse empanada" />
+              <img src="/images/food/empanada-mexicana.jpg" alt="Verse empanada" />
             </div>
             <div className="ba-over-impressie-item">
-              <img src="/images/burrito.jpg" alt="Burrito" />
+              <img src="/images/food/burrito-classic.jpg" alt="Burrito" />
             </div>
             <div className="ba-over-impressie-item">
-              <img src="/images/canelones.jpg" alt="Mexicaanse canelones" />
+              <img src="/images/food/canelones-mexicanos.jpg" alt="Mexicaanse canelones" />
             </div>
             <div className="ba-over-impressie-item">
-              <img src="/images/tostadas.jpg" alt="Tostadas" />
+              <img src="/images/food/tostadas-mexicanas.jpg" alt="Tostadas" />
             </div>
             <div className="ba-over-impressie-item ba-over-impressie-wide">
-              <img src="/images/sala.jpg" alt="Sfeer in het restaurant" />
+              <img src="/images/restaurant/interior-mesas.jpg" alt="Sfeer in het restaurant" />
             </div>
           </div>
         </div>

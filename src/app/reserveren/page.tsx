@@ -15,7 +15,7 @@ export default function ReserverenPage() {
 
       <section className="ba-reserve-hero">
         <div className="ba-reserve-hero-bg" aria-hidden>
-          <img src="/images/sala.jpg" alt="" />
+          <img src="/images/restaurant/interior-mesas.jpg" alt="" />
         </div>
         <div className="ba-reserve-hero-overlay" aria-hidden />
         <div className="ba-reserve-hero-content">

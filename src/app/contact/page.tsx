@@ -18,7 +18,7 @@ export default function ContactPage() {
       {/* Hero con nombre horizontal estilo cinematográfico */}
       <section className="ba-contact-hero">
         <div className="ba-contact-hero-bg" aria-hidden>
-          <img src="/images/sala2.jpg" alt="" />
+          <img src="/images/restaurant/interior-bar.jpg" alt="" />
         </div>
         <div className="ba-contact-hero-overlay" aria-hidden />
         <div className="ba-contact-hero-content">
@@ -83,7 +83,7 @@ export default function ContactPage() {
             </div>
 
             <div className="ba-contact-photo">
-              <img src="/images/sala2.jpg" alt="Sfeer Burrito Azteca" />
+              <img src="/images/restaurant/interior-bar.jpg" alt="Sfeer Burrito Azteca" />
             </div>
           </aside>
 

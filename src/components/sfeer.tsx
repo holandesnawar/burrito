@@ -1,31 +1,45 @@
-import { sanityFetch } from "@/sanity/lib/fetch";
-import {
-  galleryByCategoryQuery,
-  type GalleryPhotoDoc,
-} from "@/sanity/lib/queries";
 import { SfeerGrid } from "./sfeer-grid";
 
-// Fallback locales si Sanity está vacío (no debería pasar)
-const fallback: GalleryPhotoDoc[] = [
-  { _id: "1", title: "Plato completo", wide: true, image: { _id: "1", url: "/images/completo.jpg" }, alt: "Plato Mexicano completo" },
-  { _id: "2", title: "Postre", image: { _id: "2", url: "/images/postre.jpg" }, alt: "Postre artesanal" },
-  { _id: "3", title: "Tacos", image: { _id: "3", url: "/images/tacos.jpg" }, alt: "Tacos frescos" },
-  { _id: "4", title: "Tarta", image: { _id: "4", url: "/images/tarta1.jpeg" }, alt: "Tarta de queso" },
-  { _id: "5", title: "Nachos", image: { _id: "5", url: "/images/nachos.jpg" }, alt: "Nachos" },
+const cards = [
+  {
+    _id: "1",
+    title: "Plato completo",
+    wide: true,
+    image: { _id: "1", url: "/images/food/plato-completo-mesa.jpg" },
+    alt: "Plato Mexicano completo",
+  },
+  {
+    _id: "2",
+    title: "Postre",
+    image: { _id: "2", url: "/images/food/postre-fresa-chocolate.jpg" },
+    alt: "Postre artesanal",
+  },
+  {
+    _id: "3",
+    title: "Tacos",
+    image: { _id: "3", url: "/images/food/tacos-frescos.jpg" },
+    alt: "Tacos frescos",
+  },
+  {
+    _id: "4",
+    title: "Tarta",
+    image: { _id: "4", url: "/images/food/tarta-queso-mango.jpeg" },
+    alt: "Tarta de queso",
+  },
+  {
+    _id: "5",
+    title: "Nachos",
+    image: { _id: "5", url: "/images/food/nachos-con-queso.jpg" },
+    alt: "Nachos",
+  },
 ];
 
-export async function Sfeer() {
-  const photos = await sanityFetch<GalleryPhotoDoc[]>(
-    galleryByCategoryQuery,
-    { category: "sfeer" }
-  );
-  const cards = photos && photos.length > 0 ? photos : fallback;
-
+export function Sfeer() {
   return (
     <section className="ba-sfeer">
       <img
         className="ba-jarritos-peek"
-        src="/images/jarritos.png"
+        src="/images/brand/jarritos-bottles.png"
         alt=""
         aria-hidden="true"
       />

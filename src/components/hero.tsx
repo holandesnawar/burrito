@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { restaurant } from "@/lib/restaurant";
 
-const VIDEO_VERTICAL = "/images/entrando.mp4";
-const VIDEO_HORIZONTAL = "/images/horizontal.mp4";
+const VIDEO_VERTICAL = "/images/restaurant/hero-vertical.mp4";
+const VIDEO_HORIZONTAL = "/images/restaurant/hero-horizontal.mp4";
 
 export function Hero() {
   const [isDesktop, setIsDesktop] = useState<boolean | null>(null);

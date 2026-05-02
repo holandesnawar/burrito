@@ -47,12 +47,12 @@ export function MexicanClassics() {
       <div className="ba-food-inner">
         <div className="ba-food-images">
           <TiltImage
-            src="/images/burrito.jpg"
+            src="/images/food/burrito-classic.jpg"
             alt="Burrito recién hecho"
             reveal="right"
           />
           <TiltImage
-            src="/images/plato.jpg"
+            src="/images/food/plato-mexicano.jpg"
             alt="Plato mexicano de Burrito Azteca"
             reveal="left"
           />
