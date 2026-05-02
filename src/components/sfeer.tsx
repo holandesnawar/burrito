@@ -1,73 +1,28 @@
-"use client";
+import { sanityFetch } from "@/sanity/lib/fetch";
+import {
+  galleryByCategoryQuery,
+  type GalleryPhotoDoc,
+} from "@/sanity/lib/queries";
+import { SfeerGrid } from "./sfeer-grid";
 
-import { useEffect, useRef } from "react";
-
-const cardsData = [
-  { src: "/images/completo.jpg", alt: "Mexicaans menu compleet", speed: 1.0, wide: true },
-  { src: "/images/postre.jpg", alt: "Postre artesanal", speed: 0.9 },
-  { src: "/images/tacos.jpg", alt: "Verse tacos", speed: 1.3 },
-  { src: "/images/tarta1.jpeg", alt: "Tarta de postre", speed: 0.8 },
-  { src: "/images/nachos.jpg", alt: "Mexicaanse nachos", speed: 1.2 },
+// Fallback locales si Sanity está vacío (no debería pasar)
+const fallback: GalleryPhotoDoc[] = [
+  { _id: "1", title: "Plato completo", wide: true, image: { _id: "1", url: "/images/completo.jpg" }, alt: "Plato Mexicano completo" },
+  { _id: "2", title: "Postre", image: { _id: "2", url: "/images/postre.jpg" }, alt: "Postre artesanal" },
+  { _id: "3", title: "Tacos", image: { _id: "3", url: "/images/tacos.jpg" }, alt: "Tacos frescos" },
+  { _id: "4", title: "Tarta", image: { _id: "4", url: "/images/tarta1.jpeg" }, alt: "Tarta de queso" },
+  { _id: "5", title: "Nachos", image: { _id: "5", url: "/images/nachos.jpg" }, alt: "Nachos" },
 ];
 
-export function Sfeer() {
-  const gridRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const grid = gridRef.current;
-    if (!grid) return;
-    const cards = grid.querySelectorAll<HTMLDivElement>(".ba-sfeer-card");
-    if (!cards.length) return;
-
-    let ticking = false;
-
-    function updateParallax() {
-      const vw = window.innerWidth || 1;
-
-      if (vw < 768) {
-        cards.forEach((card) => {
-          card.style.transform = "translateY(0px)";
-        });
-        return;
-      }
-
-      const vh = window.innerHeight || 1;
-      const center = vh / 2;
-
-      cards.forEach((card) => {
-        const rect = card.getBoundingClientRect();
-        const cardCenter = rect.top + rect.height / 2;
-        const distance = (center - cardCenter) / vh;
-        const speed = parseFloat(card.dataset.speed || "1") || 1;
-        const move = distance * 22 * speed;
-
-        card.style.transform = `translateY(${move}px)`;
-      });
-    }
-
-    function onScroll() {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          updateParallax();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", updateParallax);
-    updateParallax();
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", updateParallax);
-    };
-  }, []);
+export async function Sfeer() {
+  const photos = await sanityFetch<GalleryPhotoDoc[]>(
+    galleryByCategoryQuery,
+    { category: "sfeer" }
+  );
+  const cards = photos && photos.length > 0 ? photos : fallback;
 
   return (
     <section className="ba-sfeer">
-      {/* Botella de Jarritos asomando como detalle Mexicano */}
       <img
         className="ba-jarritos-peek"
         src="/images/jarritos.png"
@@ -83,28 +38,15 @@ export function Sfeer() {
             </h2>
             <p className="ba-sfeer-text">
               Neem alvast een kijkje in onze sfeer. Van dampende burrito&rsquo;s
-              tot kleurrijke desserts. Scroll door de beelden en proef hoe gezellig
-              het is in ons restaurant.
+              tot kleurrijke desserts. Scroll door de beelden en proef hoe
+              gezellig het is in ons restaurant.
             </p>
             <a href="/over-ons#impressie" className="ba-sfeer-btn">
               Bekijk impressie
             </a>
           </div>
 
-          <div className="ba-sfeer-grid" ref={gridRef}>
-            {cardsData.map((card, i) => {
-              const reveal = i % 2 === 0 ? "right" : "left";
-              return (
-                <div
-                  key={card.src}
-                  className={`ba-sfeer-card reveal reveal-${reveal}${card.wide ? " ba-sfeer-card-wide" : ""}`}
-                  data-speed={card.speed.toString()}
-                >
-                  <img src={card.src} alt={card.alt} />
-                </div>
-              );
-            })}
-          </div>
+          <SfeerGrid cards={cards} />
         </div>
       </div>
     </section>
