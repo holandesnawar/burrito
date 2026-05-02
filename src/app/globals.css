@@ -605,7 +605,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 36px;
   width: auto;
   display: block;
-  filter: brightness(0); /* mismo logo que navbar, pero pintado en negro para contrastar con bg amarillo */
 }
 .ba-menu-close {
   width: 50px;
