@@ -73,7 +73,7 @@ export function Header() {
       <div id="ba-menu-mobile" className={open ? "is-open" : ""}>
         <div className="ba-menu-mobile-head">
           <span className="ba-menu-mobile-brand" aria-label="Burrito Azteca">
-            <img src="/logo-black.png" alt="Burrito Azteca" />
+            <img src="/logo.png" alt="Burrito Azteca" />
           </span>
           <button
             type="button"

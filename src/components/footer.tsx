@@ -45,41 +45,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Columna 2: navigatie */}
-          <div>
-            <div className="ba-footer-block">
-              <ul className="ba-footer-menu-list">
-                <li><a href="/">Home</a></li>
-                <li><a href="/menukaart">Menukaart</a></li>
-                <li><a href="/sfeerimpressie">Sfeerimpressie</a></li>
-                <li><a href="/over-ons">Over ons</a></li>
-                <li><a href="/contact">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Columna 3: openingstijden */}
-          <div>
-            <div className="ba-footer-block">
-              <h4 className="ba-footer-heading">Openingstijden</h4>
-              <div className="ba-footer-opening">
-                <div className="ba-footer-opening-row">
-                  <span>Maandag</span><span className="ba-footer-dots" /><span>Gesloten</span>
-                </div>
-                <div className="ba-footer-opening-row">
-                  <span>Dinsdag t/m Donderdag</span><span className="ba-footer-dots" /><span>16:00 tot 21:00</span>
-                </div>
-                <div className="ba-footer-opening-row">
-                  <span>Vrijdag t/m Zaterdag</span><span className="ba-footer-dots" /><span>16:00 tot 21:30</span>
-                </div>
-                <div className="ba-footer-opening-row">
-                  <span>Zondag</span><span className="ba-footer-dots" /><span>16:00 tot 21:00</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Columna 4: adres */}
+          {/* Columna 2: adres (zona izquierda) */}
           <div>
             <div className="ba-footer-block">
               <h4 className="ba-footer-heading">Adres</h4>
@@ -96,6 +62,40 @@ export function Footer() {
                     Google Maps <span className="ba-footer-arrow">&rarr;</span>
                   </a>
                 </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Columna 3: navigatie */}
+          <div>
+            <div className="ba-footer-block">
+              <ul className="ba-footer-menu-list">
+                <li><a href="/">Home</a></li>
+                <li><a href="/menukaart">Menukaart</a></li>
+                <li><a href="/sfeerimpressie">Sfeerimpressie</a></li>
+                <li><a href="/over-ons">Over ons</a></li>
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Columna 4: openingstijden */}
+          <div>
+            <div className="ba-footer-block">
+              <h4 className="ba-footer-heading">Openingstijden</h4>
+              <div className="ba-footer-opening">
+                <div className="ba-footer-opening-row">
+                  <span>Maandag</span><span className="ba-footer-dots" /><span>Gesloten</span>
+                </div>
+                <div className="ba-footer-opening-row">
+                  <span>Dinsdag t/m Donderdag</span><span className="ba-footer-dots" /><span>16:00 tot 21:00</span>
+                </div>
+                <div className="ba-footer-opening-row">
+                  <span>Vrijdag t/m Zaterdag</span><span className="ba-footer-dots" /><span>16:00 tot 21:30</span>
+                </div>
+                <div className="ba-footer-opening-row">
+                  <span>Zondag</span><span className="ba-footer-dots" /><span>16:00 tot 21:00</span>
+                </div>
               </div>
             </div>
           </div>

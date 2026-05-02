@@ -226,20 +226,20 @@ h1, h2, h3, h4, h5, h6 {
    ============================================================ */
 .ba-fab-reserveer {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 14px;
+  bottom: 14px;
   z-index: 40;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 12px 20px;
+  gap: 6px;
+  padding: 9px 16px;
   border-radius: 999px;
   background: #f7ca3d;
   color: #2a1f18 !important;
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.30), 0 4px 12px rgba(247, 202, 61, 0.45);
@@ -605,6 +605,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 36px;
   width: auto;
   display: block;
+  filter: brightness(0); /* mismo logo que navbar, pero pintado en negro para contrastar con bg amarillo */
 }
 .ba-menu-close {
   width: 50px;
@@ -1733,9 +1734,11 @@ h1, h2, h3, h4, h5, h6 {
   gap: 36px;
   align-items: flex-start;
 }
-.ba-footer-grid > div:last-child { text-align: right; }
-.ba-footer-grid > div:last-child .ba-footer-address a {
-  justify-content: flex-end;
+@media (min-width: 768px) {
+  .ba-footer-grid > div:last-child { text-align: right; }
+  .ba-footer-grid > div:last-child .ba-footer-address a {
+    justify-content: flex-end;
+  }
 }
 .ba-footer-brand { text-align: left; }
 .ba-footer-brand-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
@@ -2135,13 +2138,14 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff1e0;
   font-family: "Salsa", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   z-index: 1;
+  overflow: hidden;
 }
 /* Jarritos accent en Food & Drinks — esquina inferior derecha */
 .ba-food-jarritos {
   position: absolute;
-  right: -90px;
-  bottom: -30px;
-  width: 200px;
+  right: -20px;
+  bottom: -10px;
+  width: 90px;
   height: auto;
   z-index: 3;
   pointer-events: none;
@@ -2205,7 +2209,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-food-btn:hover, .ba-food-btn:focus { transform: scale(1.05); }
 @media (min-width: 768px) {
-  .ba-food-mocktails { padding: 90px 0 100px; }
+  .ba-food-mocktails { padding: 90px 0 100px; overflow: visible; }
   .ba-food-inner { flex-direction: row; align-items: center; justify-content: center; gap: 64px; }
   .ba-food-copy { text-align: left; }
   .ba-food-images { position: relative; width: 620px; max-width: 100%; height: 540px; padding: 0; display: block; }
