@@ -126,6 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .ba-hero-eyebrow {
   margin: 0 0 16px;
+  font-family: "Salsa", system-ui, sans-serif;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.3em;
@@ -675,6 +676,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-menu-hero-eyebrow {
   margin: 0 0 12px;
+  font-family: "Salsa", system-ui, sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -895,6 +897,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-contact-hero-eyebrow {
   margin: 0 0 12px;
+  font-family: "Salsa", system-ui, sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.3em;
@@ -903,14 +906,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-contact-hero-title {
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: clamp(56px, 14vw, 160px);
-  line-height: 0.95;
+  font-size: clamp(40px, 8vw, 88px);
+  line-height: 1;
   margin: 0 0 24px;
   letter-spacing: 0.02em;
   text-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
-}
-.ba-contact-hero-line {
-  display: block;
+  white-space: nowrap;
 }
 .ba-contact-hero-line-accent {
   color: #f7ca3d;
@@ -1224,6 +1225,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-over-hero-eyebrow {
   margin: 0 0 12px;
+  font-family: "Salsa", system-ui, sans-serif;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.3em;
@@ -1331,6 +1333,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-over-impressie-kicker {
   margin: 0 0 10px;
+  font-family: "Salsa", system-ui, sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.28em;
@@ -1415,6 +1418,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-reserve-hero-eyebrow {
   margin: 0 0 12px;
+  font-family: "Salsa", system-ui, sans-serif;
   font-size: 13px; font-weight: 700;
   letter-spacing: 0.3em; text-transform: uppercase;
   color: #f7ca3d;
@@ -1585,6 +1589,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-reviews-inner { max-width: 1120px; margin: 0 auto; text-align: center; }
 .ba-reviews-kicker {
+  font-family: "Salsa", system-ui, sans-serif;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   font-size: 12px;
@@ -1837,24 +1842,29 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 768px) {
   .ba-visit { padding: 80px 24px 90px; }
-  .ba-visit-inner { text-align: left; }
-  .ba-visit-layout {
-    flex-direction: row;
+  .ba-visit-inner {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
     align-items: center;
-    justify-content: space-between;
-    gap: 40px;
   }
-  .ba-visit-left { flex: 1; text-align: left; max-width: none; }
-  .ba-visit-right { flex: 1; justify-content: flex-end; }
+  .ba-visit-layout {
+    display: contents;
+  }
+  .ba-visit-left { text-align: left; max-width: none; }
+  .ba-visit-right { display: flex; justify-content: center; }
   .ba-visit-title { font-size: 26px; }
   .ba-visit-opening { margin-left: 0; margin-right: 0; }
   .ba-visit-cta-row { justify-content: flex-start; }
-  .ba-visit-photo-wrap { margin-top: 0; justify-content: flex-end; }
+  .ba-visit-photo-wrap { margin-top: 0; justify-content: center; width: 100%; }
+  .ba-visit-photo { width: min(420px, 100%); aspect-ratio: 5 / 4; }
 }
 @media (min-width: 1024px) {
   .ba-visit { padding: 110px 24px 130px; }
+  .ba-visit-inner { max-width: 1080px; gap: 80px; }
   .ba-visit-title { font-size: 32px; }
-  .ba-visit-photo { width: min(520px, 100%); }
+  .ba-visit-photo { width: min(440px, 100%); }
 }
 
 /* ============================================================
@@ -1969,6 +1979,13 @@ h1, h2, h3, h4, h5, h6 {
     to { transform: translateX(0) rotate(-8deg); opacity: 1; }
   }
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ba-jarritos-peek {
+    left: -60px;
+    bottom: -20px;
+    width: 150px;
+  }
+}
 @media (min-width: 1024px) {
   .ba-jarritos-peek {
     left: -90px;
@@ -1981,6 +1998,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-sfeer-inner { max-width: 960px; margin: 0 auto; padding: 0 16px; text-align: center; }
 .ba-sfeer-kicker {
+  font-family: "Salsa", system-ui, sans-serif;
   letter-spacing: 0.20em;
   text-transform: uppercase;
   font-size: 12px;
@@ -2041,7 +2059,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
   transition: transform .25s ease, box-shadow .25s ease;
 }
-.ba-sfeer-card-wide { grid-column: span 2; }
+.ba-sfeer-card-wide { grid-column: span 2; aspect-ratio: 16 / 9; }
 .ba-sfeer-card::before {
   content: "";
   position: absolute;
@@ -2084,6 +2102,7 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 26px;
     aspect-ratio: 4 / 5;
   }
+  .ba-sfeer-card-wide { aspect-ratio: 16 / 9; }
   .ba-sfeer-card img { border-radius: 26px; }
 }
 @media (min-width: 1024px) {

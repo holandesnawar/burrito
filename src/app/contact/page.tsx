@@ -24,8 +24,7 @@ export default function ContactPage() {
         <div className="ba-contact-hero-content">
           <p className="ba-contact-hero-eyebrow">Contact</p>
           <h1 className="ba-contact-hero-title">
-            <span className="ba-contact-hero-line">Burrito</span>
-            <span className="ba-contact-hero-line ba-contact-hero-line-accent">Azteca</span>
+            Burrito <span className="ba-contact-hero-line-accent">Azteca</span>
           </h1>
           <p className="ba-contact-hero-text">
             Vragen, reserveringen of een groepsboeking? Stuur ons een bericht of

@@ -2,35 +2,53 @@ import { SfeerGrid } from "./sfeer-grid";
 
 const cards = [
   {
-    _id: "1",
+    _id: "plato",
     title: "Plato completo",
     wide: true,
-    image: { _id: "1", url: "/images/food/plato-completo-mesa.jpg" },
+    image: { _id: "plato", url: "/images/food/plato-completo-mesa.jpg" },
     alt: "Plato Mexicano completo",
   },
   {
-    _id: "2",
-    title: "Postre",
-    image: { _id: "2", url: "/images/food/postre-fresa-chocolate.jpg" },
-    alt: "Postre artesanal",
-  },
-  {
-    _id: "3",
+    _id: "tacos",
     title: "Tacos",
-    image: { _id: "3", url: "/images/food/tacos-frescos.jpg" },
+    image: { _id: "tacos", url: "/images/food/tacos-frescos.jpg" },
     alt: "Tacos frescos",
   },
   {
-    _id: "4",
-    title: "Tarta",
-    image: { _id: "4", url: "/images/food/tarta-queso-mango.jpeg" },
-    alt: "Tarta de queso",
+    _id: "canelones",
+    title: "Canelones",
+    image: { _id: "canelones", url: "/images/food/canelones-mexicanos.jpg" },
+    alt: "Canelones mexicanos",
   },
   {
-    _id: "5",
+    _id: "nachos",
     title: "Nachos",
-    image: { _id: "5", url: "/images/food/nachos-con-queso.jpg" },
-    alt: "Nachos",
+    image: { _id: "nachos", url: "/images/food/nachos-con-queso.jpg" },
+    alt: "Nachos con queso",
+  },
+  {
+    _id: "empanada",
+    title: "Empanada",
+    image: { _id: "empanada", url: "/images/food/empanada-mexicana.jpg" },
+    alt: "Empanada mexicana",
+  },
+  {
+    _id: "tarta",
+    title: "Tarta de queso",
+    image: { _id: "tarta", url: "/images/food/tarta-queso-mango.jpeg" },
+    alt: "Tarta de queso con mango",
+  },
+  {
+    _id: "postre-fresa",
+    title: "Postre con fresa",
+    image: { _id: "postre-fresa", url: "/images/food/postre-fresa-chocolate.jpg" },
+    alt: "Postre con fresa y chocolate",
+  },
+  {
+    _id: "postre-platano",
+    title: "Postre con plátano",
+    image: { _id: "postre-platano", url: "/images/food/postre-platano.jpg" },
+    alt: "Postre con plátano",
   },
 ];
 

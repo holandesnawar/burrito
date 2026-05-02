@@ -95,28 +95,22 @@ export default function OverOnsPage() {
               <img src="/images/restaurant/interior-fiesta.jpg" alt="Fiesta sfeer in het restaurant" />
             </div>
             <div className="ba-over-impressie-item">
-              <img src="/images/food/tacos-frescos.jpg" alt="Verse tacos" />
-            </div>
-            <div className="ba-over-impressie-item">
-              <img src="/images/food/postre-platano.jpg" alt="Huisgemaakt dessert" />
-            </div>
-            <div className="ba-over-impressie-item">
-              <img src="/images/food/nachos-con-queso.jpg" alt="Mexicaanse nachos" />
+              <img src="/images/food/canelones-mexicanos.jpg" alt="Mexicaanse canelones" />
             </div>
             <div className="ba-over-impressie-item">
               <img src="/images/food/empanada-mexicana.jpg" alt="Verse empanada" />
             </div>
             <div className="ba-over-impressie-item">
+              <img src="/images/food/tostadas-mexicanas.jpg" alt="Tostadas" />
+            </div>
+            <div className="ba-over-impressie-item">
+              <img src="/images/food/postre-platano.jpg" alt="Huisgemaakt dessert met banaan" />
+            </div>
+            <div className="ba-over-impressie-item">
               <img src="/images/food/burrito-classic.jpg" alt="Burrito" />
             </div>
             <div className="ba-over-impressie-item">
-              <img src="/images/food/canelones-mexicanos.jpg" alt="Mexicaanse canelones" />
-            </div>
-            <div className="ba-over-impressie-item">
-              <img src="/images/food/tostadas-mexicanas.jpg" alt="Tostadas" />
-            </div>
-            <div className="ba-over-impressie-item ba-over-impressie-wide">
-              <img src="/images/restaurant/interior-mesas.jpg" alt="Sfeer in het restaurant" />
+              <img src="/images/restaurant/interior-bar.jpg" alt="Bar van het restaurant" />
             </div>
           </div>
         </div>
