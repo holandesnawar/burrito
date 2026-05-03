@@ -726,10 +726,10 @@ h1, h2, h3, h4, h5, h6 {
 /* Redes sociales abajo */
 .ba-menu-mobile-social {
   display: flex;
-  gap: 16px;
+  gap: 22px;
   align-items: center;
   margin-top: auto;
-  padding-top: 8px;
+  padding-top: 12px;
 }
 .ba-menu-mobile-social a {
   display: inline-flex;
@@ -745,8 +745,8 @@ h1, h2, h3, h4, h5, h6 {
   transform: scale(1.12);
 }
 .ba-menu-mobile-social svg {
-  width: 22px;
-  height: 22px;
+  width: 30px;
+  height: 30px;
   display: block;
 }
 
