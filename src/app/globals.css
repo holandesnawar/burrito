@@ -1571,7 +1571,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 22px 44px rgba(42, 31, 24, 0.22);
 }
 .ba-sfeerimpressie-img {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
 }
 .ba-sfeerimpressie-img img {
@@ -1617,7 +1617,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 1024px) {
   .ba-sfeerimpressie { padding: 140px 32px 170px; }
-  .ba-sfeerimpressie-grid { gap: 28px; }
+  .ba-sfeerimpressie-grid {
+    max-width: 960px;
+    margin: 0 auto;
+    gap: 22px;
+  }
   .ba-sfeerimpressie-caption {
     padding: 22px 24px 18px;
     font-size: 16px;

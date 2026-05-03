@@ -128,7 +128,7 @@ export function Hero() {
 
         <div className="ba-hero-ctas">
           <Link href="/menukaart" className="ba-cta-lg-secondary">
-            <span>Bekijk de menukaart</span>
+            <span>Bekijk het menukaart</span>
             <span aria-hidden>→</span>
           </Link>
         </div>

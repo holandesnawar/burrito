@@ -50,7 +50,7 @@ export function Reviews() {
     <section className="ba-reviews">
       <div className="ba-reviews-inner">
         <p className="ba-reviews-kicker">REVIEWS</p>
-        <h2 className="ba-reviews-title">Wat onze gasten zeggen</h2>
+        <h2 className="ba-reviews-title">Wat onze gasten vinden</h2>
 
         <div className="ba-reviews-grid">
           {reviews.map((r) => (

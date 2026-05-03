@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import { restaurant } from "@/lib/restaurant";
 
 function useTilt() {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -72,8 +73,13 @@ export function MexicanClassics() {
             mocktails en huisgemaakte desserts. Alles wordt met zorg geserveerd
             in onze warme, moderne zaak in het hart van Kampen.
           </p>
-          <a href="/menukaart" className="ba-food-btn">
-            <span>Bekijk het menu</span><span>&rarr;</span>
+          <a
+            href={restaurant.reservation.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ba-food-btn"
+          >
+            <span>Reserveren</span><span>&rarr;</span>
           </a>
         </div>
       </div>
