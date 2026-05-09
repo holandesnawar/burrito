@@ -17,7 +17,7 @@ const cards = [
   {
     _id: "canelones",
     title: "Canelones",
-    image: { _id: "canelones", url: "/images/food/canelones-mexicanos.jpg" },
+    image: { _id: "canelones", url: "/images/food/enchiladas-mexicanos.jpg" },
     alt: "Canelones mexicanos",
   },
   {
@@ -29,7 +29,7 @@ const cards = [
   {
     _id: "postre-fresa",
     title: "Postre con fresa",
-    image: { _id: "postre-fresa", url: "/images/food/postre-fresa-chocolate.jpg" },
+    image: { _id: "postre-fresa", url: "/images/food/framboos-meringue.jpg" },
     alt: "Postre con fresa y chocolate",
   },
 ];

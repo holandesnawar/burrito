@@ -25,12 +25,12 @@ const photos = [
     caption: "Passie/Mango kwarktaart",
   },
   {
-    src: "/images/food/postre-platano.jpg",
+    src: "/images/food/babaroise-chocolate.jpg",
     alt: "Chocolade bavaroise taart handmade",
     caption: "Chocolade bavaroise taart handmade",
   },
   {
-    src: "/images/food/canelones-mexicanos.jpg",
+    src: "/images/food/enchiladas-mexicanos.jpg",
     alt: "Enchiladas",
     caption: "Enchiladas",
   },
@@ -45,7 +45,7 @@ const photos = [
     caption: "Plato Mexicano",
   },
   {
-    src: "/images/food/postre-fresa-chocolate.jpg",
+    src: "/images/food/framboos-meringue.jpg",
     alt: "Framboos meringue gebak glutenvrij",
     caption: "Framboos meringue gebak glutenvrij",
   },
