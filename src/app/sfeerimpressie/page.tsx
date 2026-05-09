@@ -17,22 +17,22 @@ const photos = [
   {
     src: "/images/food/tostadas-mexicanas.jpg",
     alt: "Mexicaanse tostadas",
-    caption: "Tostadas",
+    caption: "Tostadas krokant of zacht",
   },
   {
     src: "/images/food/tarta-queso-mango.jpeg",
-    alt: "Cheesecake met mango",
-    caption: "Cheesecake met mango",
+    alt: "Passie/Mango kwarktaart",
+    caption: "Passie/Mango kwarktaart",
   },
   {
     src: "/images/food/postre-platano.jpg",
-    alt: "Huisgemaakt dessert met banaan",
-    caption: "Postre met banaan",
+    alt: "Chocolade bavaroise taart handmade",
+    caption: "Chocolade bavaroise taart handmade",
   },
   {
     src: "/images/food/canelones-mexicanos.jpg",
-    alt: "Mexicaanse canelones",
-    caption: "Canelones",
+    alt: "Enchiladas",
+    caption: "Enchiladas",
   },
   {
     src: "/images/food/burrito-classic.jpg",
@@ -46,8 +46,8 @@ const photos = [
   },
   {
     src: "/images/food/postre-fresa-chocolate.jpg",
-    alt: "Aardbeien dessert met chocolade",
-    caption: "Aardbeien dessert",
+    alt: "Framboos meringue gebak glutenvrij",
+    caption: "Framboos meringue gebak glutenvrij",
   },
   {
     src: "/images/food/nachos-con-queso.jpg",
@@ -65,9 +65,7 @@ export default function SfeerimpressiePage() {
         <div className="ba-sfeerimpressie-inner">
           <div className="ba-sfeerimpressie-head">
             <p className="ba-sfeerimpressie-kicker">Sfeerimpressie</p>
-            <h1 className="ba-sfeerimpressie-title">
-              Een kijkje bij Burrito Azteca
-            </h1>
+            <h1 className="ba-sfeerimpressie-title">Een kijkje bij ons</h1>
             <p className="ba-sfeerimpressie-text">
               Onze gerechten, onze sfeer en onze passie voor de Mexicaanse keuken.
               Beweeg over de foto&rsquo;s om er meer over te ontdekken.
