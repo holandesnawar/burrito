@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 type SfeerCard = {
@@ -72,14 +73,26 @@ export function SfeerGrid({ cards }: { cards: SfeerCard[] }) {
       <div className="ba-sfeer-row ba-sfeer-row-1">
         {row1.map((card) => (
           <div key={card._id} className="ba-sfeer-card">
-            <img src={card.image.url} alt={card.alt} loading="lazy" />
+            <Image
+              src={card.image.url}
+              alt={card.alt}
+              fill
+              sizes="(max-width: 767px) 35vw, (max-width: 1023px) 22vw, 18vw"
+              loading="lazy"
+            />
           </div>
         ))}
       </div>
       <div className="ba-sfeer-row ba-sfeer-row-2">
         {row2.map((card) => (
           <div key={card._id} className="ba-sfeer-card">
-            <img src={card.image.url} alt={card.alt} loading="lazy" />
+            <Image
+              src={card.image.url}
+              alt={card.alt}
+              fill
+              sizes="(max-width: 767px) 35vw, (max-width: 1023px) 22vw, 18vw"
+              loading="lazy"
+            />
           </div>
         ))}
       </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { restaurant } from "@/lib/restaurant";
 
 export function Footer() {
@@ -8,7 +9,12 @@ export function Footer() {
           {/* Columna 1: marca + texto + redes */}
           <div className="ba-footer-brand">
             <div className="ba-footer-brand-logo">
-              <img src="/logo.png" alt="Burrito Azteca" />
+              <Image
+                src="/logo.png"
+                alt="Burrito Azteca"
+                width={401}
+                height={361}
+              />
               <div className="ba-footer-title">Burrito Azteca</div>
             </div>
             <p className="ba-footer-text">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SfeerGrid } from "./sfeer-grid";
 
 const cards = [
@@ -101,9 +102,11 @@ export function Sfeer() {
           </div>
 
           <div className="ba-sfeer-bottom-photo">
-            <img
+            <Image
               src="/images/restaurant/mesa.jpg"
               alt="Mesa van Burrito Azteca"
+              fill
+              sizes="(max-width: 767px) 90vw, (max-width: 1023px) 40vw, 360px"
               loading="lazy"
             />
           </div>

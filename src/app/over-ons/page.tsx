@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
@@ -26,9 +27,11 @@ export default function OverOnsPage() {
       <section className="ba-over-story">
         <div className="ba-over-story-inner">
           <div className="ba-over-photo">
-            <img
+            <Image
               src="/images/team/claudia-alfredo-fundadores.jpg"
               alt="Claudia y Alfredo, oprichters van Burrito Azteca"
+              fill
+              sizes="(max-width: 767px) 90vw, 50vw"
             />
           </div>
 

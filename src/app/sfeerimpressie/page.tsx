@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 
@@ -71,7 +72,13 @@ export default function SfeerimpressiePage() {
             {photos.map((photo) => (
               <figure key={photo.src} className="ba-sfeerimpressie-card">
                 <div className="ba-sfeerimpressie-img">
-                  <img src={photo.src} alt={photo.alt} loading="lazy" />
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(max-width: 767px) 92vw, (max-width: 1023px) 45vw, 380px"
+                    loading="lazy"
+                  />
                 </div>
                 <figcaption className="ba-sfeerimpressie-caption">
                   {photo.caption}

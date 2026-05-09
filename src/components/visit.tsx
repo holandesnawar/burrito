@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { restaurant } from "@/lib/restaurant";
 
@@ -86,9 +87,11 @@ export function Visit() {
               className="ba-visit-photo"
               ref={photoRef}
             >
-              <img
+              <Image
                 src="/images/restaurant/interior-visit.jpg"
                 alt="Gezellige sfeer bij Burrito Azteca"
+                fill
+                sizes="(max-width: 767px) 100vw, 50vw"
               />
             </div>
           </div>

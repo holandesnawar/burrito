@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { restaurant } from "@/lib/restaurant";
 
@@ -44,7 +45,13 @@ export function Header() {
       <nav id="ba-nav" aria-label="Hoofdnavigatie">
         <div className="ba-nav-inner">
           <a href="/" className="ba-brand" aria-label="Burrito Azteca">
-            <img src="/logo.png" alt="Burrito Azteca" />
+            <Image
+              src="/logo.png"
+              alt="Burrito Azteca"
+              width={401}
+              height={361}
+              priority
+            />
           </a>
 
           <div className="ba-menu" role="menubar">
@@ -84,7 +91,12 @@ export function Header() {
       <div id="ba-menu-mobile" className={open ? "is-open" : ""}>
         <div className="ba-menu-mobile-head">
           <span className="ba-menu-mobile-brand" aria-label="Burrito Azteca">
-            <img src="/logo-black.png" alt="Burrito Azteca" />
+            <Image
+              src="/logo-black.png"
+              alt="Burrito Azteca"
+              width={581}
+              height={354}
+            />
           </span>
           <button
             type="button"

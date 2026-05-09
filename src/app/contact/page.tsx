@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ContactForm } from "@/components/contact-form";
@@ -18,7 +19,13 @@ export default function ContactPage() {
       {/* Hero con nombre horizontal estilo cinematográfico */}
       <section className="ba-contact-hero">
         <div className="ba-contact-hero-bg" aria-hidden>
-          <img src="/images/restaurant/interior-bar.jpg" alt="" />
+          <Image
+            src="/images/restaurant/interior-bar.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            priority
+          />
         </div>
         <div className="ba-contact-hero-overlay" aria-hidden />
         <div className="ba-contact-hero-content">

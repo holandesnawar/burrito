@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { restaurant } from "@/lib/restaurant";
 
@@ -37,7 +38,13 @@ function TiltImage({
       onMouseLeave={onLeave}
       className={`ba-food-img reveal reveal-${reveal} tilt-3d`}
     >
-      <img src={src} alt={alt} />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 767px) 90vw, (max-width: 1023px) 45vw, 500px"
+        loading="lazy"
+      />
     </div>
   );
 }
@@ -45,11 +52,13 @@ function TiltImage({
 export function MexicanClassics() {
   return (
     <section className="ba-food-mocktails">
-      <img
+      <Image
         className="ba-food-jarritos"
         src="/images/brand/jarritos-bottles.png"
         alt=""
-        aria-hidden="true"
+        aria-hidden
+        width={280}
+        height={140}
       />
       <div className="ba-food-inner">
         <div className="ba-food-images">
