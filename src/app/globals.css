@@ -44,6 +44,22 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.01em;
 }
 
+/* Faux-bold para los títulos de secciones (Salsa solo tiene peso 400) */
+.ba-hero-title,
+.ba-food-title,
+.ba-sfeer-title,
+.ba-reviews-title,
+.ba-visit-title,
+.ba-promos-title,
+.ba-over-hero-title,
+.ba-over-impressie-title,
+.ba-sfeerimpressie-title,
+.ba-menu-hero-title,
+.ba-contact-hero-title {
+  -webkit-text-stroke: 0.6px currentColor;
+  paint-order: stroke fill;
+}
+
 /* ============================================================
    HERO con doble vídeo (técnica Apple — vertical + bg borroso)
    ============================================================ */
@@ -1539,11 +1555,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-sfeerimpressie-title {
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: clamp(40px, 7vw, 68px);
+  font-size: clamp(48px, 8vw, 80px);
   letter-spacing: 0.04em;
   line-height: 1.05;
   margin: 0 0 22px;
-  color: #2a1f18;
+  color: #2b9595;
 }
 .ba-sfeerimpressie-text {
   font-size: 15px;
@@ -1554,25 +1570,19 @@ h1, h2, h3, h4, h5, h6 {
 .ba-sfeerimpressie-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
+  gap: 22px;
 }
 .ba-sfeerimpressie-card {
-  position: relative;
   margin: 0;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 14px 32px rgba(42, 31, 24, 0.12);
-  background: #000;
-  cursor: pointer;
-  transition: transform .35s ease, box-shadow .35s ease;
-}
-.ba-sfeerimpressie-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 44px rgba(42, 31, 24, 0.22);
+  display: block;
 }
 .ba-sfeerimpressie-img {
   aspect-ratio: 3 / 2;
   overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 14px 32px rgba(42, 31, 24, 0.14);
+  cursor: pointer;
+  transition: box-shadow .35s ease;
 }
 .ba-sfeerimpressie-img img {
   width: 100%;
@@ -1581,51 +1591,43 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform .55s ease, filter .35s ease;
   display: block;
 }
+.ba-sfeerimpressie-card:hover .ba-sfeerimpressie-img {
+  box-shadow: 0 22px 44px rgba(42, 31, 24, 0.22);
+}
 .ba-sfeerimpressie-card:hover .ba-sfeerimpressie-img img {
   transform: scale(1.10);
-  filter: brightness(0.85);
 }
+/* Caption con altura reservada → al hover solo cambia opacity, no mueve las filas de abajo */
 .ba-sfeerimpressie-caption {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 18px 20px 16px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
-  color: #fff;
+  display: block;
+  height: 36px;
+  padding: 12px 4px 0;
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  transform: translateY(100%);
+  color: rgba(42, 31, 24, 0.55);
   opacity: 0;
-  transition: transform .35s ease, opacity .35s ease;
-  pointer-events: none;
+  transition: opacity .3s ease, color .3s ease;
 }
 .ba-sfeerimpressie-card:hover .ba-sfeerimpressie-caption {
-  transform: translateY(0);
   opacity: 1;
+  color: #2a1f18;
 }
 @media (min-width: 768px) {
-  .ba-sfeerimpressie { padding: 110px 28px 140px; }
+  .ba-sfeerimpressie { padding: 110px 18px 140px; }
   .ba-sfeerimpressie-head { margin-bottom: 60px; }
   .ba-sfeerimpressie-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+    gap: 36px 22px; /* gap mayor entre filas para respiro */
   }
-  .ba-sfeerimpressie-card { border-radius: 22px; }
+  .ba-sfeerimpressie-img { border-radius: 24px; }
+  .ba-sfeerimpressie-caption { height: 40px; font-size: 15px; padding: 14px 6px 0; }
 }
 @media (min-width: 1024px) {
-  .ba-sfeerimpressie { padding: 140px 32px 170px; }
-  .ba-sfeerimpressie-grid {
-    max-width: 960px;
-    margin: 0 auto;
-    gap: 22px;
-  }
-  .ba-sfeerimpressie-caption {
-    padding: 22px 24px 18px;
-    font-size: 16px;
-  }
+  .ba-sfeerimpressie { padding: 140px 24px 170px; }
+  .ba-sfeerimpressie-grid { gap: 44px 28px; }
+  .ba-sfeerimpressie-caption { height: 44px; font-size: 16px; padding: 16px 8px 0; }
 }
 
 /* ============================================================
@@ -1981,6 +1983,150 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================================
+   PROMOS (.ba-promos) — cream + 2 cards (online korting + massage)
+   ============================================================ */
+.ba-promos {
+  position: relative;
+  z-index: 1;
+  background: #fff1e0;
+  padding: 60px 18px 80px;
+  color: #2a1f18;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+.ba-promos-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ba-promos-kicker {
+  font-family: "Salsa", system-ui, sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #2b9595;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+.ba-promos-title {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  margin: 0 0 36px;
+  color: #2a1f18;
+}
+.ba-promos-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  text-align: left;
+}
+.ba-promo-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 18px;
+  align-items: start;
+  padding: 22px 22px 24px;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid rgba(42, 31, 24, 0.08);
+  box-shadow: 0 10px 28px rgba(42, 31, 24, 0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.ba-promo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(42, 31, 24, 0.14);
+}
+.ba-promo-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.ba-promo-card-icon svg {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+.ba-promo-card-online .ba-promo-card-icon {
+  background: #fff3c0;
+  color: #b48a0c;
+}
+.ba-promo-card-massage .ba-promo-card-icon {
+  background: #d8efef;
+  color: #1f7a7a;
+}
+.ba-promo-card-body { min-width: 0; }
+.ba-promo-card-eyebrow {
+  font-family: "Salsa", system-ui, sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: rgba(42, 31, 24, 0.65);
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+.ba-promo-card-title {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 19px;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin: 0 0 10px;
+  color: #2a1f18;
+}
+.ba-promo-card-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(42, 31, 24, 0.78);
+  margin: 0 0 14px;
+}
+.ba-promo-code {
+  display: inline-block;
+  padding: 1px 8px;
+  border-radius: 6px;
+  background: #f7ca3d;
+  color: #2a1f18;
+  font-family: "Salsa", system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.ba-promo-highlight {
+  font-weight: 700;
+  color: #2b9595;
+}
+.ba-promo-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #2b9595;
+  transition: color .18s ease, transform .18s ease;
+}
+.ba-promo-card-cta:hover {
+  color: #1f7a7a;
+  transform: translateX(2px);
+}
+@media (min-width: 768px) {
+  .ba-promos { padding: 80px 24px 100px; }
+  .ba-promos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+  .ba-promo-card { padding: 26px 28px 28px; }
+  .ba-promo-card-title { font-size: 22px; }
+  .ba-promo-card-text { font-size: 15px; }
+}
+
+/* ============================================================
    VISIT  (.ba-visit) — cian brand + 2 columnas en desktop + foto asimétrica
    ============================================================ */
 :root {
@@ -2174,17 +2320,12 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   background: #000;
   box-shadow: 0 22px 48px rgba(0, 0, 0, 0.45);
-  transform: translateY(0);
-  transition: transform .22s ease, box-shadow .22s ease;
   aspect-ratio: 5 / 4;
 }
 .ba-food-img img {
   width: 100%; height: 100%; display: block; object-fit: cover;
-  transform: scale(1.07);
-  transition: transform .22s ease, filter .22s ease;
+  transform: scale(1.04);
 }
-.ba-food-img:hover { box-shadow: 0 26px 56px rgba(0, 0, 0, 0.55); transform: translateY(-5px); }
-.ba-food-img:hover img { transform: scale(1.1); filter: brightness(1.06); }
 .ba-food-copy { text-align: center; max-width: 640px; }
 .ba-food-kicker {
   font-family: "Salsa", system-ui, sans-serif;
@@ -2198,7 +2339,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-food-text {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 16px; line-height: 2; color: var(--ba-muted); margin: 0 0 30px;
+  font-size: 16px; line-height: 2; color: #fff; margin: 0 0 30px;
 }
 .ba-food-btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -2219,32 +2360,33 @@ h1, h2, h3, h4, h5, h6 {
   .ba-food-copy { text-align: left; }
   .ba-food-images {
     position: relative;
-    width: 560px;
+    width: 640px;
     max-width: 100%;
     height: auto;
     padding: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 0;
-    align-items: center;
+    display: block;
   }
   .ba-food-img {
     position: relative;
-    flex: 1;
+    width: 78%;
     aspect-ratio: 5 / 4;
-    border-radius: 28px;
+    border-radius: 30px;
     box-shadow: 0 26px 56px rgba(0, 0, 0, 0.5);
+    margin: 0;
   }
+  /* Foto 1: arriba a la izquierda */
   .ba-food-img:first-child {
     z-index: 2;
-    transform: translateX(8px) translateY(-10px) rotate(-2deg);
+    margin-left: 0;
+    transform: rotate(-2deg);
   }
+  /* Foto 2: justo debajo a la derecha, ligeramente solapada con la 1 */
   .ba-food-img:last-child {
     z-index: 1;
-    transform: translateX(-8px) translateY(10px) rotate(2deg);
+    margin-left: auto;
+    margin-top: -60px;
+    transform: rotate(2deg);
   }
-  .ba-food-img:first-child:hover { transform: translateX(8px) translateY(-16px) rotate(-2deg); }
-  .ba-food-img:last-child:hover { transform: translateX(-8px) translateY(4px) rotate(2deg); }
   .ba-food-title { font-size: 34px; }
   .ba-food-text { font-size: 16px; }
   .ba-food-btn { font-size: 16px; padding: 14px 34px; }
@@ -2304,27 +2446,97 @@ h1, h2, h3, h4, h5, h6 {
 @media (prefers-reduced-motion: reduce) {
   .ba-jarritos-peek { animation: none !important; opacity: 1; transform: rotate(-8deg); }
 }
-.ba-sfeer-inner { max-width: 960px; margin: 0 auto; padding: 0 16px; text-align: center; }
+/* Grid de fotos: 2 filas que se desplazan en direcciones opuestas al scroll */
+.ba-sfeer-grid-wrap {
+  overflow: hidden;
+  padding: 0 0 0 12px; /* solo padding izquierdo para que el peek aparezca por la derecha */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ba-sfeer-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  will-change: transform;
+}
+.ba-sfeer-row > .ba-sfeer-card {
+  flex: 0 0 38%; /* 4 cards = 152% del ancho → 2.5 cards visibles + peek de la 3ra y 4ta */
+}
+.ba-sfeer-card {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.10);
+  box-shadow: 0 10px 24px rgba(120, 80, 0, 0.25);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.ba-sfeer-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transform: scale(1.03);
+  transition: transform .35s ease, filter .35s ease;
+}
+.ba-sfeer-card:hover { box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45); }
+.ba-sfeer-card:hover img { transform: scale(1.08); filter: brightness(1.05); }
+
+/* Bottom block: texto izquierda + foto mesa derecha */
+.ba-sfeer-bottom {
+  margin-top: 36px;
+  padding: 0 16px;
+}
+.ba-sfeer-bottom-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.ba-sfeer-text-block {
+  text-align: left;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.ba-sfeer-bottom-photo {
+  width: min(360px, 100%);
+  margin: 0 auto;
+  aspect-ratio: 3 / 4;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+}
+.ba-sfeer-bottom-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .ba-sfeer-kicker {
   font-family: "Salsa", system-ui, sans-serif;
-  letter-spacing: 0.20em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  font-size: 12px;
-  color: rgba(42, 31, 24, 0.65);
-  margin: 0 0 6px;
+  font-size: 13px;
+  color: rgba(42, 31, 24, 0.7);
+  margin: 0 0 10px;
   font-weight: 700;
 }
 .ba-sfeer-title {
-  font-size: 22px;
-  letter-spacing: 0.06em;
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: clamp(28px, 5.5vw, 44px);
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin: 0 0 10px;
+  line-height: 1.05;
+  margin: 0 0 14px;
   color: #2a1f18;
 }
 .ba-sfeer-text {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.65;
   color: rgba(42, 31, 24, 0.78);
   margin: 0 0 22px;
 }
@@ -2353,75 +2565,27 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 16px 34px rgba(0, 0, 0, 0.45);
 }
 @media (min-width: 768px) {
+  .ba-sfeer { padding: 80px 0 100px; }
+  .ba-sfeer-grid-wrap { padding: 0 18px; gap: 14px; overflow: visible; }
+  .ba-sfeer-row { gap: 14px; }
+  .ba-sfeer-row > .ba-sfeer-card { flex: 1 1 0; } /* desktop: cards iguales sin peek */
+  .ba-sfeer-card { border-radius: 24px; }
+  .ba-sfeer-bottom { margin-top: 64px; padding: 0 28px; }
+  .ba-sfeer-bottom-inner {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 56px;
+    align-items: center;
+  }
+  .ba-sfeer-text-block { margin: 0; max-width: none; }
+  .ba-sfeer-bottom-photo { width: 100%; margin: 0; aspect-ratio: 3 / 4; border-radius: 30px; }
+  .ba-sfeer-text { font-size: 16px; line-height: 1.75; }
   .ba-sfeer-btn { font-size: 16px; padding: 14px 34px; }
 }
-.ba-sfeer-grid {
-  margin: 38px auto 0;
-  max-width: 620px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-.ba-sfeer-card {
-  position: relative;
-  border-radius: 22px;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.10);
-  box-shadow: 0 12px 28px rgba(120, 80, 0, 0.30);
-  transform: translateY(0);
-  transition: transform .25s ease, box-shadow .25s ease;
-}
-.ba-sfeer-card-wide { grid-column: span 2; aspect-ratio: 16 / 9; }
-.ba-sfeer-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 55%);
-  opacity: 0.7;
-  pointer-events: none;
-  z-index: 1;
-}
-.ba-sfeer-card img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  border-radius: 22px;
-  transform: scale(1.03);
-  transition: transform .25s ease, filter .25s ease;
-}
-.ba-sfeer-card:hover { box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55); }
-.ba-sfeer-card:hover img { transform: scale(1.07); filter: brightness(1.05); }
-@media (min-width: 768px) {
-  .ba-sfeer { padding: 100px 0 120px; }
-  .ba-sfeer-inner { text-align: left; padding: 0 28px; }
-  .ba-sfeer-head { max-width: 540px; }
-  .ba-sfeer-title { font-size: 28px; letter-spacing: 0.04em; }
-  .ba-sfeer-text { font-size: 16px; line-height: 1.8; }
-  .ba-sfeer-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
-    gap: 56px;
-    align-items: start;
-  }
-  .ba-sfeer-grid {
-    margin-top: 0;
-    max-width: none;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
-  }
-  .ba-sfeer-card {
-    border-radius: 26px;
-    aspect-ratio: 4 / 5;
-  }
-  .ba-sfeer-card-wide { aspect-ratio: 16 / 9; }
-  .ba-sfeer-card img { border-radius: 26px; }
-}
 @media (min-width: 1024px) {
-  .ba-sfeer { padding: 130px 0 150px; }
-  .ba-sfeer-inner { max-width: 1200px; padding: 0 32px; }
-  .ba-sfeer-title { font-size: 34px; letter-spacing: 0.05em; }
-  .ba-sfeer-text { font-size: 17px; max-width: 460px; }
-  .ba-sfeer-layout { gap: 80px; }
-  .ba-sfeer-grid { gap: 22px; }
+  .ba-sfeer { padding: 110px 0 130px; }
+  .ba-sfeer-grid-wrap { padding: 0 28px; gap: 16px; }
+  .ba-sfeer-row { gap: 16px; }
+  .ba-sfeer-bottom { margin-top: 80px; }
+  .ba-sfeer-bottom-inner { gap: 80px; max-width: 1200px; }
+  .ba-sfeer-bottom-photo { border-radius: 32px; }
 }

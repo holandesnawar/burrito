@@ -4,7 +4,6 @@ const cards = [
   {
     _id: "plato",
     title: "Plato completo",
-    wide: true,
     image: { _id: "plato", url: "/images/food/plato-completo-mesa.jpg" },
     alt: "Plato Mexicano completo",
   },
@@ -15,10 +14,10 @@ const cards = [
     alt: "Tacos frescos",
   },
   {
-    _id: "canelones",
-    title: "Canelones",
-    image: { _id: "canelones", url: "/images/food/enchiladas-mexicanos.jpg" },
-    alt: "Canelones mexicanos",
+    _id: "burrito",
+    title: "Burrito classic",
+    image: { _id: "burrito", url: "/images/food/burrito-classic.jpg" },
+    alt: "Burrito classic",
   },
   {
     _id: "nachos",
@@ -27,20 +26,40 @@ const cards = [
     alt: "Nachos con queso",
   },
   {
+    _id: "enchiladas",
+    title: "Enchiladas",
+    image: { _id: "enchiladas", url: "/images/food/enchiladas-mexicanos.jpg" },
+    alt: "Enchiladas",
+  },
+  {
+    _id: "tarta",
+    title: "Cheesecake",
+    image: { _id: "tarta", url: "/images/food/tarta-queso-mango.jpeg" },
+    alt: "Cheesecake met mango",
+  },
+  {
     _id: "postre-fresa",
-    title: "Postre con fresa",
+    title: "Framboos meringue",
     image: { _id: "postre-fresa", url: "/images/food/framboos-meringue.jpg" },
-    alt: "Postre con fresa y chocolate",
+    alt: "Framboos meringue",
+  },
+  {
+    _id: "babaroise",
+    title: "Chocolade bavaroise",
+    image: { _id: "babaroise", url: "/images/food/babaroise-chocolate.jpg" },
+    alt: "Chocolade bavaroise taart",
   },
 ];
 
 export function Sfeer() {
   return (
     <section className="ba-sfeer">
-      <div className="ba-sfeer-inner">
-        <div className="ba-sfeer-layout">
-          <div className="ba-sfeer-head">
-            <p className="ba-sfeer-kicker">SFEERIMPRESSIE</p>
+      <SfeerGrid cards={cards} />
+
+      <div className="ba-sfeer-bottom">
+        <div className="ba-sfeer-bottom-inner">
+          <div className="ba-sfeer-text-block">
+            <p className="ba-sfeer-kicker">Sfeerimpressie</p>
             <h2 className="ba-sfeer-title">
               Alsof Burrito Azteca <br /> bij jou thuis is
             </h2>
@@ -50,11 +69,18 @@ export function Sfeer() {
               gezellig het is in ons restaurant.
             </p>
             <a href="/sfeerimpressie" className="ba-sfeer-btn">
-              Bekijk impressie
+              <span>Bekijk impressie</span>
+              <span aria-hidden>→</span>
             </a>
           </div>
 
-          <SfeerGrid cards={cards} />
+          <div className="ba-sfeer-bottom-photo">
+            <img
+              src="/images/restaurant/mesa.jpg"
+              alt="Mesa van Burrito Azteca"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
     </section>

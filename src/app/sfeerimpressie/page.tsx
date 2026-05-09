@@ -64,12 +64,7 @@ export default function SfeerimpressiePage() {
       <section className="ba-sfeerimpressie">
         <div className="ba-sfeerimpressie-inner">
           <div className="ba-sfeerimpressie-head">
-            <p className="ba-sfeerimpressie-kicker">Sfeerimpressie</p>
-            <h1 className="ba-sfeerimpressie-title">Een kijkje bij ons</h1>
-            <p className="ba-sfeerimpressie-text">
-              Onze gerechten, onze sfeer en onze passie voor de Mexicaanse keuken.
-              Beweeg over de foto&rsquo;s om er meer over te ontdekken.
-            </p>
+            <h1 className="ba-sfeerimpressie-title">Sfeerimpressie</h1>
           </div>
 
           <div className="ba-sfeerimpressie-grid">
