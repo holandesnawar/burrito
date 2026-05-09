@@ -391,14 +391,23 @@ h1, h2, h3, h4, h5, h6 {
 
 #ba-nav {
   width: 100%;
-  padding: 14px 24px;
-  background: rgba(15, 17, 23, 0.42);
-  -webkit-backdrop-filter: saturate(170%) blur(24px);
-  backdrop-filter: saturate(170%) blur(24px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  padding: 22px 24px;
+  background: rgba(15, 17, 23, 0.30);
+  -webkit-backdrop-filter: saturate(170%) blur(20px);
+  backdrop-filter: saturate(170%) blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   justify-content: center;
   color: #fff;
+  transition: padding .28s ease, background .28s ease, backdrop-filter .28s ease, border-bottom-color .28s ease;
+}
+/* Smart navbar: al hacer scroll se compacta */
+#ba-nav-wrap.is-scrolled #ba-nav {
+  padding: 12px 24px;
+  background: rgba(15, 17, 23, 0.50);
+  -webkit-backdrop-filter: saturate(180%) blur(28px);
+  backdrop-filter: saturate(180%) blur(28px);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
 }
 .ba-nav-inner {
   width: 100%;
@@ -430,13 +439,16 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 .ba-brand img {
-  height: 42px;
+  height: 56px;
   width: auto;
   display: block;
   filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+  transition: height .28s ease;
 }
+#ba-nav-wrap.is-scrolled .ba-brand img { height: 40px; }
 @media (max-width: 880px) {
-  .ba-brand img { height: 36px; }
+  .ba-brand img { height: 44px; }
+  #ba-nav-wrap.is-scrolled .ba-brand img { height: 34px; }
 }
 
 /* === Hero CTAs (use same design language as navbar buttons) === */
@@ -518,13 +530,13 @@ h1, h2, h3, h4, h5, h6 {
   left: 0; right: 0; bottom: 2px;
   height: 2px;
   border-radius: 999px;
-  background: linear-gradient(90deg, transparent, #f7ca3d, transparent);
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
   transform-origin: center;
   transform: scaleX(0);
   transition: transform .18s ease;
 }
 .ba-menu a:hover::after { transform: scaleX(1); }
-.ba-menu a:hover { color: #f7ca3d; }
+.ba-menu a:hover { color: var(--ba-link); }
 
 .ba-actions { display: flex; align-items: center; gap: 12px; }
 

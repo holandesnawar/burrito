@@ -13,6 +13,17 @@ const links = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Smart navbar: shrink al hacer scroll
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Cerrar con ESC
   useEffect(() => {
@@ -29,7 +40,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <div id="ba-nav-wrap">
+    <div id="ba-nav-wrap" className={scrolled ? "is-scrolled" : ""}>
       <nav id="ba-nav" aria-label="Hoofdnavigatie">
         <div className="ba-nav-inner">
           <a href="/" className="ba-brand" aria-label="Burrito Azteca">
