@@ -1,6 +1,13 @@
 import { SfeerGrid } from "./sfeer-grid";
 
 const cards = [
+  // Row 1 (6 cards, primero y último son "peek")
+  {
+    _id: "empanada",
+    title: "Empanada",
+    image: { _id: "empanada", url: "/images/food/empanada-mexicana.jpg" },
+    alt: "Empanada",
+  },
   {
     _id: "plato",
     title: "Plato completo",
@@ -26,6 +33,19 @@ const cards = [
     alt: "Nachos con queso",
   },
   {
+    _id: "tostadas",
+    title: "Tostadas",
+    image: { _id: "tostadas", url: "/images/food/tostadas-mexicanas.jpg" },
+    alt: "Tostadas",
+  },
+  // Row 2 (6 cards, primero y último son "peek")
+  {
+    _id: "quesadilla",
+    title: "Quesadilla",
+    image: { _id: "quesadilla", url: "/images/food/quesadilla.jpg" },
+    alt: "Quesadilla",
+  },
+  {
     _id: "enchiladas",
     title: "Enchiladas",
     image: { _id: "enchiladas", url: "/images/food/enchiladas-mexicanos.jpg" },
@@ -48,6 +68,12 @@ const cards = [
     title: "Chocolade bavaroise",
     image: { _id: "babaroise", url: "/images/food/babaroise-chocolate.jpg" },
     alt: "Chocolade bavaroise taart",
+  },
+  {
+    _id: "plato-mex",
+    title: "Plato Mexicano",
+    image: { _id: "plato-mex", url: "/images/food/plato-mexicano.jpg" },
+    alt: "Plato Mexicano",
   },
 ];
 

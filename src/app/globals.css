@@ -522,7 +522,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 8px 2px;
   position: relative;
   white-space: nowrap;
-  transition: color .18s ease, opacity .18s ease, transform .18s ease;
+  transition: color .18s ease, opacity .18s ease, transform .18s ease, font-size .28s ease;
 }
 .ba-menu a::after {
   content: "";
@@ -557,9 +557,18 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
   white-space: nowrap;
   box-shadow: 0 6px 18px rgba(247, 202, 61, 0.45);
-  transition: transform .18s ease;
+  transition: transform .18s ease, padding .28s ease, font-size .28s ease;
 }
 .ba-cta:hover { transform: scale(1.06); }
+
+/* Smart navbar: letras y CTA más grandes inicialmente, se compactan al scroll
+   Solo en desktop — mobile sin cambios */
+@media (min-width: 881px) {
+  .ba-menu a { font-size: 18px; }
+  .ba-cta { font-size: 16px; padding: 12px 28px; }
+  #ba-nav-wrap.is-scrolled .ba-menu a { font-size: 16px; }
+  #ba-nav-wrap.is-scrolled .ba-cta { font-size: 14px; padding: 10px 22px; }
+}
 
 .ba-burger {
   display: none;
@@ -798,7 +807,7 @@ h1, h2, h3, h4, h5, h6 {
 .ba-menu-hero {
   background: radial-gradient(circle at top, var(--ba-bg-soft), var(--ba-bg));
   color: #fff1e0;
-  padding: 100px 24px 60px;
+  padding: 130px 24px 70px;
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 .ba-menu-hero-inner {
@@ -983,7 +992,7 @@ h1, h2, h3, h4, h5, h6 {
 .ba-menu-footer-note p { margin: 0 0 8px; }
 .ba-menu-footer-note p:last-child { margin-bottom: 0; }
 @media (min-width: 768px) {
-  .ba-menu-hero { padding: 120px 24px 70px; }
+  .ba-menu-hero { padding: 150px 24px 80px; }
   .ba-menu-content { padding: 100px 24px 120px; }
   .ba-menu-item-name { font-size: 22px; }
   .ba-menu-item-price { font-size: 20px; }
@@ -1001,7 +1010,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 24px 80px;
+  padding: 130px 24px 80px;
   color: #fff1e0;
 }
 .ba-contact-hero-bg {
@@ -1338,11 +1347,11 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  min-height: 50vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 120px 24px 80px;
+  padding: 130px 24px 80px;
   color: #fff1e0;
 }
 .ba-over-hero-bg {
@@ -1453,7 +1462,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 4px;
 }
 @media (min-width: 768px) {
-  .ba-over-hero { min-height: 60vh; padding: 160px 24px 100px; }
+  .ba-over-hero { min-height: 60vh; padding: 170px 24px 100px; }
   .ba-over-story { padding: 100px 24px 80px; }
   .ba-over-text p { font-size: 17px; }
 }
@@ -1546,6 +1555,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 130px 20px 110px;
   color: #2a1f18;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 60vh;
 }
 .ba-sfeerimpressie-inner {
   max-width: 1200px;
@@ -1627,7 +1637,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #2a1f18;
 }
 @media (min-width: 768px) {
-  .ba-sfeerimpressie { padding: 110px 18px 140px; }
+  .ba-sfeerimpressie { padding: 150px 18px 140px; }
   .ba-sfeerimpressie-head { margin-bottom: 60px; }
   .ba-sfeerimpressie-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1637,7 +1647,7 @@ h1, h2, h3, h4, h5, h6 {
   .ba-sfeerimpressie-caption { height: 40px; font-size: 15px; padding: 14px 6px 0; }
 }
 @media (min-width: 1024px) {
-  .ba-sfeerimpressie { padding: 140px 24px 170px; }
+  .ba-sfeerimpressie { padding: 170px 24px 170px; }
   .ba-sfeerimpressie-grid { gap: 44px 28px; }
   .ba-sfeerimpressie-caption { height: 44px; font-size: 16px; padding: 16px 8px 0; }
 }
@@ -2458,10 +2468,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (prefers-reduced-motion: reduce) {
   .ba-jarritos-peek { animation: none !important; opacity: 1; transform: rotate(-8deg); }
 }
-/* Grid de fotos: 2 filas que se desplazan en direcciones opuestas al scroll */
+/* Grid de fotos: 2 filas que se desplazan en direcciones opuestas al scroll.
+   Las filas exceden el ancho del viewport por ambos lados → fotos
+   parcialmente ocultas en los bordes ("peek") sugieren que hay más fotos. */
 .ba-sfeer-grid-wrap {
   overflow: hidden;
-  padding: 0 0 0 12px; /* solo padding izquierdo para que el peek aparezca por la derecha */
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -2469,11 +2480,12 @@ h1, h2, h3, h4, h5, h6 {
 .ba-sfeer-row {
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
   gap: 10px;
   will-change: transform;
 }
 .ba-sfeer-row > .ba-sfeer-card {
-  flex: 0 0 38%; /* 4 cards = 152% del ancho → 2.5 cards visibles + peek de la 3ra y 4ta */
+  flex: 0 0 38%; /* mobile: 6 cards x 38% = 228% → mucho peek a ambos lados */
 }
 .ba-sfeer-card {
   position: relative;
@@ -2578,9 +2590,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 768px) {
   .ba-sfeer { padding: 80px 0 100px; }
-  .ba-sfeer-grid-wrap { padding: 0 18px; gap: 14px; overflow: visible; }
+  .ba-sfeer-grid-wrap { gap: 14px; overflow: hidden; }
   .ba-sfeer-row { gap: 14px; }
-  .ba-sfeer-row > .ba-sfeer-card { flex: 1 1 0; } /* desktop: cards iguales sin peek */
+  .ba-sfeer-row > .ba-sfeer-card { flex: 0 0 22%; } /* tablet: 6 cards x 22% = 132% → peek ambos lados */
   .ba-sfeer-card { border-radius: 24px; }
   .ba-sfeer-bottom { margin-top: 64px; padding: 0 28px; }
   .ba-sfeer-bottom-inner {
@@ -2595,8 +2607,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 1024px) {
   .ba-sfeer { padding: 110px 0 130px; }
-  .ba-sfeer-grid-wrap { padding: 0 28px; gap: 16px; }
+  .ba-sfeer-grid-wrap { gap: 16px; }
   .ba-sfeer-row { gap: 16px; }
+  .ba-sfeer-row > .ba-sfeer-card { flex: 0 0 20%; } /* desktop: 6 cards x 20% = 120% → peek sutil ambos lados */
   .ba-sfeer-bottom { margin-top: 80px; }
   .ba-sfeer-bottom-inner { gap: 80px; max-width: 1200px; }
   .ba-sfeer-bottom-photo { border-radius: 32px; }
