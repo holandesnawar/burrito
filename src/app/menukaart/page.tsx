@@ -30,11 +30,6 @@ export default function MenukaartPage() {
       <section className="ba-menu-hero">
         <div className="ba-menu-hero-inner">
           <h1 className="ba-menu-hero-title">Menukaart</h1>
-          <p className="ba-menu-hero-text">
-            Vers, royaal gevuld en vol smaak. Bekijk onze volledige selectie
-            authentieke Mexicaanse gerechten. Van klassieke burritos tot
-            hoofdgerechten en huisgemaakte desserts.
-          </p>
 
           <nav className="ba-menu-toc" aria-label="Categorieën">
             {menu.map((cat) => (

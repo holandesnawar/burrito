@@ -570,6 +570,30 @@ h1, h2, h3, h4, h5, h6 {
   #ba-nav-wrap.is-scrolled .ba-cta { font-size: 14px; padding: 10px 22px; }
 }
 
+/* En desktop: botones con estilo limpio sin sombras pesadas (estilo reviews-btn).
+   Mobile mantiene las sombras existentes. */
+@media (min-width: 768px) {
+  .ba-cta,
+  .ba-cta-lg,
+  .ba-cta-lg-secondary,
+  .ba-food-btn,
+  .ba-sfeer-btn,
+  .ba-visit-cta,
+  .ba-fab-reserveer,
+  .ba-promo-card-cta {
+    box-shadow: none;
+  }
+  .ba-cta:hover,
+  .ba-cta-lg:hover,
+  .ba-cta-lg-secondary:hover,
+  .ba-food-btn:hover,
+  .ba-sfeer-btn:hover,
+  .ba-visit-cta:hover,
+  .ba-fab-reserveer:hover {
+    box-shadow: none;
+  }
+}
+
 .ba-burger {
   display: none;
   width: 40px;
@@ -2485,7 +2509,7 @@ h1, h2, h3, h4, h5, h6 {
   will-change: transform;
 }
 .ba-sfeer-row > .ba-sfeer-card {
-  flex: 0 0 38%; /* mobile: 6 cards x 38% = 228% → mucho peek a ambos lados */
+  flex: 0 0 32%; /* mobile: 6 cards x 32% = 192% → peek moderado */
 }
 .ba-sfeer-card {
   position: relative;
@@ -2592,7 +2616,7 @@ h1, h2, h3, h4, h5, h6 {
   .ba-sfeer { padding: 80px 0 100px; }
   .ba-sfeer-grid-wrap { gap: 14px; overflow: hidden; }
   .ba-sfeer-row { gap: 14px; }
-  .ba-sfeer-row > .ba-sfeer-card { flex: 0 0 22%; } /* tablet: 6 cards x 22% = 132% → peek ambos lados */
+  .ba-sfeer-row > .ba-sfeer-card { flex: 0 0 19%; } /* tablet: 6 cards x 19% = 114% → peek pequeño */
   .ba-sfeer-card { border-radius: 24px; }
   .ba-sfeer-bottom { margin-top: 64px; padding: 0 28px; }
   .ba-sfeer-bottom-inner {
@@ -2609,7 +2633,7 @@ h1, h2, h3, h4, h5, h6 {
   .ba-sfeer { padding: 110px 0 130px; }
   .ba-sfeer-grid-wrap { gap: 16px; }
   .ba-sfeer-row { gap: 16px; }
-  .ba-sfeer-row > .ba-sfeer-card { flex: 0 0 20%; } /* desktop: 6 cards x 20% = 120% → peek sutil ambos lados */
+  .ba-sfeer-row > .ba-sfeer-card { flex: 0 0 17.5%; } /* desktop: 6 cards x 17.5% = 105% → peek mínimo (sliver) */
   .ba-sfeer-bottom { margin-top: 80px; }
   .ba-sfeer-bottom-inner { gap: 80px; max-width: 1200px; }
   .ba-sfeer-bottom-photo { border-radius: 32px; }
