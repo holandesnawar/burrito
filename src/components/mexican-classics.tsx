@@ -59,8 +59,8 @@ export function MexicanClassics() {
             reveal="right"
           />
           <TiltImage
-            src="/images/food/plato-mexicano.jpg"
-            alt="Plato mexicano de Burrito Azteca"
+            src="/images/food/quesadilla.jpg"
+            alt="Quesadilla mexicana"
             reveal="left"
           />
         </div>
