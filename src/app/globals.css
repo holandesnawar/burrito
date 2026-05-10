@@ -1443,6 +1443,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: start;
 }
 .ba-over-photo {
+  position: relative;
   width: 100%;
   border-radius: 22px;
   overflow: hidden;
@@ -1623,6 +1624,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 .ba-sfeerimpressie-img {
+  position: relative;
   aspect-ratio: 3 / 2;
   overflow: hidden;
   border-radius: 20px;
@@ -2550,6 +2552,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 .ba-sfeer-bottom-photo {
+  position: relative;
   width: min(360px, 100%);
   margin: 0 auto;
   aspect-ratio: 3 / 4;
