@@ -2,77 +2,57 @@ import Image from "next/image";
 import { SfeerGrid } from "./sfeer-grid";
 
 const cards = [
-  // Row 1 (6 cards, primero y último son "peek")
+  // Row 1 (5 cards: 4 visibles + sliver de la 5ta a la derecha)
+  // Foto 1 alineada al borde izquierdo
   {
-    _id: "empanada",
-    title: "Empanada",
-    image: { _id: "empanada", url: "/images/food/empanada-mexicana.jpg" },
-    alt: "Empanada",
-  },
-  {
-    _id: "plato",
-    title: "Plato completo",
+    _id: "plato-completo",
     image: { _id: "plato", url: "/images/food/plato-completo-mesa.jpg" },
     alt: "Plato Mexicano completo",
   },
   {
     _id: "tacos",
-    title: "Tacos",
     image: { _id: "tacos", url: "/images/food/tacos-frescos.jpg" },
     alt: "Tacos frescos",
   },
   {
+    _id: "quesadilla",
+    image: { _id: "quesadilla", url: "/images/food/quesadilla.jpg" },
+    alt: "Quesadilla",
+  },
+  {
     _id: "burrito",
-    title: "Burrito classic",
     image: { _id: "burrito", url: "/images/food/burrito-classic.jpg" },
     alt: "Burrito classic",
   },
   {
     _id: "nachos",
-    title: "Nachos",
     image: { _id: "nachos", url: "/images/food/nachos-con-queso.jpg" },
     alt: "Nachos con queso",
   },
-  {
-    _id: "tostadas",
-    title: "Tostadas",
-    image: { _id: "tostadas", url: "/images/food/tostadas-mexicanas.jpg" },
-    alt: "Tostadas",
-  },
-  // Row 2 (6 cards, primero y último son "peek")
-  {
-    _id: "quesadilla",
-    title: "Quesadilla",
-    image: { _id: "quesadilla", url: "/images/food/quesadilla.jpg" },
-    alt: "Quesadilla",
-  },
+  // Row 2 (5 cards: sliver a la izquierda + 4 visibles)
+  // Foto 5 alineada al borde derecho
   {
     _id: "enchiladas",
-    title: "Enchiladas",
     image: { _id: "enchiladas", url: "/images/food/enchiladas-mexicanos.jpg" },
     alt: "Enchiladas",
   },
   {
     _id: "tarta",
-    title: "Cheesecake",
     image: { _id: "tarta", url: "/images/food/tarta-queso-mango.jpeg" },
     alt: "Cheesecake met mango",
   },
   {
-    _id: "postre-fresa",
-    title: "Framboos meringue",
-    image: { _id: "postre-fresa", url: "/images/food/framboos-meringue.jpg" },
+    _id: "framboos",
+    image: { _id: "framboos", url: "/images/food/framboos-meringue.jpg" },
     alt: "Framboos meringue",
   },
   {
     _id: "babaroise",
-    title: "Chocolade bavaroise",
     image: { _id: "babaroise", url: "/images/food/babaroise-chocolate.jpg" },
     alt: "Chocolade bavaroise taart",
   },
   {
     _id: "plato-mex",
-    title: "Plato Mexicano",
     image: { _id: "plato-mex", url: "/images/food/plato-mexicano.jpg" },
     alt: "Plato Mexicano",
   },

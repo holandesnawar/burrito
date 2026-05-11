@@ -33,6 +33,9 @@
   --ba-accent-hover: #7fd63a;
 }
 
+html, body {
+  overflow-x: clip; /* previene scroll horizontal de cualquier elemento absoluto que sobresalga */
+}
 body {
   background: var(--background);
   color: var(--foreground);
@@ -2303,7 +2306,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   .ba-visit-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.85fr);
     align-items: center;
     gap: 0;
   }
@@ -2494,9 +2497,10 @@ h1, h2, h3, h4, h5, h6 {
 @media (prefers-reduced-motion: reduce) {
   .ba-jarritos-peek { animation: none !important; opacity: 1; transform: rotate(-8deg); }
 }
-/* Grid de fotos: 2 filas que se desplazan en direcciones opuestas al scroll.
-   Las filas exceden el ancho del viewport por ambos lados → fotos
-   parcialmente ocultas en los bordes ("peek") sugieren que hay más fotos. */
+/* Grid de fotos: 2 filas asimétricas.
+   Row 1: anclada a la izquierda → 4 fotos visibles + sliver de la 5ta a la derecha
+   Row 2: anclada a la derecha → sliver de la 1ra a la izquierda + 4 visibles
+   Esto da un look diagonal/escalonado y solo se ve un trozo de la "última" foto */
 .ba-sfeer-grid-wrap {
   overflow: hidden;
   display: flex;
@@ -2506,12 +2510,13 @@ h1, h2, h3, h4, h5, h6 {
 .ba-sfeer-row {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
   gap: 10px;
   will-change: transform;
 }
+.ba-sfeer-row-1 { justify-content: flex-start; }
+.ba-sfeer-row-2 { justify-content: flex-end; }
 .ba-sfeer-row > .ba-sfeer-card {
-  flex: 0 0 32%; /* mobile: 6 cards x 32% = 192% → peek moderado */
+  flex: 0 0 26%; /* mobile: 5 cards x 26% = 130% → 4 visibles + sliver del 5to */
 }
 .ba-sfeer-card {
   position: relative;
@@ -2619,7 +2624,7 @@ h1, h2, h3, h4, h5, h6 {
   .ba-sfeer { padding: 80px 0 100px; }
   .ba-sfeer-grid-wrap { gap: 14px; overflow: hidden; }
   .ba-sfeer-row { gap: 14px; }
-  .ba-sfeer-row > .ba-sfeer-card { flex: 0 0 19%; } /* tablet: 6 cards x 19% = 114% → peek pequeño */
+  .ba-sfeer-row > .ba-sfeer-card { flex: 0 0 22%; } /* tablet: 5 cards x 22% = 110% → 4 visibles + sliver */
   .ba-sfeer-card { border-radius: 24px; }
   .ba-sfeer-bottom { margin-top: 64px; padding: 0 28px; }
   .ba-sfeer-bottom-inner {
@@ -2636,7 +2641,7 @@ h1, h2, h3, h4, h5, h6 {
   .ba-sfeer { padding: 110px 0 130px; }
   .ba-sfeer-grid-wrap { gap: 16px; }
   .ba-sfeer-row { gap: 16px; }
-  .ba-sfeer-row > .ba-sfeer-card { flex: 0 0 17.5%; } /* desktop: 6 cards x 17.5% = 105% → peek mínimo (sliver) */
+  .ba-sfeer-row > .ba-sfeer-card { flex: 0 0 21%; } /* desktop: 5 cards x 21% = 105% → 4 fotos completas + sliver de la 5ta */
   .ba-sfeer-bottom { margin-top: 80px; }
   .ba-sfeer-bottom-inner { gap: 80px; max-width: 1200px; }
   .ba-sfeer-bottom-photo { border-radius: 32px; }
