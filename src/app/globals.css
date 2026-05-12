@@ -267,6 +267,11 @@ h1, h2, h3, h4, h5, h6 {
 .ba-fab-reserveer:hover {
   transform: scale(1.06);
 }
+.ba-fab-reserveer--light {
+  background: #fff;
+  color: #2a1f18 !important;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28), 0 4px 12px rgba(0, 0, 0, 0.16);
+}
 .ba-fab-reserveer:focus-visible {
   outline: 3px solid #fff3d4;
   outline-offset: 3px;
