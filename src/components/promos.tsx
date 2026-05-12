@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { restaurant } from "@/lib/restaurant";
 
 export function Promos() {
@@ -6,33 +7,33 @@ export function Promos() {
       <div className="ba-promos-inner">
         <p className="ba-promos-kicker">Voordelen</p>
         <h2 id="ba-promos-title" className="ba-promos-title">
-          Twee redenen om hier te eten
+          Bestel slim, profiteer dubbel
         </h2>
 
         <div className="ba-promos-grid">
-          {/* Card 1: 10% korting via website */}
-          <article className="ba-promo-card ba-promo-card-online">
-            <div className="ba-promo-card-icon" aria-hidden>
-              {/* shopping bag icon */}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <path d="M16 10a4 4 0 01-8 0" />
-              </svg>
-            </div>
-            <div className="ba-promo-card-body">
-              <p className="ba-promo-card-eyebrow">Bestel online</p>
-              <h3 className="ba-promo-card-title">10% korting via onze website</h3>
-              <p className="ba-promo-card-text">
-                Bestellen via onze eigen website is goedkoper. Gebruik de code{" "}
-                <span className="ba-promo-code">AZTECA10</span> en profiteer van
-                10% korting op je bestelling.
+          {/* Hero card: 10% korting via website — ticket style */}
+          <article className="ba-promo-hero" aria-labelledby="ba-promo-hero-title">
+            <div className="ba-promo-hero-content">
+              <p className="ba-promo-hero-eyebrow">Bestel direct via ons</p>
+              <h3 id="ba-promo-hero-title" className="ba-promo-hero-title">
+                10% korting met de code
+              </h3>
+
+              <div className="ba-promo-ticket" aria-hidden>
+                <span className="ba-promo-ticket-code">AZTECA10</span>
+                <span className="ba-promo-ticket-label">10% korting</span>
+              </div>
+
+              <p className="ba-promo-hero-text">
+                Bestellen via onze eigen website is goedkoper. Gebruik de code
+                bij het afrekenen en profiteer van 10% korting.
               </p>
+
               <a
                 href={restaurant.delivery.orderUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ba-promo-card-cta"
+                className="ba-promo-hero-cta"
               >
                 <span>Bestellen</span>
                 <span aria-hidden>→</span>
@@ -40,20 +41,24 @@ export function Promos() {
             </div>
           </article>
 
-          {/* Card 2: €10 korting bij Natuur Therapie */}
-          <article className="ba-promo-card ba-promo-card-massage">
-            <div className="ba-promo-card-icon" aria-hidden>
-              {/* leaf / wellness icon */}
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M11 20A7 7 0 014 13c0-3.5 1.5-6.5 6-9 4.5 2.5 6 5.5 6 9a7 7 0 01-5 7" />
-                <path d="M11 20l1-9" />
-              </svg>
+          {/* Perk card: €10 korting bij Natuur Therapie */}
+          <article className="ba-promo-perk" aria-labelledby="ba-promo-perk-title">
+            <div className="ba-promo-perk-photo">
+              <Image
+                src="/images/promos/natuur-therapie.webp"
+                alt="Natuur Therapie — massage"
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="ba-promo-perk-img"
+              />
             </div>
-            <div className="ba-promo-card-body">
-              <p className="ba-promo-card-eyebrow">Eet & ontspan</p>
-              <h3 className="ba-promo-card-title">€10 korting op een massage</h3>
-              <p className="ba-promo-card-text">
-                Na het eten bij Burrito Azteca krijg je{" "}
+            <div className="ba-promo-perk-body">
+              <p className="ba-promo-perk-eyebrow">Onze partner</p>
+              <h3 id="ba-promo-perk-title" className="ba-promo-perk-title">
+                €10 korting op een massage
+              </h3>
+              <p className="ba-promo-perk-text">
+                Na het eten krijg je{" "}
                 <span className="ba-promo-highlight">€10 korting</span> op een
                 massage bij Natuur Therapie. Toon je bon en geniet van de rust.
               </p>
@@ -61,7 +66,7 @@ export function Promos() {
                 href="https://natuurtherapie.nl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ba-promo-card-cta"
+                className="ba-promo-perk-cta"
               >
                 <span>Meer info</span>
                 <span aria-hidden>→</span>

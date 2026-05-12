@@ -265,9 +265,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
 }
 .ba-fab-reserveer:hover {
-  background: #ffd75f;
   transform: scale(1.06);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.40), 0 6px 18px rgba(247, 202, 61, 0.6);
 }
 .ba-fab-reserveer:focus-visible {
   outline: 3px solid #fff3d4;
@@ -1964,26 +1962,31 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
   font-style: inherit;
 }
-.ba-reviews-summary-btn {
+.ba-reviews-cta {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
+.ba-reviews-all-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 11px 22px;
-  border-radius: 12px;
+  padding: 13px 28px;
+  border-radius: 999px;
   border: 1px solid #2b9595;
   background: #2b9595;
   color: #fff;
   font-family: "Salsa", system-ui, sans-serif;
   font-weight: 600;
   font-size: 14px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   text-decoration: none;
   transform-origin: center center;
   transition: transform .25s ease;
-  will-change: transform;
 }
-.ba-reviews-summary-btn:hover {
-  transform: scale(1.06);
+.ba-reviews-all-btn:hover {
+  transform: scale(1.05);
 }
 .ba-reviews-summary-foot {
   margin: 0 0 2px;
@@ -2209,87 +2212,187 @@ h1, h2, h3, h4, h5, h6 {
   gap: 18px;
   text-align: left;
 }
-.ba-promo-card {
+
+/* HERO CARD — código AZTECA10 (protagonista) */
+.ba-promo-hero {
   position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 18px;
-  align-items: start;
-  padding: 22px 22px 24px;
-  border-radius: 22px;
-  background: #fff;
-  border: 1px solid rgba(42, 31, 24, 0.08);
-  box-shadow: 0 10px 28px rgba(42, 31, 24, 0.08);
-  transition: transform .25s ease, box-shadow .25s ease;
+  overflow: hidden;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #f7ca3d 0%, #f3b71a 100%);
+  padding: 30px 24px 32px;
+  color: #2a1f18;
+  box-shadow: 0 14px 36px rgba(42, 31, 24, 0.18);
+  isolation: isolate;
 }
-.ba-promo-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(42, 31, 24, 0.14);
+.ba-promo-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255, 255, 255, 0.35), transparent 50%),
+    radial-gradient(circle at 10% 100%, rgba(43, 149, 149, 0.18), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
 }
-.ba-promo-card-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  display: inline-flex;
+.ba-promo-hero-content {
+  position: relative;
+  z-index: 1;
+}
+.ba-promo-hero-eyebrow {
+  font-family: "Salsa", system-ui, sans-serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: rgba(42, 31, 24, 0.7);
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+.ba-promo-hero-title {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: clamp(22px, 4vw, 28px);
+  letter-spacing: 0.04em;
+  line-height: 1.18;
+  margin: 0 0 18px;
+  color: #2a1f18;
+}
+
+/* Ticket / cupón con el código */
+.ba-promo-ticket {
+  position: relative;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
+  gap: 4px;
+  padding: 18px 22px;
+  margin: 0 0 18px;
+  background: #fff;
+  border: 2px dashed rgba(42, 31, 24, 0.28);
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(42, 31, 24, 0.14);
 }
-.ba-promo-card-icon svg {
-  width: 26px;
-  height: 26px;
-  display: block;
+.ba-promo-ticket::before,
+.ba-promo-ticket::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #f3b71a;
+  transform: translateY(-50%);
 }
-.ba-promo-card-online .ba-promo-card-icon {
-  background: #fff3c0;
-  color: #b48a0c;
+.ba-promo-ticket::before { left: -10px; }
+.ba-promo-ticket::after  { right: -10px; }
+.ba-promo-ticket-code {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: clamp(28px, 6.5vw, 42px);
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: #2a1f18;
+  line-height: 1;
 }
-.ba-promo-card-massage .ba-promo-card-icon {
-  background: #d8efef;
-  color: #1f7a7a;
-}
-.ba-promo-card-body { min-width: 0; }
-.ba-promo-card-eyebrow {
+.ba-promo-ticket-label {
   font-family: "Salsa", system-ui, sans-serif;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-size: 11px;
-  color: rgba(42, 31, 24, 0.65);
+  color: #2b9595;
+  font-weight: 700;
+}
+
+.ba-promo-hero-text {
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: rgba(42, 31, 24, 0.82);
+  margin: 0 0 18px;
+}
+.ba-promo-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: #2a1f18;
+  color: #f7ca3d;
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform .18s ease, background .18s ease;
+}
+.ba-promo-hero-cta:hover {
+  transform: translateX(2px);
+  background: #3a2c22;
+}
+
+/* PERK CARD — partner masaje (secundario) */
+.ba-promo-perk {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid rgba(42, 31, 24, 0.08);
+  box-shadow: 0 8px 22px rgba(42, 31, 24, 0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.ba-promo-perk:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(42, 31, 24, 0.14);
+}
+.ba-promo-perk-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  background: #d8efef;
+  overflow: hidden;
+}
+.ba-promo-perk-img {
+  object-fit: cover;
+}
+.ba-promo-perk-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px 22px 24px;
+}
+.ba-promo-perk-eyebrow {
+  font-family: "Salsa", system-ui, sans-serif;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: rgba(42, 31, 24, 0.6);
   font-weight: 700;
   margin: 0 0 6px;
 }
-.ba-promo-card-title {
+.ba-promo-perk-title {
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: 19px;
+  font-size: 18px;
   letter-spacing: 0.04em;
-  line-height: 1.2;
+  line-height: 1.22;
   margin: 0 0 10px;
   color: #2a1f18;
 }
-.ba-promo-card-text {
+.ba-promo-perk-text {
   font-size: 14px;
-  line-height: 1.65;
-  color: rgba(42, 31, 24, 0.78);
+  line-height: 1.6;
+  color: rgba(42, 31, 24, 0.74);
   margin: 0 0 14px;
-}
-.ba-promo-code {
-  display: inline-block;
-  padding: 1px 8px;
-  border-radius: 6px;
-  background: #f7ca3d;
-  color: #2a1f18;
-  font-family: "Salsa", system-ui, sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.08em;
 }
 .ba-promo-highlight {
   font-weight: 700;
   color: #2b9595;
 }
-.ba-promo-card-cta {
+.ba-promo-perk-cta {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  margin-top: auto;
   font-family: "Salsa", system-ui, sans-serif;
   font-size: 13px;
   font-weight: 700;
@@ -2299,19 +2402,24 @@ h1, h2, h3, h4, h5, h6 {
   color: #2b9595;
   transition: color .18s ease, transform .18s ease;
 }
-.ba-promo-card-cta:hover {
+.ba-promo-perk-cta:hover {
   color: #1f7a7a;
   transform: translateX(2px);
 }
+
 @media (min-width: 768px) {
   .ba-promos { padding: 80px 24px 100px; }
   .ba-promos-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 6fr 4fr;
     gap: 22px;
+    align-items: stretch;
   }
-  .ba-promo-card { padding: 26px 28px 28px; }
-  .ba-promo-card-title { font-size: 22px; }
-  .ba-promo-card-text { font-size: 15px; }
+  .ba-promo-hero { padding: 40px 44px 44px; }
+  .ba-promo-hero-title { font-size: clamp(26px, 2.4vw, 32px); }
+  .ba-promo-ticket { padding: 22px 28px; }
+  .ba-promo-perk-body { padding: 24px 28px 28px; }
+  .ba-promo-perk-title { font-size: 20px; }
+  .ba-promo-perk-text { font-size: 14.5px; }
 }
 
 /* ============================================================
@@ -2547,40 +2655,48 @@ h1, h2, h3, h4, h5, h6 {
 .ba-food-btn:hover, .ba-food-btn:focus { transform: scale(1.05); }
 @media (min-width: 768px) {
   .ba-food-mocktails { padding: 90px 0 100px; overflow: visible; }
-  .ba-food-inner { flex-direction: row; align-items: center; justify-content: center; gap: 80px; }
-  .ba-food-copy { text-align: left; }
+  .ba-food-inner { flex-direction: row; align-items: center; justify-content: flex-start; gap: 96px; }
+  .ba-food-copy { text-align: left; flex: 1 1 320px; min-width: 0; padding-left: 32px; }
   .ba-food-images {
     position: relative;
-    width: 640px;
-    max-width: 100%;
-    height: auto;
+    flex: 0 0 auto;
+    width: 680px;
+    max-width: 58vw;
+    height: 460px;
     padding: 0;
+    margin-left: -90px;
     display: block;
   }
   .ba-food-img {
-    position: relative;
-    width: 78%;
-    aspect-ratio: 5 / 4;
-    border-radius: 30px;
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    border-radius: 28px;
     box-shadow: 0 26px 56px rgba(0, 0, 0, 0.5);
     margin: 0;
   }
-  /* Foto 1: arriba a la izquierda */
+  /* Foto 1: izquierda, más arriba */
   .ba-food-img:first-child {
     z-index: 2;
-    margin-left: 0;
-    transform: rotate(-2deg);
+    left: 0;
+    top: 0;
+    width: 56%;
+    transform: rotate(-3deg);
   }
-  /* Foto 2: justo debajo a la derecha, ligeramente solapada con la 1 */
+  /* Foto 2: derecha, claramente más abajo, ligeramente solapada */
   .ba-food-img:last-child {
     z-index: 1;
-    margin-left: auto;
-    margin-top: -60px;
-    transform: rotate(2deg);
+    left: 48%;
+    top: 80px;
+    width: 56%;
+    transform: rotate(3deg);
   }
   .ba-food-title { font-size: 34px; }
   .ba-food-text { font-size: 16px; }
   .ba-food-btn { font-size: 16px; padding: 14px 34px; }
+}
+@media (min-width: 1024px) {
+  .ba-food-images { width: 720px; max-width: 54vw; height: 500px; margin-left: -120px; }
+  .ba-food-img:last-child { top: 100px; }
 }
 
 /* ============================================================

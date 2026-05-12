@@ -324,14 +324,6 @@ export function Reviews() {
               <span>powered by</span>
               <GoogleWordmark height={16} />
             </div>
-            <a
-              href={REVIEWS_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ba-reviews-summary-btn"
-            >
-              Alles lezen
-            </a>
           </aside>
 
           <div
@@ -370,6 +362,17 @@ export function Reviews() {
               <ChevronIcon dir="right" />
             </button>
           </div>
+        </div>
+
+        <div className="ba-reviews-cta">
+          <a
+            href={REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ba-reviews-all-btn"
+          >
+            Alle reviews lezen
+          </a>
         </div>
       </div>
     </section>
