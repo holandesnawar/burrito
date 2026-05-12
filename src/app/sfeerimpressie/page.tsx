@@ -11,14 +11,19 @@ export const metadata: Metadata = {
 
 const photos = [
   {
-    src: "/images/food/empanada-mexicana.jpg",
-    alt: "Verse empanada",
-    caption: "Empanadas",
+    src: "/images/food/burrito-classic.jpg",
+    alt: "Burrito classic",
+    caption: "Burrito classic",
   },
   {
-    src: "/images/food/tostadas-mexicanas.jpg",
-    alt: "Mexicaanse tostadas",
-    caption: "Tostadas krokant of zacht",
+    src: "/images/food/quesadilla.jpg",
+    alt: "Quesadilla",
+    caption: "Quesadilla",
+  },
+  {
+    src: "/images/food/plato-salmon.jpg",
+    alt: "Plato met zalm",
+    caption: "Plato met zalm",
   },
   {
     src: "/images/food/tarta-queso-mango.jpeg",
@@ -26,34 +31,29 @@ const photos = [
     caption: "Passie/Mango kwarktaart",
   },
   {
+    src: "/images/food/bebida.png",
+    alt: "Verfrissende drank",
+    caption: "Verfrissende drank",
+  },
+  {
+    src: "/images/food/jarritos.png",
+    alt: "Jarritos Mexicaanse frisdrank",
+    caption: "Jarritos frisdrank",
+  },
+  {
     src: "/images/food/babaroise-chocolate.jpg",
-    alt: "Chocolade bavaroise taart handmade",
-    caption: "Chocolade bavaroise taart handmade",
-  },
-  {
-    src: "/images/food/enchiladas-mexicanos.jpg",
-    alt: "Enchiladas",
-    caption: "Enchiladas",
-  },
-  {
-    src: "/images/food/burrito-classic.jpg",
-    alt: "Burrito classic",
-    caption: "Burrito classic",
-  },
-  {
-    src: "/images/food/plato-mexicano.jpg",
-    alt: "Plato Mexicano",
-    caption: "Plato Mexicano",
-  },
-  {
-    src: "/images/food/framboos-meringue.jpg",
-    alt: "Framboos meringue gebak glutenvrij",
-    caption: "Framboos meringue gebak glutenvrij",
+    alt: "Chocolade bavaroise taart",
+    caption: "Chocolade bavaroise taart",
   },
   {
     src: "/images/food/nachos-con-queso.jpg",
     alt: "Nachos met kaas",
     caption: "Nachos con queso",
+  },
+  {
+    src: "/images/food/tres-leches.jpg",
+    alt: "Tres leches dessert",
+    caption: "Tres leches",
   },
 ];
 
