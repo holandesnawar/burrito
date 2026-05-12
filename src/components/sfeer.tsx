@@ -15,14 +15,14 @@ const cards = [
     alt: "Tacos frescos",
   },
   {
-    _id: "quesadilla",
-    image: { _id: "quesadilla", url: "/images/food/quesadilla.jpg" },
-    alt: "Quesadilla",
+    _id: "empanada",
+    image: { _id: "empanada", url: "/images/food/empanada-mexicana.jpg" },
+    alt: "Verse empanada",
   },
   {
-    _id: "burrito",
-    image: { _id: "burrito", url: "/images/food/burrito-classic.jpg" },
-    alt: "Burrito classic",
+    _id: "tostadas",
+    image: { _id: "tostadas", url: "/images/food/tostadas-mexicanas.jpg" },
+    alt: "Mexicaanse tostadas",
   },
   {
     _id: "nachos",
@@ -32,14 +32,19 @@ const cards = [
   // Row 2 (5 cards: sliver a la izquierda + 4 visibles)
   // Foto 5 alineada al borde derecho
   {
+    _id: "babaroise",
+    image: { _id: "babaroise", url: "/images/food/babaroise-chocolate.jpg" },
+    alt: "Chocolade bavaroise taart",
+  },
+  {
     _id: "enchiladas",
     image: { _id: "enchiladas", url: "/images/food/enchiladas-mexicanos.jpg" },
     alt: "Enchiladas",
   },
   {
-    _id: "tarta",
-    image: { _id: "tarta", url: "/images/food/tarta-queso-mango.jpeg" },
-    alt: "Cheesecake met mango",
+    _id: "tres-leches",
+    image: { _id: "tres-leches", url: "/images/food/tres-leches.jpg" },
+    alt: "Tres leches dessert",
   },
   {
     _id: "framboos",
@@ -47,14 +52,9 @@ const cards = [
     alt: "Framboos meringue",
   },
   {
-    _id: "babaroise",
-    image: { _id: "babaroise", url: "/images/food/babaroise-chocolate.jpg" },
-    alt: "Chocolade bavaroise taart",
-  },
-  {
-    _id: "plato-mex",
-    image: { _id: "plato-mex", url: "/images/food/plato-mexicano.jpg" },
-    alt: "Plato Mexicano",
+    _id: "plato-carne",
+    image: { _id: "plato-carne", url: "/images/food/plato-carne.jpg" },
+    alt: "Plato met vlees",
   },
 ];
 

@@ -88,8 +88,8 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "antojitos",
-    name: "Antojitos",
-    subtitle: "Mexicaanse hapjes",
+    name: "Mexicaanse hapjes",
+    subtitle: "Antojitos",
     items: [
       {
         name: "Tostadas",
@@ -237,8 +237,8 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "postres",
-    name: "Postres",
-    subtitle: "Desserts",
+    name: "Desserts",
+    subtitle: "Postres",
     items: [
       {
         name: "Churros",
@@ -322,6 +322,7 @@ export const menu: MenuCategory[] = [
   {
     slug: "warme-dranken",
     name: "Warme dranken",
+    subtitle: "Bebidas calientes",
     items: [
       { name: "Koffie", price: "3,50" },
       { name: "Thee (diverse keuze)", price: "3,50" },
@@ -349,6 +350,7 @@ export const menu: MenuCategory[] = [
   {
     slug: "wijnen",
     name: "Wijnen",
+    subtitle: "Vinos",
     items: [
       { name: "Huiswijn Wit (per glas)", price: "5,50" },
       { name: "Huiswijn Rood (per glas)", price: "5,50" },
@@ -372,6 +374,7 @@ export const menu: MenuCategory[] = [
   {
     slug: "gedistilleerd",
     name: "Gedistilleerd",
+    subtitle: "Destilados",
     items: [
       { name: "Vodka", price: "5,90" },
       { name: "Gin", price: "5,90" },
@@ -407,6 +410,7 @@ export const menu: MenuCategory[] = [
   {
     slug: "sauzen",
     name: "Sauzen",
+    subtitle: "Salsas",
     items: [
       { name: "Mayonaise", price: "1,00" },
       { name: "BBQ-saus", price: "1,00" },
