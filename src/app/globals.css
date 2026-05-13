@@ -2666,9 +2666,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-food-title {
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: clamp(22px, 6vw, 34px);
-  letter-spacing: 0.02em;
-  line-height: 1.15;
+  font-size: clamp(22px, 5.5vw, 44px);
+  letter-spacing: 0.04em;
+  line-height: 1.05;
   text-transform: uppercase;
   margin: 0 0 14px;
   color: #fff;
@@ -2696,16 +2696,16 @@ h1, h2, h3, h4, h5, h6 {
 .ba-food-btn:hover, .ba-food-btn:focus { background: #ffd75f; }
 @media (min-width: 768px) {
   .ba-food-mocktails { padding: 90px 0 100px; overflow: visible; }
-  .ba-food-inner { flex-direction: row; align-items: center; justify-content: flex-start; gap: 96px; }
-  .ba-food-copy { text-align: left; flex: 1 1 320px; min-width: 0; padding-left: 32px; }
+  .ba-food-inner { flex-direction: row; align-items: center; justify-content: flex-start; gap: 64px; }
+  .ba-food-copy { text-align: left; flex: 1 1 320px; min-width: 0; padding-left: 16px; }
   .ba-food-images {
     position: relative;
     flex: 0 0 auto;
-    width: 680px;
-    max-width: 58vw;
-    height: 460px;
+    width: 560px;
+    max-width: 50vw;
+    height: 400px;
     padding: 0;
-    margin-left: -40px;
+    margin-left: -30px;
     display: block;
   }
   .ba-food-img {
@@ -2720,24 +2720,23 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 2;
     left: 0;
     top: 0;
-    width: 56%;
+    width: 54%;
     transform: rotate(-3deg);
   }
   /* Foto 2: derecha, claramente más abajo, ligeramente solapada */
   .ba-food-img:last-child {
     z-index: 1;
     left: 48%;
-    top: 80px;
-    width: 56%;
+    top: 70px;
+    width: 54%;
     transform: rotate(3deg);
   }
-  .ba-food-title { font-size: 36px; line-height: 1.1; }
   .ba-food-text { font-size: 16px; line-height: 1.7; }
   .ba-food-btn { font-size: 16px; padding: 14px 34px; }
 }
 @media (min-width: 1024px) {
-  .ba-food-images { width: 720px; max-width: 54vw; height: 500px; margin-left: -60px; }
-  .ba-food-img:last-child { top: 100px; }
+  .ba-food-images { width: 600px; max-width: 46vw; height: 440px; margin-left: -40px; }
+  .ba-food-img:last-child { top: 90px; }
 }
 
 /* ============================================================

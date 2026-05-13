@@ -75,7 +75,6 @@ export function MexicanClassics() {
         </div>
 
         <div className="ba-food-copy">
-          <p className="ba-food-kicker">FOOD &amp; DRINKS</p>
           <h2 className="ba-food-title">
             Mexicaanse klassiekers,<br />modern geserveerd
           </h2>
