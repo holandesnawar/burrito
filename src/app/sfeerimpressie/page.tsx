@@ -31,12 +31,12 @@ const photos = [
     caption: "Passie/Mango kwarktaart",
   },
   {
-    src: "/images/food/bebida.png",
+    src: "/images/food/bebida.jpg",
     alt: "Verfrissende drank",
     caption: "Verfrissende drank",
   },
   {
-    src: "/images/food/jarritos.png",
+    src: "/images/food/jarritos.jpg",
     alt: "Jarritos Mexicaanse frisdrank",
     caption: "Jarritos frisdrank",
   },

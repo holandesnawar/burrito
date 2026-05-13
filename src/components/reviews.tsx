@@ -234,24 +234,28 @@ export function Reviews() {
   const loop = [...reviews, ...reviews];
   const trackRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
+  const animatingRef = useRef(false);
+  const animTimeoutRef = useRef<number | null>(null);
 
+  // Native smooth scroll — GPU accelerated. Mucho más fluido que rAF custom.
   const animateTo = (target: number) => {
     const track = trackRef.current;
     if (!track) return;
-    const start = track.scrollLeft;
-    if (Math.abs(target - start) < 0.5) return;
-    const duration = 520;
-    const t0 = performance.now();
-    const animate = (t: number) => {
-      const progress = Math.min(1, (t - t0) / duration);
-      const eased =
-        progress < 0.5
-          ? 2 * progress * progress
-          : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-      track.scrollLeft = start + (target - start) * eased;
-      if (progress < 1) requestAnimationFrame(animate);
-    };
-    requestAnimationFrame(animate);
+    if (Math.abs(target - track.scrollLeft) < 0.5) return;
+    animatingRef.current = true;
+    track.scrollTo({ left: target, behavior: "smooth" });
+    if (animTimeoutRef.current) window.clearTimeout(animTimeoutRef.current);
+    // Buffer para que termine el smooth scroll antes de permitir wrap-around.
+    animTimeoutRef.current = window.setTimeout(() => {
+      animatingRef.current = false;
+      // Si tras animar quedamos fuera de rango, hacer wrap silencioso.
+      const t = trackRef.current;
+      if (!t) return;
+      const half = t.scrollWidth / 2;
+      if (half <= 0) return;
+      if (t.scrollLeft >= half) t.scrollLeft -= half;
+      else if (t.scrollLeft < 0) t.scrollLeft += half;
+    }, 700);
   };
 
   useEffect(() => {
@@ -259,7 +263,7 @@ export function Reviews() {
     if (!track) return;
 
     const id = window.setInterval(() => {
-      if (pausedRef.current) return;
+      if (pausedRef.current || animatingRef.current) return;
       const firstCard = track.querySelector<HTMLElement>(".ba-review-card");
       const cardW = firstCard?.getBoundingClientRect().width ?? 320;
       const step = cardW + 18;
@@ -267,12 +271,17 @@ export function Reviews() {
       animateTo(targetIdx * step);
     }, 4000);
 
-    return () => window.clearInterval(id);
+    return () => {
+      window.clearInterval(id);
+      if (animTimeoutRef.current) window.clearTimeout(animTimeoutRef.current);
+    };
   }, []);
 
+  // Solo hace wrap cuando NO estamos animando — evita el corte mid-animation
+  // que era la causa del lag al pulsar las flechas.
   const handleScroll = () => {
     const track = trackRef.current;
-    if (!track) return;
+    if (!track || animatingRef.current) return;
     const half = track.scrollWidth / 2;
     if (half <= 0) return;
     if (track.scrollLeft >= half) track.scrollLeft -= half;
