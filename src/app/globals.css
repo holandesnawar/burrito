@@ -2192,15 +2192,16 @@ h1, h2, h3, h4, h5, h6 {
   .ba-review-card { flex-basis: 320px; }
 }
 
-/* Mobile: bloque rating EXACTAMENTE centrado en el viewport; logo a la izquierda
-   pegado a él, centrado vertical. Grid de 3 columnas 1fr auto 1fr asegura que
-   el bloque auto del medio (rating) cae en el centro de la página. */
+/* Mobile: logo + rating como una sola unidad visual centrada en la página.
+   El grid se hace tan ancho como su contenido (justify-content: center) y se
+   centra como bloque entero — el logo se siente parte del rating, no flotante. */
 @media (max-width: 899px) {
   .ba-reviews-summary {
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: auto auto;
+    justify-content: center;
     align-items: center;
-    column-gap: 14px;
+    column-gap: 16px;
     row-gap: 0;
     text-align: center;
     padding: 4px 0 0;
@@ -2208,10 +2209,9 @@ h1, h2, h3, h4, h5, h6 {
   .ba-reviews-summary-logo {
     grid-column: 1;
     grid-row: 1 / span 4;
-    justify-self: end;
     align-self: center;
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     margin: 0;
   }
   .ba-reviews-summary-rating,
