@@ -13,25 +13,20 @@ export function ContactForm() {
 
     const fd = new FormData(e.currentTarget);
     const data = {
-      firstName: fd.get("firstName"),
-      lastName: fd.get("lastName"),
-      email: fd.get("email"),
-      phone: fd.get("phone") || "",
-      message: fd.get("message"),
+      firstName: String(fd.get("firstName") ?? ""),
+      lastName: String(fd.get("lastName") ?? ""),
+      email: String(fd.get("email") ?? ""),
+      phone: String(fd.get("phone") ?? ""),
+      message: String(fd.get("message") ?? ""),
     };
 
-    // TODO: Conectar con servicio de email (Resend, Formspree, etc.)
-    // Por ahora simulamos envío exitoso con un fallback mailto.
     try {
-      const subject = encodeURIComponent(
-        `Bericht van ${data.firstName} ${data.lastName}`
-      );
-      const body = encodeURIComponent(
-        `Naam: ${data.firstName} ${data.lastName}\nE-mail: ${data.email}\nTelefoon: ${data.phone}\n\n${data.message}`
-      );
-      window.location.href = `mailto:info@burrito-azteca.nl?subject=${subject}&body=${body}`;
-
-      await new Promise((r) => setTimeout(r, 600));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error(`status ${res.status}`);
       setStatus("success");
     } catch {
       setStatus("error");

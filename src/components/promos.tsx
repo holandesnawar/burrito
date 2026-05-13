@@ -11,24 +11,21 @@ export function Promos() {
         </h2>
 
         <div className="ba-promos-grid">
-          {/* Hero card: 10% korting via website — ticket style */}
+          {/* Hero card: 10% korting via website — coupon style */}
           <article className="ba-promo-hero" aria-labelledby="ba-promo-hero-title">
+            <span className="ba-promo-hero-punch ba-promo-hero-punch-l" aria-hidden />
+            <span className="ba-promo-hero-punch ba-promo-hero-punch-r" aria-hidden />
             <div className="ba-promo-hero-content">
               <p className="ba-promo-hero-eyebrow">Bestel direct via ons</p>
               <h3 id="ba-promo-hero-title" className="ba-promo-hero-title">
                 10% korting met de code
               </h3>
-
-              <div className="ba-promo-ticket" aria-hidden>
-                <span className="ba-promo-ticket-code">AZTECA10</span>
-                <span className="ba-promo-ticket-label">10% korting</span>
-              </div>
-
+              <span className="ba-promo-hero-code" aria-label="kortingscode AZTECA10">
+                AZTECA10
+              </span>
               <p className="ba-promo-hero-text">
-                Bestellen via onze eigen website is goedkoper. Gebruik de code
-                bij het afrekenen en profiteer van 10% korting.
+                Gebruik de code bij het afrekenen en profiteer.
               </p>
-
               <a
                 href={restaurant.delivery.orderUrl}
                 target="_blank"
@@ -53,7 +50,7 @@ export function Promos() {
               />
             </div>
             <div className="ba-promo-perk-body">
-              <p className="ba-promo-perk-eyebrow">Onze partner</p>
+              <p className="ba-promo-perk-eyebrow">Massages met Claudia</p>
               <h3 id="ba-promo-perk-title" className="ba-promo-perk-title">
                 €10 korting op een massage
               </h3>
@@ -63,7 +60,7 @@ export function Promos() {
                 massage bij Natuur Therapie. Toon je bon en geniet van de rust.
               </p>
               <a
-                href="https://natuurtherapie.nl"
+                href="https://natuurtherapieclaudia.nl"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ba-promo-perk-cta"

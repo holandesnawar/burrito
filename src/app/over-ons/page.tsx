@@ -16,7 +16,6 @@ export default function OverOnsPage() {
 
       <section className="ba-over-hero ba-over-hero-green">
         <div className="ba-over-hero-content">
-          <p className="ba-over-hero-eyebrow">Over ons</p>
           <h1 className="ba-over-hero-title">Claudia &amp; Alfredo</h1>
           <p className="ba-over-hero-text">
             Een passie voor authentieke Latijnse smaken in het hart van Kampen.

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
+import { SfeerimpressieGrid } from "@/components/sfeerimpressie-grid";
 
 export const metadata: Metadata = {
   title: "Sfeerimpressie | Burrito Azteca Kampen",
@@ -68,24 +68,7 @@ export default function SfeerimpressiePage() {
             <h1 className="ba-sfeerimpressie-title">Sfeerimpressie</h1>
           </div>
 
-          <div className="ba-sfeerimpressie-grid">
-            {photos.map((photo) => (
-              <figure key={photo.src} className="ba-sfeerimpressie-card">
-                <div className="ba-sfeerimpressie-img">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    fill
-                    sizes="(max-width: 767px) 92vw, (max-width: 1023px) 45vw, 380px"
-                    loading="lazy"
-                  />
-                </div>
-                <figcaption className="ba-sfeerimpressie-caption">
-                  {photo.caption}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
+          <SfeerimpressieGrid photos={photos} />
         </div>
       </section>
 
