@@ -476,7 +476,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 12px 28px rgba(247, 202, 61, 0.5);
+  box-shadow: none;
   transition: transform .18s ease;
 }
 .ba-cta-lg:hover { transform: scale(1.05); }
@@ -499,7 +499,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 12px 28px rgba(111, 175, 45, 0.5);
+  box-shadow: none;
   transition: transform .18s ease;
 }
 .ba-cta-lg-secondary:hover { transform: scale(1.05); }
@@ -562,7 +562,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow: 0 6px 18px rgba(247, 202, 61, 0.45);
+  box-shadow: none;
   transition: transform .18s ease, padding .28s ease, font-size .28s ease;
 }
 .ba-cta:hover { transform: scale(1.06); }
@@ -2100,7 +2100,7 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 220px;
 }
 .ba-review-card:hover {
-  transform: translateY(-3px);
+  transform: scale(1.03);
 }
 .ba-review-head {
   display: flex;
@@ -2326,11 +2326,11 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-  transition: transform .18s ease, background .18s ease;
+  box-shadow: none;
+  transition: transform .18s ease;
 }
 .ba-promo-hero-cta:hover {
-  transform: translateX(2px);
-  background: #3a2c22;
+  transform: scale(1.05);
 }
 
 /* PERK CARD — partner masaje (secundario) */
@@ -2343,12 +2343,11 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 22px;
   background: #fff;
   border: 1px solid rgba(42, 31, 24, 0.08);
-  box-shadow: 0 8px 22px rgba(42, 31, 24, 0.08);
-  transition: transform .25s ease, box-shadow .25s ease;
+  box-shadow: none;
+  transition: transform .25s ease;
 }
 .ba-promo-perk:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 36px rgba(42, 31, 24, 0.14);
+  transform: scale(1.02);
 }
 .ba-promo-perk-photo {
   position: relative;
@@ -2405,11 +2404,11 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   text-decoration: none;
   color: #2b9595;
-  transition: color .18s ease, transform .18s ease;
+  transform-origin: left center;
+  transition: transform .18s ease;
 }
 .ba-promo-perk-cta:hover {
-  color: #1f7a7a;
-  transform: translateX(2px);
+  transform: scale(1.05);
 }
 
 @media (min-width: 768px) {
@@ -2514,8 +2513,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-visit-cta * { color: #2a1f18 !important; }
 .ba-visit-cta:hover {
-  transform: scale(1.04);
-  box-shadow: none;
+  transform: scale(1.05);
 }
 .ba-visit-photo {
   width: min(480px, 100%);
@@ -2654,7 +2652,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700; font-size: 15px;
   letter-spacing: 0.05em; text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+  box-shadow: none;
   transition: transform .18s ease;
 }
 .ba-food-btn:hover, .ba-food-btn:focus { transform: scale(1.05); }
@@ -2873,13 +2871,11 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.35);
-  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  box-shadow: none;
+  transition: transform .18s ease;
 }
 .ba-sfeer-btn:hover {
-  background: #f2dfc5;
   transform: scale(1.05);
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.45);
 }
 @media (min-width: 768px) {
   .ba-sfeer { padding: 80px 0 100px; }
