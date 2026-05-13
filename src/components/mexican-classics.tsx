@@ -76,7 +76,9 @@ export function MexicanClassics() {
 
         <div className="ba-food-copy">
           <p className="ba-food-kicker">FOOD &amp; DRINKS</p>
-          <h2 className="ba-food-title">Mexicaanse klassiekers, modern geserveerd</h2>
+          <h2 className="ba-food-title">
+            Mexicaanse klassiekers,<br />modern geserveerd
+          </h2>
           <p className="ba-food-text">
             Van rijkgevulde burrito&rsquo;s en knapperige quesadilla&rsquo;s tot frisse
             mocktails en huisgemaakte desserts. Alles wordt met zorg geserveerd

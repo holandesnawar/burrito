@@ -1937,7 +1937,7 @@ h1, h2, h3, h4, h5, h6 {
 .ba-reviews-layout {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 8px;
   text-align: left;
 }
 
@@ -2192,13 +2192,38 @@ h1, h2, h3, h4, h5, h6 {
   .ba-review-card { flex-basis: 320px; }
 }
 
-/* Mobile: summary más compacto — logo más pequeño y count/google más pegado a las estrellas */
+/* Mobile: bloque rating EXACTAMENTE centrado en el viewport; logo a la izquierda
+   pegado a él, centrado vertical. Grid de 3 columnas 1fr auto 1fr asegura que
+   el bloque auto del medio (rating) cae en el centro de la página. */
 @media (max-width: 899px) {
-  .ba-reviews-summary { gap: 6px; padding-top: 4px; }
-  .ba-reviews-summary-logo { width: 72px; height: 72px; margin-bottom: 0; }
-  .ba-reviews-summary-rating { font-size: 44px; }
-  .ba-reviews-summary .ba-review-stars { margin-bottom: 2px; }
-  .ba-reviews-summary-count { margin: -10px 0 -2px; font-size: 12.5px; }
+  .ba-reviews-summary {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    column-gap: 14px;
+    row-gap: 0;
+    text-align: center;
+    padding: 4px 0 0;
+  }
+  .ba-reviews-summary-logo {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    justify-self: end;
+    align-self: center;
+    width: 64px;
+    height: 64px;
+    margin: 0;
+  }
+  .ba-reviews-summary-rating,
+  .ba-reviews-summary .ba-review-stars,
+  .ba-reviews-summary-count,
+  .ba-reviews-summary-foot {
+    grid-column: 2;
+    justify-self: center;
+  }
+  .ba-reviews-summary-rating { font-size: 44px; line-height: 1; }
+  .ba-reviews-summary .ba-review-stars { margin: 2px 0 0; }
+  .ba-reviews-summary-count { margin: 0; font-size: 12.5px; }
   .ba-reviews-summary-foot { margin: 0; font-size: 11px; }
 }
 
@@ -2277,6 +2302,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .ba-promo-hero-punch-l { left: -14px; }
 .ba-promo-hero-punch-r { right: -14px; }
+@media (max-width: 767px) {
+  .ba-promo-hero-punch { display: none; }
+}
 
 .ba-promo-hero-content {
   position: relative;
@@ -2641,17 +2669,26 @@ h1, h2, h3, h4, h5, h6 {
 .ba-food-copy { text-align: center; max-width: 640px; }
 .ba-food-kicker {
   font-family: "Salsa", system-ui, sans-serif;
-  letter-spacing: 0.24em; text-transform: uppercase;
-  font-size: 14px; color: #fbe9cf; margin: 0 0 12px;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px; color: #fbe9cf; margin: 0 0 14px;
 }
 .ba-food-title {
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: 30px; letter-spacing: 0.09em;
-  text-transform: uppercase; margin: 0 0 14px; color: #fff;
+  font-size: clamp(22px, 6vw, 34px);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  color: #fff;
+  text-wrap: balance;
 }
 .ba-food-text {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 16px; line-height: 2; color: #fff; margin: 0 0 30px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 241, 224, 0.88);
+  margin: 0 0 30px;
 }
 .ba-food-btn {
   display: inline-flex; align-items: center; justify-content: center;
@@ -2703,8 +2740,8 @@ h1, h2, h3, h4, h5, h6 {
     width: 56%;
     transform: rotate(3deg);
   }
-  .ba-food-title { font-size: 34px; }
-  .ba-food-text { font-size: 16px; }
+  .ba-food-title { font-size: 36px; line-height: 1.1; }
+  .ba-food-text { font-size: 16px; line-height: 1.7; }
   .ba-food-btn { font-size: 16px; padding: 14px 34px; }
 }
 @media (min-width: 1024px) {
@@ -2828,7 +2865,7 @@ h1, h2, h3, h4, h5, h6 {
 .ba-sfeer-bottom-photo {
   position: relative;
   width: min(360px, 100%);
-  margin: 0 auto;
+  margin: 0;
   aspect-ratio: 3 / 4;
   border-radius: 28px;
   overflow: hidden;
