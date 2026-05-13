@@ -2192,39 +2192,30 @@ h1, h2, h3, h4, h5, h6 {
   .ba-review-card { flex-basis: 320px; }
 }
 
-/* Mobile: logo + rating como una sola unidad visual centrada en la página.
-   El grid se hace tan ancho como su contenido (justify-content: center) y se
-   centra como bloque entero — el logo se siente parte del rating, no flotante. */
+/* Mobile: logo arriba, todo apilado y centrado (stack vertical limpio).
+   Logo pequeño y "Basado en X reseñas" con respiro inferior. */
 @media (max-width: 899px) {
   .ba-reviews-summary {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: center;
-    align-items: center;
-    column-gap: 16px;
-    row-gap: 0;
-    text-align: center;
-    padding: 4px 0 0;
+    gap: 4px;
+    padding-top: 4px;
   }
   .ba-reviews-summary-logo {
-    grid-column: 1;
-    grid-row: 1 / span 4;
-    align-self: center;
-    width: 72px;
-    height: 72px;
-    margin: 0;
-  }
-  .ba-reviews-summary-rating,
-  .ba-reviews-summary .ba-review-stars,
-  .ba-reviews-summary-count,
-  .ba-reviews-summary-foot {
-    grid-column: 2;
-    justify-self: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 0 4px;
   }
   .ba-reviews-summary-rating { font-size: 44px; line-height: 1; }
-  .ba-reviews-summary .ba-review-stars { margin: 2px 0 0; }
-  .ba-reviews-summary-count { margin: 0; font-size: 12.5px; }
+  .ba-reviews-summary .ba-review-stars { margin: 4px 0 2px; }
+  .ba-reviews-summary-count { margin: 0 0 8px; font-size: 12.5px; }
   .ba-reviews-summary-foot { margin: 0; font-size: 11px; }
+}
+
+/* Desktop: count + foot más pegados a las estrellas (reduce gap interno). */
+@media (min-width: 900px) {
+  .ba-reviews-summary { gap: 4px; }
+  .ba-reviews-summary .ba-review-stars { margin-bottom: 0; }
+  .ba-reviews-summary-count { margin: 2px 0 0; }
+  .ba-reviews-summary-foot { margin: 4px 0 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
