@@ -249,8 +249,8 @@ export const menu: MenuCategory[] = [
   },
   {
     slug: "bijgerechten",
-    name: "Bijgerechten & Sauzen",
-    subtitle: "Acompañamientos & Salsas",
+    name: "Bijgerechten",
+    subtitle: "Acompañamientos",
     items: [
       { name: "Papas fritas", price: "4,50" },
       {
