@@ -24,7 +24,7 @@ export function Promos() {
                 AZTECA10
               </span>
               <p className="ba-promo-hero-text">
-                Gebruik de code bij het afrekenen en profiteer.
+                Gebruik de code bij het afrekenen.
               </p>
               <a
                 href={restaurant.delivery.orderUrl}
