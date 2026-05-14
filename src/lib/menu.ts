@@ -191,6 +191,31 @@ export const menu: MenuCategory[] = [
     ],
   },
   {
+    slug: "menu-sharing",
+    name: "Voor te delen",
+    subtitle: "Para compartir",
+    items: [
+      {
+        name: "Menu Azteca 2 Personen",
+        description:
+          "1× Nacho's met cheddarsaus. 2× Quesadilla's (kip, rundergehakt, pulled-pork of veggie). 2× Burrito (kip, rundergehakt, pulled pork of veggie). 2× Churros met chocoladesaus óf 1× Cheesecake p.p.",
+        price: "54,90",
+      },
+      {
+        name: "Keuzemenu",
+        description:
+          "Menu Degustación — probeer verschillende gerechten uit onze Mexicaanse keuken in proef-porties. Kies 6 gerechten van de kaart, bijvoorbeeld 2× voorgerecht, 3× hoofdgerecht en 1× dessert.",
+        price: "38,90",
+      },
+      {
+        name: "Borrelplank Pica-Pica",
+        description:
+          "Grote borrelplank voor ongeveer 2 personen. Nacho's, papas-fritas, kleine empanadas, guacamole-kroketjes en meer...",
+        price: "26,90",
+      },
+    ],
+  },
+  {
     slug: "salades",
     name: "Salades",
     subtitle: "Ensaladas",
@@ -220,6 +245,34 @@ export const menu: MenuCategory[] = [
           "Sla, tomaat, nachos, mango, crème-fraîche, guacamole, Mexicaanse Hanensaus, jalapeños",
         price: "10,50",
       },
+    ],
+  },
+  {
+    slug: "bijgerechten",
+    name: "Bijgerechten & Sauzen",
+    subtitle: "Acompañamientos & Salsas",
+    items: [
+      { name: "Papas fritas", price: "4,50" },
+      {
+        name: "Batatas fritas",
+        description: "Zoete aardappel friet",
+        price: "7,50",
+      },
+      { name: "Mexicaanse rijst", price: "2,50" },
+      { name: "Bonen", price: "2,00" },
+      { name: "Sla, tomaat, maïs", price: "2,00" },
+      { name: "Maïskoven", price: "5,50" },
+      { name: "Kip", price: "2,00" },
+      { name: "Mayonaise", price: "1,00" },
+      { name: "BBQ-saus", price: "1,00" },
+      { name: "Mexicaanse Hanensaus", price: "1,00", badges: ["pikant"] },
+      { name: "Mango saus", price: "1,00" },
+      { name: "Crème Fraîche", price: "1,00" },
+      { name: "Guacamole", price: "2,00" },
+      { name: "Cheddarsaus", price: "2,00" },
+      { name: "Chipotle", price: "2,00", badges: ["pikant"] },
+      { name: "Salsa Tomate Normaal", price: "2,00" },
+      { name: "Salsa Tomate pikante", price: "3,50", badges: ["pikant"] },
     ],
   },
   {
@@ -387,41 +440,6 @@ export const menu: MenuCategory[] = [
       { name: "Cointreau", price: "5,90" },
       { name: "Tia Maria", price: "5,90" },
       { name: "Kahlua", price: "5,90" },
-    ],
-  },
-  {
-    slug: "bijgerechten",
-    name: "Bijgerechten",
-    subtitle: "Acompañamientos",
-    items: [
-      { name: "Papas fritas", price: "4,50" },
-      {
-        name: "Batatas fritas",
-        description: "Zoete aardappel friet",
-        price: "7,50",
-      },
-      { name: "Mexicaanse rijst", price: "2,50" },
-      { name: "Bonen", price: "2,00" },
-      { name: "Sla, tomaat, maïs", price: "2,00" },
-      { name: "Maïskoven", price: "5,50" },
-      { name: "Kip", price: "2,00" },
-    ],
-  },
-  {
-    slug: "sauzen",
-    name: "Sauzen",
-    subtitle: "Salsas",
-    items: [
-      { name: "Mayonaise", price: "1,00" },
-      { name: "BBQ-saus", price: "1,00" },
-      { name: "Mexicaanse Hanensaus", price: "1,00", badges: ["pikant"] },
-      { name: "Mango saus", price: "1,00" },
-      { name: "Crème Fraîche", price: "1,00" },
-      { name: "Guacamole", price: "2,00" },
-      { name: "Cheddarsaus", price: "2,00" },
-      { name: "Chipotle", price: "2,00", badges: ["pikant"] },
-      { name: "Salsa Tomate Normaal", price: "2,00" },
-      { name: "Salsa Tomate pikante", price: "3,50", badges: ["pikant"] },
     ],
   },
 ];
