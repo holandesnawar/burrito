@@ -23,8 +23,8 @@ const photos = [
   },
   {
     src: "/images/food/plato-salmon.jpg",
-    alt: "Plato met zalm",
-    caption: "Plato met zalm",
+    alt: "Salmon Mexicano",
+    caption: "Salmon Mexicano",
   },
   {
     src: "/images/food/tarta-queso-mango.jpeg",
