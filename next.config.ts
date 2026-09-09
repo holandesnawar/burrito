@@ -23,6 +23,22 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // Redirecciones 301 desde las URLs del WordPress antiguo (según su sitemap).
+  // /contact/, /over-ons/ y /menukaart/ ya coinciden: Next quita la barra
+  // final con un 308 automático.
+  async redirects() {
+    return [
+      { source: "/home2", destination: "/", permanent: true },
+      { source: "/pruebas", destination: "/", permanent: true },
+      // Flipbooks del menú (plugin Real3D): burrito-azteca.nl/?r3d=menukaart…
+      {
+        source: "/",
+        has: [{ type: "query", key: "r3d" }],
+        destination: "/menukaart",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {
