@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Menukaart | Burrito Azteca Kampen",
   description:
     "Onze volledige menukaart: burritos, quesadillas, fajitas, salades, postres en meer. Authentieke Mexicaanse keuken in Kampen.",
+  alternates: { canonical: "/menukaart" },
 };
 
 function formatPrice(price: string | { single: string; double?: string }) {
@@ -20,6 +21,7 @@ const badgeLabels: Record<string, { label: string; color: string }> = {
   vegetarisch: { label: "🌱 Vega", color: "#6faf2d" },
   vegan: { label: "✦ Vegan", color: "#2b9595" },
   halal: { label: "✦ Halal", color: "#6faf2d" },
+  suggestie: { label: "★ Suggestie van het huis", color: "#c8892a" },
 };
 
 export default function MenukaartPage() {

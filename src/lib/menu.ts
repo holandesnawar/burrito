@@ -2,7 +2,7 @@ export type MenuItem = {
   name: string;
   description?: string;
   price: string | { single: string; double?: string };
-  badges?: string[]; // ej: ["vegan", "halal", "pikant"]
+  badges?: string[]; // ej: ["vegan", "halal", "pikant", "suggestie"]
 };
 
 export type MenuCategory = {
@@ -137,8 +137,10 @@ export const menu: MenuCategory[] = [
       },
       {
         name: "Carne Guisada",
-        description: "Stoofvlees in Mexicaanse stijl geserveerd met friet",
+        description:
+          "Stoofvlees in Mexicaanse stijl: zachtjes gestoofd rundvlees met een levendig accent van Mexicaanse pepers. Een unieke fusion van texturen. Geserveerd met Mexicaanse friet",
         price: "26,90",
+        badges: ["suggestie"],
       },
       {
         name: "Salmon Mexicano",
@@ -165,8 +167,9 @@ export const menu: MenuCategory[] = [
       {
         name: "Pollo Entomatado",
         description:
-          "Malse kip gesmoord in een rijke saus van gerijpte tomaten en specerijen",
+          "Malse kip gesmoord in een rijke saus van gerijpte tomaten en specerijen. Een hartige, authentieke smaakervaring. Geserveerd met Mexicaanse rijst",
         price: "20,90",
+        badges: ["suggestie"],
       },
       {
         name: "Ravioles",
@@ -206,12 +209,6 @@ export const menu: MenuCategory[] = [
         description:
           "Menu Degustación — probeer verschillende gerechten uit onze Mexicaanse keuken in proef-porties. Kies 6 gerechten van de kaart, bijvoorbeeld 2× voorgerecht, 3× hoofdgerecht en 1× dessert.",
         price: "38,90",
-      },
-      {
-        name: "Borrelplank Pica-Pica",
-        description:
-          "Grote borrelplank voor ongeveer 2 personen. Nacho's, papas-fritas, kleine empanadas, guacamole-kroketjes en meer...",
-        price: "26,90",
       },
     ],
   },
@@ -278,7 +275,7 @@ export const menu: MenuCategory[] = [
   {
     slug: "kindermenu",
     name: "Kindermenu",
-    subtitle: "Meny Infantil",
+    subtitle: "Menú Infantil",
     items: [
       {
         name: "Menu Infantil",
@@ -330,20 +327,11 @@ export const menu: MenuCategory[] = [
         price: "8,50",
       },
       {
-        name: "Chocolade Lava Cake",
-        price: "7,75",
-      },
-      {
         name: "Cranberry Kwarktaart",
         price: "7,95",
       },
       {
         name: "Handgemaakte Chocolade Bavaroise",
-        price: "7,75",
-      },
-      {
-        name: "Postre Azteca",
-        description: "Verrassing van de chef",
         price: "7,75",
       },
     ],
@@ -417,7 +405,7 @@ export const menu: MenuCategory[] = [
   {
     slug: "cocktails",
     name: "Cocktails",
-    subtitle: "Cocteles",
+    subtitle: "Cócteles",
     items: [
       { name: "Mojito", price: "10,50" },
       { name: "Margarita", price: "10,50" },

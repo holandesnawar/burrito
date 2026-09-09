@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Over ons | Burrito Azteca Kampen",
   description:
     "Maak kennis met Claudia en Alfredo, de oprichters van Burrito Azteca. Authentieke Mexicaanse keuken in het hart van Kampen.",
+  alternates: { canonical: "/over-ons" },
 };
 
 export default function OverOnsPage() {

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Sfeerimpressie | Burrito Azteca Kampen",
   description:
     "Een sfeerimpressie van Burrito Azteca: authentieke Mexicaanse gerechten en de gezellige sfeer van ons restaurant in Kampen.",
+  alternates: { canonical: "/sfeerimpressie" },
 };
 
 const photos = [

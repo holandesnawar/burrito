@@ -327,7 +327,7 @@ export function Reviews() {
             <div className="ba-reviews-summary-rating">{AVERAGE_RATING.toFixed(1)}</div>
             <StarsRow value={AVERAGE_RATING} size={22} />
             <p className="ba-reviews-summary-count">
-              Basado en <strong>{TOTAL_REVIEWS}</strong> reseñas
+              Gebaseerd op <strong>{TOTAL_REVIEWS}</strong> beoordelingen
             </p>
             <div className="ba-reviews-summary-foot">
               <span>powered by</span>

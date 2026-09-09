@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Contact | Burrito Azteca Kampen",
   description:
     "Neem contact op met Burrito Azteca in Kampen. Stuur ons een bericht, bel ons of kom langs aan de Broederstraat 25.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

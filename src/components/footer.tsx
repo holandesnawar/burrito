@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { restaurant } from "@/lib/restaurant";
 
 export function Footer() {
@@ -76,11 +77,11 @@ export function Footer() {
           <div>
             <div className="ba-footer-block">
               <ul className="ba-footer-menu-list">
-                <li><a href="/">Home</a></li>
-                <li><a href="/menukaart">Menukaart</a></li>
-                <li><a href="/sfeerimpressie">Sfeerimpressie</a></li>
-                <li><a href="/over-ons">Over ons</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><Link href="/">Home</Link></li>
+                <li><Link href="/menukaart">Menukaart</Link></li>
+                <li><Link href="/sfeerimpressie">Sfeerimpressie</Link></li>
+                <li><Link href="/over-ons">Over ons</Link></li>
+                <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
           </div>

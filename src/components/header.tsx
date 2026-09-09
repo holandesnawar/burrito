@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { restaurant } from "@/lib/restaurant";
 
@@ -44,7 +45,7 @@ export function Header() {
     <div id="ba-nav-wrap" className={scrolled ? "is-scrolled" : ""}>
       <nav id="ba-nav" aria-label="Hoofdnavigatie">
         <div className="ba-nav-inner">
-          <a href="/" className="ba-brand" aria-label="Burrito Azteca">
+          <Link href="/" className="ba-brand" aria-label="Burrito Azteca">
             <Image
               src="/logo.png"
               alt="Burrito Azteca"
@@ -52,7 +53,7 @@ export function Header() {
               height={361}
               priority
             />
-          </a>
+          </Link>
 
           <div className="ba-menu" role="menubar">
             {links.map((link) => (
@@ -77,7 +78,7 @@ export function Header() {
             </a>
             <button
               className={`ba-burger${open ? " is-open" : ""}`}
-              aria-label={open ? "Cerrar menú" : "Abrir menú"}
+              aria-label={open ? "Menu sluiten" : "Menu openen"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
               type="button"
@@ -102,7 +103,7 @@ export function Header() {
             type="button"
             className="ba-menu-close"
             onClick={() => setOpen(false)}
-            aria-label="Cerrar menú"
+            aria-label="Menu sluiten"
           >
             ×
           </button>

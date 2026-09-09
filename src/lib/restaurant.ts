@@ -16,14 +16,16 @@ export const restaurant = {
     instagram: "https://instagram.com/burrito.azteca",
     facebook: "https://facebook.com/BurritoAztecaKampen",
   },
+  siteUrl: "https://burrito-azteca.nl",
+  // Horario también hardcodeado en hero/header/footer; mantener en sync.
   hours: [
     { day: "Maandag", value: "Gesloten", closed: true },
-    { day: "Dinsdag", value: "16:30 tot 21:00" },
-    { day: "Woensdag", value: "16:30 tot 21:00" },
-    { day: "Donderdag", value: "16:30 tot 21:00" },
-    { day: "Vrijdag", value: "16:30 tot 21:30" },
-    { day: "Zaterdag", value: "16:30 tot 21:30" },
-    { day: "Zondag", value: "16:30 tot 21:00" },
+    { day: "Dinsdag", value: "16:00 tot 21:00" },
+    { day: "Woensdag", value: "16:00 tot 21:00" },
+    { day: "Donderdag", value: "16:00 tot 21:00" },
+    { day: "Vrijdag", value: "16:00 tot 21:30" },
+    { day: "Zaterdag", value: "16:00 tot 21:30" },
+    { day: "Zondag", value: "16:00 tot 21:00" },
   ],
   delivery: {
     info: "Tot €30: €2,50 bezorgkosten",
