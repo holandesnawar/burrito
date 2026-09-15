@@ -112,17 +112,17 @@ export function Hero() {
           <p className="ba-hero-hours">
             <span>DI-DO</span>
             <span aria-hidden>·</span>
-            <span>16:00 — 21:00 uur</span>
+            <span>16:30 — 21:00 uur</span>
           </p>
           <p className="ba-hero-hours">
             <span>VR-ZA</span>
             <span aria-hidden>·</span>
-            <span>16:00 — 21:30 uur</span>
+            <span>16:30 — 21:30 uur</span>
           </p>
           <p className="ba-hero-hours">
             <span>ZO</span>
             <span aria-hidden>·</span>
-            <span>16:00 — 21:00 uur</span>
+            <span>16:30 — 21:00 uur</span>
           </p>
         </div>
 

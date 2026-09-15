@@ -126,9 +126,9 @@ export function Header() {
             <summary>Openingstijden</summary>
             <div className="ba-menu-mobile-hours">
               <div><span>Maandag</span><span>Gesloten</span></div>
-              <div><span>Di t/m Do</span><span>16:00 tot 21:00</span></div>
-              <div><span>Vr t/m Za</span><span>16:00 tot 21:30</span></div>
-              <div><span>Zondag</span><span>16:00 tot 21:00</span></div>
+              <div><span>Di t/m Do</span><span>16:30 tot 21:00</span></div>
+              <div><span>Vr t/m Za</span><span>16:30 tot 21:30</span></div>
+              <div><span>Zondag</span><span>16:30 tot 21:00</span></div>
             </div>
           </details>
           <details>

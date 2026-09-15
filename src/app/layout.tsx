@@ -46,8 +46,8 @@ const jsonLd = {
   acceptsReservations: restaurant.reservation.url,
   sameAs: [restaurant.social.instagram, restaurant.social.facebook],
   openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Sunday"], opens: "16:00", closes: "21:00" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday", "Saturday"], opens: "16:00", closes: "21:30" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Sunday"], opens: "16:30", closes: "21:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday", "Saturday"], opens: "16:30", closes: "21:30" },
   ],
 };
 

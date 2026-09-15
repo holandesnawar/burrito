@@ -95,13 +95,13 @@ export function Footer() {
                   <span>Maandag</span><span className="ba-footer-dots" /><span>Gesloten</span>
                 </div>
                 <div className="ba-footer-opening-row">
-                  <span>Dinsdag t/m Donderdag</span><span className="ba-footer-dots" /><span>16:00 tot 21:00</span>
+                  <span>Dinsdag t/m Donderdag</span><span className="ba-footer-dots" /><span>16:30 tot 21:00</span>
                 </div>
                 <div className="ba-footer-opening-row">
-                  <span>Vrijdag t/m Zaterdag</span><span className="ba-footer-dots" /><span>16:00 tot 21:30</span>
+                  <span>Vrijdag t/m Zaterdag</span><span className="ba-footer-dots" /><span>16:30 tot 21:30</span>
                 </div>
                 <div className="ba-footer-opening-row">
-                  <span>Zondag</span><span className="ba-footer-dots" /><span>16:00 tot 21:00</span>
+                  <span>Zondag</span><span className="ba-footer-dots" /><span>16:30 tot 21:00</span>
                 </div>
               </div>
             </div>
