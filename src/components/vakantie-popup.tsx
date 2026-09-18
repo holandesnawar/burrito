@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import { restaurant } from "@/lib/restaurant";
 
-const STORAGE_KEY = "ba-vakantie-dismissed";
-
 function isActive(): boolean {
   const h = restaurant.holiday;
   if (!h.enabled) return false;
@@ -18,10 +16,13 @@ export function VakantiePopup() {
 
   useEffect(() => {
     if (!isActive()) return;
+    // Sale cada vez que se entra a la web (desde Google, Instagram, la URL…),
+    // pero no al pasar de una página a otra dentro del propio sitio.
     try {
-      if (sessionStorage.getItem(STORAGE_KEY)) return;
+      const ref = document.referrer ? new URL(document.referrer) : null;
+      if (ref && ref.origin === window.location.origin) return;
     } catch {
-      /* sessionStorage puede no estar disponible; mostramos igualmente */
+      /* referrer ilegible: mostramos igualmente */
     }
     const t = window.setTimeout(() => setOpen(true), 2500);
     return () => window.clearTimeout(t);
@@ -38,11 +39,6 @@ export function VakantiePopup() {
 
   function close() {
     setOpen(false);
-    try {
-      sessionStorage.setItem(STORAGE_KEY, "1");
-    } catch {
-      /* ignorar */
-    }
   }
 
   if (!open) return null;
@@ -64,7 +60,9 @@ export function VakantiePopup() {
           onClick={close}
           aria-label="Sluiten"
         >
-          ×
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" aria-hidden focusable="false">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
         </button>
         <span className="ba-vakantie-punch ba-vakantie-punch-l" aria-hidden />
         <span className="ba-vakantie-punch ba-vakantie-punch-r" aria-hidden />

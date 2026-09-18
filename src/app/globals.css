@@ -688,8 +688,6 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin-right: 7px; /* alinea el centro de la X con el centro del burger del navbar */
   color: #2a1f18;
-  font-family: "Salsa", system-ui, sans-serif;
-  font-size: 44px;
   line-height: 1;
   cursor: pointer;
   display: inline-flex;
@@ -697,6 +695,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   transition: transform .18s ease, color .18s ease;
 }
+.ba-menu-close svg { display: block; }
 .ba-menu-close:hover {
   color: #5a3d1e;
   transform: scale(1.12);
@@ -2994,8 +2993,9 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(42, 31, 24, 0.14);
   background: #fff;
   color: #2a1f18;
-  font-size: 22px;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: background .15s ease, transform .15s ease;
 }
