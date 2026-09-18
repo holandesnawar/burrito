@@ -80,7 +80,7 @@ export function VakantiePopup() {
         </p>
         <p className="ba-vakantie-text">
           In deze periode zijn we gesloten. Vanaf{" "}
-          <strong>{h.reopenLabel}</strong> staan we weer voor je klaar met
+          <strong>{h.reopenLabel}</strong>{" "}staan we weer voor je klaar met
           verse burrito&rsquo;s, quesadilla&rsquo;s en meer.
         </p>
         <p className="ba-vakantie-sign">¡Hasta pronto! Claudia &amp; Alfredo</p>
