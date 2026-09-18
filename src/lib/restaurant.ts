@@ -34,6 +34,16 @@ export const restaurant = {
   reservation: {
     url: "https://widget.thefork.com/a568eaa6-aa18-4b67-bec7-0f0f113445d0",
   },
+  // Cierre por vacaciones. El popup se muestra hasta el último día (incluido)
+  // y desaparece solo después. Para quitarlo antes: enabled: false.
+  holiday: {
+    enabled: true,
+    from: "2026-09-28", // ISO, primer día cerrado
+    to: "2026-10-05", // ISO, último día cerrado
+    fromLabel: "maandag 28 september",
+    toLabel: "maandag 5 oktober",
+    reopenLabel: "dinsdag 6 oktober",
+  },
 };
 
 export const categories = [

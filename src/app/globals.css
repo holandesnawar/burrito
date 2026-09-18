@@ -2943,3 +2943,123 @@ h1, h2, h3, h4, h5, h6 {
   .ba-sfeer-bottom-inner { gap: 80px; max-width: 1200px; }
   .ba-sfeer-bottom-photo { border-radius: 32px; }
 }
+
+/* ============================================================
+   VAKANTIE POPUP (.ba-vakantie-*) — aviso de cierre, estilo cupón
+   ============================================================ */
+.ba-vakantie-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(42, 31, 24, 0.62);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: ba-vakantie-fade .25s ease-out;
+}
+.ba-vakantie-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  border-radius: 22px;
+  background: #fff1e0;
+  border: 3px dashed #f3b71a;
+  padding: 34px 26px 28px;
+  color: #2a1f18;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+  animation: ba-vakantie-pop .32s cubic-bezier(.2, .9, .3, 1.2);
+}
+.ba-vakantie-punch {
+  position: absolute;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(42, 31, 24, 0.62);
+  transform: translateY(-50%);
+}
+.ba-vakantie-punch-l { left: -15px; }
+.ba-vakantie-punch-r { right: -15px; }
+.ba-vakantie-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(42, 31, 24, 0.14);
+  background: #fff;
+  color: #2a1f18;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .15s ease, transform .15s ease;
+}
+.ba-vakantie-close:hover { background: #f7ca3d; transform: rotate(90deg); }
+.ba-vakantie-kicker {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #2b9595;
+  margin: 0 0 6px;
+}
+.ba-vakantie-title {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(28px, 7vw, 36px);
+  line-height: 1.05;
+  margin: 0 0 14px;
+}
+.ba-vakantie-dates {
+  display: inline-block;
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.3;
+  padding: 8px 16px;
+  border-radius: 12px;
+  background: #f7ca3d;
+  border: 1px solid #d6a91f;
+  margin: 0 0 16px;
+}
+.ba-vakantie-text {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(42, 31, 24, 0.82);
+  margin: 0 0 10px;
+}
+.ba-vakantie-sign {
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 15px;
+  color: #d44a3f;
+  margin: 0 0 20px;
+}
+.ba-vakantie-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1px solid #1f7a7a;
+  background: #2b9595;
+  color: #fff;
+  font-family: "Salsa", system-ui, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform .15s ease, background .15s ease;
+}
+.ba-vakantie-cta:hover { background: #1f7a7a; transform: scale(1.04); }
+@keyframes ba-vakantie-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ba-vakantie-pop {
+  from { opacity: 0; transform: translateY(18px) scale(.96); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ba-vakantie-overlay, .ba-vakantie-card { animation: none; }
+}

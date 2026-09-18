@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Salsa, Inter } from "next/font/google";
 import "./globals.css";
 import { FloatingReserveer } from "@/components/floating-reserveer";
+import { VakantiePopup } from "@/components/vakantie-popup";
 import { restaurant } from "@/lib/restaurant";
 
 const salsa = Salsa({
@@ -49,6 +50,18 @@ const jsonLd = {
     { "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Sunday"], opens: "16:30", closes: "21:00" },
     { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday", "Saturday"], opens: "16:30", closes: "21:30" },
   ],
+  // Cierre por vacaciones (opens = closes = 00:00 significa "gesloten").
+  ...(restaurant.holiday.enabled && {
+    specialOpeningHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        validFrom: restaurant.holiday.from,
+        validThrough: restaurant.holiday.to,
+        opens: "00:00",
+        closes: "00:00",
+      },
+    ],
+  }),
 };
 
 export default function RootLayout({
@@ -70,6 +83,7 @@ export default function RootLayout({
         />
         {children}
         <FloatingReserveer />
+        <VakantiePopup />
       </body>
     </html>
   );
