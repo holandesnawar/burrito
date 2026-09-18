@@ -40,8 +40,8 @@ export const restaurant = {
     enabled: true,
     from: "2026-09-28", // ISO, primer día cerrado
     to: "2026-10-05", // ISO, último día cerrado
-    fromLabel: "maandag 28 september",
-    toLabel: "maandag 5 oktober",
+    fromLabel: "28 september",
+    toLabel: "5 oktober",
     reopenLabel: "dinsdag 6 oktober",
   },
 };

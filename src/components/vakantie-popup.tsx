@@ -23,7 +23,7 @@ export function VakantiePopup() {
     } catch {
       /* sessionStorage puede no estar disponible; mostramos igualmente */
     }
-    const t = window.setTimeout(() => setOpen(true), 700);
+    const t = window.setTimeout(() => setOpen(true), 2500);
     return () => window.clearTimeout(t);
   }, []);
 
@@ -71,7 +71,7 @@ export function VakantiePopup() {
 
         <p className="ba-vakantie-kicker">Vakantie</p>
         <h2 id="ba-vakantie-title" className="ba-vakantie-title">
-          Wij zijn even weg
+          Even gesloten
         </h2>
         <p className="ba-vakantie-dates">
           {h.fromLabel}
@@ -79,14 +79,13 @@ export function VakantiePopup() {
           {h.toLabel}
         </p>
         <p className="ba-vakantie-text">
-          In deze periode zijn we gesloten. Vanaf{" "}
-          <strong>{h.reopenLabel}</strong>{" "}staan we weer voor je klaar met
-          verse burrito&rsquo;s, quesadilla&rsquo;s en meer.
+          Vanaf <strong>{h.reopenLabel}</strong>{" "}zijn we er weer.
+          <br />
+          <span className="ba-vakantie-sign">¡Hasta pronto!</span>
         </p>
-        <p className="ba-vakantie-sign">¡Hasta pronto! Claudia &amp; Alfredo</p>
 
         <button type="button" className="ba-vakantie-cta" onClick={close}>
-          <span>Oké, tot dan</span>
+          <span>Oké</span>
           <span aria-hidden>→</span>
         </button>
       </div>

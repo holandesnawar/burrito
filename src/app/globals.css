@@ -3027,16 +3027,15 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 16px;
 }
 .ba-vakantie-text {
-  font-size: 14.5px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.6;
   color: rgba(42, 31, 24, 0.82);
-  margin: 0 0 10px;
+  margin: 0 0 20px;
 }
 .ba-vakantie-sign {
   font-family: "Salsa", system-ui, sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   color: #d44a3f;
-  margin: 0 0 20px;
 }
 .ba-vakantie-cta {
   display: inline-flex;
