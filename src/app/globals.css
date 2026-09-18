@@ -2972,17 +2972,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
   animation: ba-vakantie-pop .32s cubic-bezier(.2, .9, .3, 1.2);
 }
-.ba-vakantie-punch {
-  position: absolute;
-  top: 50%;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: rgba(42, 31, 24, 0.62);
-  transform: translateY(-50%);
-}
-.ba-vakantie-punch-l { left: -15px; }
-.ba-vakantie-punch-r { right: -15px; }
 .ba-vakantie-close {
   position: absolute;
   top: 10px;

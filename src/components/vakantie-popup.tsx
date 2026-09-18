@@ -64,9 +64,6 @@ export function VakantiePopup() {
             <path d="M6 6l12 12M18 6L6 18" />
           </svg>
         </button>
-        <span className="ba-vakantie-punch ba-vakantie-punch-l" aria-hidden />
-        <span className="ba-vakantie-punch ba-vakantie-punch-r" aria-hidden />
-
         <p className="ba-vakantie-kicker">Vakantie</p>
         <h2 id="ba-vakantie-title" className="ba-vakantie-title">
           Even gesloten
