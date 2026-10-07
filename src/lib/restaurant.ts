@@ -37,7 +37,7 @@ export const restaurant = {
   // Cierre por vacaciones. El popup se muestra hasta el último día (incluido)
   // y desaparece solo después. Para quitarlo antes: enabled: false.
   holiday: {
-    enabled: true,
+    enabled: false,
     from: "2026-09-28", // ISO, primer día cerrado
     to: "2026-10-05", // ISO, último día cerrado
     fromLabel: "28 september",
