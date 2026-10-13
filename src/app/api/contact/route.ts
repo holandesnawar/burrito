@@ -1,7 +1,13 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const TO_EMAIL = process.env.CONTACT_TO ?? "info@burrito-azteca.nl";
+// Destinatarios. Se puede sobreescribir con CONTACT_TO (varios separados por coma).
+const TO_EMAILS = (
+  process.env.CONTACT_TO ?? "info@burrito-azteca.nl, alfregramigna@gmail.com"
+)
+  .split(",")
+  .map((e) => e.trim())
+  .filter(Boolean);
 
 // Rate limit: 5 envíos por IP cada 10 minutos (en memoria por instancia).
 // Sirve como mitigación básica contra spam; para algo robusto usar Vercel KV.
@@ -108,7 +114,7 @@ export async function POST(req: Request) {
 
   const { error } = await resend.emails.send({
     from,
-    to: TO_EMAIL,
+    to: TO_EMAILS,
     replyTo: email,
     subject: "Mensaje de Contacto",
     html,
